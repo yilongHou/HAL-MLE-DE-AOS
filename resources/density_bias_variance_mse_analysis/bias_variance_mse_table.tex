@@ -1,0 +1,39 @@
+% Auto-generated bias-variance-MSE summary table
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{l l c c c}
+    \toprule
+    DGP & Method & Mean $|$Bias$|$ & Mean Variance & Mean MSE \\
+    \midrule
+    TN & HAL-MLE & 0.004056 & 0.009656 & 0.009685 \\
+     & KDE & 0.046380 & 0.010896 & 0.015784 \\
+     & TF & 0.021612 & 0.077959 & 0.078807 \\
+     & LogSplines & 0.027749 & 0.020323 & 0.021826 \\
+    GS3 & HAL-MLE & 0.021704 & 0.021207 & 0.022009 \\
+     & KDE & 0.058578 & 0.019115 & 0.025887 \\
+     & TF & 0.047179 & 0.080281 & 0.084163 \\
+     & LogSplines & 0.076431 & 0.034384 & 0.042595 \\
+    GA3 & HAL-MLE & 0.029466 & 0.015642 & 0.017245 \\
+     & KDE & 0.045495 & 0.016793 & 0.023669 \\
+     & TF & 0.021659 & 0.037418 & 0.038237 \\
+     & LogSplines & 0.036700 & 0.022625 & 0.025002 \\
+    GS5 & HAL-MLE & 0.137023 & 0.221292 & 0.337217 \\
+     & KDE & 0.367413 & 0.149027 & 0.973225 \\
+     & TF & 0.031863 & 0.506509 & 0.509499 \\
+     & LogSplines & 0.381868 & 0.271924 & 1.181851 \\
+    Step & HAL-MLE & 0.033888 & 0.008029 & 0.013404 \\
+     & KDE & 0.020220 & 0.023416 & 0.028317 \\
+     & TF & 0.030597 & 0.008446 & 0.012354 \\
+     & LogSplines & 0.045377 & 0.010245 & 0.016396 \\
+    Sine & HAL-MLE & 0.012801 & 0.005355 & 0.005615 \\
+     & KDE & 0.004688 & 0.019763 & 0.019794 \\
+     & TF & 0.010744 & 0.007425 & 0.007602 \\
+     & LogSplines & 0.012554 & 0.005492 & 0.005848 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Bias--variance--MSE summary at $n=800$ across DGPs and methods. Mean $|$Bias$|$ averages absolute bias over evaluation points; Variance and MSE are averaged over points.}
+  \label{tab:bias_variance_mse_summary}
+\end{table}

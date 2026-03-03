@@ -1,0 +1,407 @@
+\begin{thebibliography}{40}
+% BibTex style file: imsart-nameyear.bst, 2017-11-03
+% Default style options (sort=1,type=nameyear).
+% Used options (sort=1,type=nameyear).
+
+\bibitem[\protect\citeauthoryear{Akiba et~al.}{2019}]{akiba2019optuna}
+\begin{binproceedings}[author]
+\bauthor{\bsnm{Akiba},~\bfnm{Takuya}\binits{T.}}, \bauthor{\bsnm{Sano},~\bfnm{Shotaro}\binits{S.}}, \bauthor{\bsnm{Yanase},~\bfnm{Toshihiko}\binits{T.}}, \bauthor{\bsnm{Ohta},~\bfnm{Takeru}\binits{T.}} \AND \bauthor{\bsnm{Koyama},~\bfnm{Masanori}\binits{M.}}
+(\byear{2019}).
+\btitle{Optuna: A next-generation hyperparameter optimization framework}.
+In \bbooktitle{Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery \& data mining}
+\bpages{2623--2631}.
+\end{binproceedings}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Bak et~al.}{2021}]{bak2021penalized}
+\begin{barticle}[author]
+\bauthor{\bsnm{Bak},~\bfnm{Kwan-Young}\binits{K.-Y.}}, \bauthor{\bsnm{Jhong},~\bfnm{Jae-Hwan}\binits{J.-H.}}, \bauthor{\bsnm{Lee},~\bfnm{JungJun}\binits{J.}}, \bauthor{\bsnm{Shin},~\bfnm{Jae-Kyung}\binits{J.-K.}} \AND \bauthor{\bsnm{Koo},~\bfnm{Ja-Yong}\binits{J.-Y.}}
+(\byear{2021}).
+\btitle{Penalized logspline density estimation using total variation penalty}.
+\bjournal{Computational Statistics \& Data Analysis}
+\bvolume{153}
+\bpages{107060}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Benkeser and Van Der~Laan}{2016}]{benkeser2016highly}
+\begin{binproceedings}[author]
+\bauthor{\bsnm{Benkeser},~\bfnm{David}\binits{D.}} \AND \bauthor{\bsnm{Van Der~Laan},~\bfnm{Mark}\binits{M.}}
+(\byear{2016}).
+\btitle{The highly adaptive lasso estimator}.
+In \bbooktitle{2016 IEEE international conference on data science and advanced analytics (DSAA)}
+\bpages{689--696}.
+\bpublisher{IEEE}.
+\end{binproceedings}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Bibaut and van~der Laan}{2019}]{bibaut2019fast}
+\begin{barticle}[author]
+\bauthor{\bsnm{Bibaut},~\bfnm{Aur{\'e}lien~F}\binits{A.~F.}} \AND \bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}}
+(\byear{2019}).
+\btitle{Fast rates for empirical risk minimization over c$\backslash$adl$\backslash$ag functions with bounded sectional variation norm}.
+\bjournal{arXiv preprint arXiv:1907.09244}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Birman and Solomjak}{1967}]{birman1967piecewise}
+\begin{barticle}[author]
+\bauthor{\bsnm{Birman},~\bfnm{M~{\v{S}}}\binits{M.~{\v{S}}.}} \AND \bauthor{\bsnm{Solomjak},~\bfnm{Mikhail~Z}\binits{M.~Z.}}
+(\byear{1967}).
+\btitle{Piecewise-polynomial approximations of functions of the classes}.
+\bjournal{Mathematics of the USSR-Sbornik}
+\bvolume{2}
+\bpages{295}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{De~Boor}{1976}]{de1976splines}
+\begin{btechreport}[author]
+\bauthor{\bsnm{De~Boor},~\bfnm{Carl}\binits{C.}}
+(\byear{1976}).
+\btitle{Splines as Linear Combinations of B-Splines. A Survey.}
+\btype{Technical Report}.
+\end{btechreport}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Fang, Guntuboyina and Sen}{2021}]{fang2021multivariate}
+\begin{barticle}[author]
+\bauthor{\bsnm{Fang},~\bfnm{Billy}\binits{B.}}, \bauthor{\bsnm{Guntuboyina},~\bfnm{Adityanand}\binits{A.}} \AND \bauthor{\bsnm{Sen},~\bfnm{Bodhisattva}\binits{B.}}
+(\byear{2021}).
+\btitle{Multivariate extensions of isotonic regression and total variation denoising via entire monotonicity and Hardy--Krause variation}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Gill, van~der Laan and Wellner}{2001}]{gill2001inefficient}
+\begin{btechreport}[author]
+\bauthor{\bsnm{Gill},~\bfnm{Richard~D}\binits{R.~D.}}, \bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}} \AND \bauthor{\bsnm{Wellner},~\bfnm{Jon~A}\binits{J.~A.}}
+(\byear{2001}).
+\btitle{Inefficient Estimators of the Bivariate Survival Function for three Models}
+\btype{Technical Report},
+\bpublisher{Working paper, UC Berkely}.
+\end{btechreport}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Kaplan and Meier}{1958}]{kaplan1958nonparametric}
+\begin{barticle}[author]
+\bauthor{\bsnm{Kaplan},~\bfnm{Edward~L}\binits{E.~L.}} \AND \bauthor{\bsnm{Meier},~\bfnm{Paul}\binits{P.}}
+(\byear{1958}).
+\btitle{Nonparametric estimation from incomplete observations}.
+\bjournal{Journal of the American statistical association}
+\bvolume{53}
+\bpages{457--481}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Ki, Fang and Guntuboyina}{2024}]{ki2024mars}
+\begin{barticle}[author]
+\bauthor{\bsnm{Ki},~\bfnm{Dohyeong}\binits{D.}}, \bauthor{\bsnm{Fang},~\bfnm{Billy}\binits{B.}} \AND \bauthor{\bsnm{Guntuboyina},~\bfnm{Adityanand}\binits{A.}}
+(\byear{2024}).
+\btitle{Mars via lasso}.
+\bjournal{The Annals of Statistics}
+\bvolume{52}
+\bpages{1102--1126}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Kooperberg and Stone}{1991}]{kooperberg1991study}
+\begin{barticle}[author]
+\bauthor{\bsnm{Kooperberg},~\bfnm{Charles}\binits{C.}} \AND \bauthor{\bsnm{Stone},~\bfnm{Charles~J}\binits{C.~J.}}
+(\byear{1991}).
+\btitle{A study of logspline density estimation}.
+\bjournal{Computational Statistics \& Data Analysis}
+\bvolume{12}
+\bpages{327--347}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Kooperberg and Stone}{1992}]{kooperberg1992logspline}
+\begin{barticle}[author]
+\bauthor{\bsnm{Kooperberg},~\bfnm{Charles}\binits{C.}} \AND \bauthor{\bsnm{Stone},~\bfnm{Charles~J}\binits{C.~J.}}
+(\byear{1992}).
+\btitle{Logspline density estimation for censored data}.
+\bjournal{Journal of Computational and Graphical Statistics}
+\bvolume{1}
+\bpages{301--328}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Leonard}{1978}]{leonard1978density}
+\begin{barticle}[author]
+\bauthor{\bsnm{Leonard},~\bfnm{Tom}\binits{T.}}
+(\byear{1978}).
+\btitle{Density estimation, stochastic processes and prior information}.
+\bjournal{Journal of the Royal Statistical Society: Series B (Methodological)}
+\bvolume{40}
+\bpages{113--132}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Mammen and Van De~Geer}{1997}]{mammen1997locally}
+\begin{barticle}[author]
+\bauthor{\bsnm{Mammen},~\bfnm{Enno}\binits{E.}} \AND \bauthor{\bsnm{Van De~Geer},~\bfnm{Sara}\binits{S.}}
+(\byear{1997}).
+\btitle{Locally adaptive regression splines}.
+\bjournal{The Annals of Statistics}
+\bvolume{25}
+\bpages{387--413}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Munch et~al.}{2024}]{munch2024estimating}
+\begin{barticle}[author]
+\bauthor{\bsnm{Munch},~\bfnm{Anders}\binits{A.}}, \bauthor{\bsnm{Gerds},~\bfnm{Thomas~A}\binits{T.~A.}}, \bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}} \AND \bauthor{\bsnm{Rytgaard},~\bfnm{Helene~CW}\binits{H.~C.}}
+(\byear{2024}).
+\btitle{Estimating conditional hazard functions and densities with the highly-adaptive lasso}.
+\bjournal{arXiv preprint arXiv:2404.11083}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Postman, Huchra and Geller}{1986}]{postman1986probes}
+\begin{barticle}[author]
+\bauthor{\bsnm{Postman},~\bfnm{Marc}\binits{M.}}, \bauthor{\bsnm{Huchra},~\bfnm{John~Peter}\binits{J.~P.}} \AND \bauthor{\bsnm{Geller},~\bfnm{Margaret~J}\binits{M.~J.}}
+(\byear{1986}).
+\btitle{Probes of large-scale structure in the Corona Borealis region}.
+\bjournal{Astronomical Journal (ISSN 0004-6256), vol. 92, Dec. 1986, p. 1238-1247.}
+\bvolume{92}
+\bpages{1238--1247}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Radulovi{\'c}, Wegkamp and Zhao}{2017}]{radulovic2017weak}
+\begin{barticle}[author]
+\bauthor{\bsnm{Radulovi{\'c}},~\bfnm{Dragan}\binits{D.}}, \bauthor{\bsnm{Wegkamp},~\bfnm{Marten}\binits{M.}} \AND \bauthor{\bsnm{Zhao},~\bfnm{Yue}\binits{Y.}}
+(\byear{2017}).
+\btitle{Weak convergence of empirical copula processes indexed by functions}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Ramdas and Tibshirani}{2016}]{ramdas2016fast}
+\begin{barticle}[author]
+\bauthor{\bsnm{Ramdas},~\bfnm{Aaditya}\binits{A.}} \AND \bauthor{\bsnm{Tibshirani},~\bfnm{Ryan~J}\binits{R.~J.}}
+(\byear{2016}).
+\btitle{Fast and flexible ADMM algorithms for trend filtering}.
+\bjournal{Journal of Computational and Graphical Statistics}
+\bvolume{25}
+\bpages{839--858}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Roeder}{1990}]{roeder1990density}
+\begin{barticle}[author]
+\bauthor{\bsnm{Roeder},~\bfnm{Kathryn}\binits{K.}}
+(\byear{1990}).
+\btitle{Density estimation with confidence sets exemplified by superclusters and voids in the galaxies}.
+\bjournal{Journal of the American Statistical Association}
+\bvolume{85}
+\bpages{617--624}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Rytgaard, Eriksson and van~der Laan}{2023}]{rytgaard2023estimation}
+\begin{barticle}[author]
+\bauthor{\bsnm{Rytgaard},~\bfnm{Helene~CW}\binits{H.~C.}}, \bauthor{\bsnm{Eriksson},~\bfnm{Frank}\binits{F.}} \AND \bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}}
+(\byear{2023}).
+\btitle{Estimation of time-specific intervention effects on continuously distributed time-to-event outcomes by targeted maximum likelihood estimation}.
+\bjournal{Biometrics}
+\bvolume{79}
+\bpages{3038--3049}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Sadhanala and Tibshirani}{2019}]{sadhanala2019additive}
+\begin{barticle}[author]
+\bauthor{\bsnm{Sadhanala},~\bfnm{Veeranjaneyulu}\binits{V.}} \AND \bauthor{\bsnm{Tibshirani},~\bfnm{Ryan~J}\binits{R.~J.}}
+(\byear{2019}).
+\btitle{Additive models with trend filtering}.
+\bjournal{The Annals of Statistics}
+\bvolume{47}
+\bpages{3032--3068}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Sadhanala et~al.}{2024}]{sadhanala2024exponential}
+\begin{barticle}[author]
+\bauthor{\bsnm{Sadhanala},~\bfnm{Veeranjaneyulu}\binits{V.}}, \bauthor{\bsnm{Bassett},~\bfnm{Robert}\binits{R.}}, \bauthor{\bsnm{Sharpnack},~\bfnm{James}\binits{J.}} \AND \bauthor{\bsnm{McDonald},~\bfnm{Daniel~J}\binits{D.~J.}}
+(\byear{2024}).
+\btitle{Exponential family trend filtering on lattices}.
+\bjournal{Electronic Journal of Statistics}
+\bvolume{18}
+\bpages{1749--1814}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Schumaker}{2007}]{schumaker2007spline}
+\begin{bbook}[author]
+\bauthor{\bsnm{Schumaker},~\bfnm{Larry}\binits{L.}}
+(\byear{2007}).
+\btitle{Spline functions: basic theory}.
+\bpublisher{Cambridge university press}.
+\end{bbook}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Silverman}{1982}]{silverman1982estimation}
+\begin{barticle}[author]
+\bauthor{\bsnm{Silverman},~\bfnm{Bernard~W}\binits{B.~W.}}
+(\byear{1982}).
+\btitle{On the estimation of a probability density function by the maximum penalized likelihood method}.
+\bjournal{The Annals of Statistics}
+\bpages{795--810}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Stone}{1990}]{stone1990large}
+\begin{barticle}[author]
+\bauthor{\bsnm{Stone},~\bfnm{Charles~J}\binits{C.~J.}}
+(\byear{1990}).
+\btitle{Large-sample inference for log-spline models}.
+\bjournal{The Annals of Statistics}
+\bvolume{18}
+\bpages{717--741}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Tibshirani}{2011}]{tibshirani2011solution}
+\begin{bbook}[author]
+\bauthor{\bsnm{Tibshirani},~\bfnm{Ryan~J}\binits{R.~J.}}
+(\byear{2011}).
+\btitle{The solution path of the generalized lasso}.
+\bpublisher{Stanford University}.
+\end{bbook}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Tibshirani}{2014}]{tibshirani2014adaptive}
+\begin{barticle}[author]
+\bauthor{\bsnm{Tibshirani},~\bfnm{Ryan~J}\binits{R.~J.}}
+(\byear{2014}).
+\btitle{Adaptive piecewise polynomial estimation via trend filtering}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Tibshirani et~al.}{2022}]{tibshirani2022divided}
+\begin{barticle}[author]
+\bauthor{\bsnm{Tibshirani},~\bfnm{Ryan~J}\binits{R.~J.}} \betal{et~al.}
+(\byear{2022}).
+\btitle{Divided differences, falling factorials, and discrete splines: Another look at trend filtering and related problems}.
+\bjournal{Foundations and Trends{\textregistered} in Machine Learning}
+\bvolume{15}
+\bpages{694--846}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Vaart, Dudoit and Laan}{2006}]{vaart2006oracle}
+\begin{barticle}[author]
+\bauthor{\bsnm{Vaart},~\bfnm{Aad W van~der}\binits{A.~W. v.~d.}}, \bauthor{\bsnm{Dudoit},~\bfnm{Sandrine}\binits{S.}} \AND \bauthor{\bsnm{Laan},~\bfnm{Mark J van~der}\binits{M.~J. v.~d.}}
+(\byear{2006}).
+\btitle{Oracle inequalities for multi-fold cross validation}.
+\bjournal{Statistics \& Decisions}
+\bvolume{24}
+\bpages{351--371}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan}{2017}]{van2017generally}
+\begin{barticle}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark}\binits{M.}}
+(\byear{2017}).
+\btitle{A generally efficient targeted minimum loss based estimator based on the highly adaptive lasso}.
+\bjournal{The international journal of biostatistics}
+\bvolume{13}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan}{2023}]{vanderlaan2023higherordersplinehighly}
+\begin{bmisc}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark}\binits{M.}}
+(\byear{2023}).
+\btitle{Higher Order Spline Highly Adaptive Lasso Estimators of Functional Parameters: Pointwise Asymptotic Normality and Uniform Convergence Rates}.
+\end{bmisc}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan, Benkeser and Cai}{2023}]{van2023efficient}
+\begin{barticle}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}}, \bauthor{\bsnm{Benkeser},~\bfnm{David}\binits{D.}} \AND \bauthor{\bsnm{Cai},~\bfnm{Weixin}\binits{W.}}
+(\byear{2023}).
+\btitle{Efficient estimation of pathwise differentiable target parameters with the undersmoothed highly adaptive lasso}.
+\bjournal{The international journal of biostatistics}
+\bvolume{19}
+\bpages{261--289}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan and Bibaut}{2017}]{van2017uniform}
+\begin{barticle}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}} \AND \bauthor{\bsnm{Bibaut},~\bfnm{Aur{\'e}lien~F}\binits{A.~F.}}
+(\byear{2017}).
+\btitle{Uniform consistency of the highly adaptive lasso estimator of infinite dimensional parameters}.
+\bjournal{arXiv preprint arXiv:1709.06256}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Van Der~Laan and Dudoit}{2003}]{van2003unified}
+\begin{barticle}[author]
+\bauthor{\bsnm{Van Der~Laan},~\bfnm{Mark~J}\binits{M.~J.}} \AND \bauthor{\bsnm{Dudoit},~\bfnm{Sandrine}\binits{S.}}
+(\byear{2003}).
+\btitle{Unified cross-validation methodology for selection among estimators and a general cross-validated adaptive epsilon-net estimator: Finite sample oracle inequalities and examples}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan, Dudoit and Keles}{2004}]{van2004asymptotic}
+\begin{barticle}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}}, \bauthor{\bsnm{Dudoit},~\bfnm{Sandrine}\binits{S.}} \AND \bauthor{\bsnm{Keles},~\bfnm{Sunduz}\binits{S.}}
+(\byear{2004}).
+\btitle{Asymptotic optimality of likelihood-based cross-validation}.
+\bjournal{Statistical applications in genetics and molecular biology}
+\bvolume{3}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{van~der Laan and Gruber}{2016}]{van2016one}
+\begin{barticle}[author]
+\bauthor{\bparticle{van~der} \bsnm{Laan},~\bfnm{Mark}\binits{M.}} \AND \bauthor{\bsnm{Gruber},~\bfnm{Susan}\binits{S.}}
+(\byear{2016}).
+\btitle{One-step targeted minimum loss-based estimation based on universal least favorable one-dimensional submodels}.
+\bjournal{The international journal of biostatistics}
+\bvolume{12}
+\bpages{351--378}.
+\end{barticle}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Van~der Laan and Rose}{2018}]{van2018targeted}
+\begin{bbook}[author]
+\bauthor{\bparticle{Van~der} \bsnm{Laan},~\bfnm{Mark~J}\binits{M.~J.}} \AND \bauthor{\bsnm{Rose},~\bfnm{Sherri}\binits{S.}}
+(\byear{2018}).
+\btitle{Targeted learning in data science}.
+\bpublisher{Springer}.
+\end{bbook}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Van Der~Vaart et~al.}{1996}]{van1996weak}
+\begin{bbook}[author]
+\bauthor{\bsnm{Van Der~Vaart},~\bfnm{Aad~W}\binits{A.~W.}}, \bauthor{\bsnm{Wellner},~\bfnm{Jon~A}\binits{J.~A.}}, \bauthor{\bparticle{van~der} \bsnm{Vaart},~\bfnm{Aad~W}\binits{A.~W.}} \AND \bauthor{\bsnm{Wellner},~\bfnm{Jon~A}\binits{J.~A.}}
+(\byear{1996}).
+\btitle{Weak convergence}.
+\bpublisher{Springer}.
+\end{bbook}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Venables and Ripley}{2002}]{venables2002modern}
+\begin{bmisc}[author]
+\bauthor{\bsnm{Venables},~\bfnm{WN}\binits{W.}} \AND \bauthor{\bsnm{Ripley},~\bfnm{BD}\binits{B.}}
+(\byear{2002}).
+\btitle{Modern Applied Statistics with S, Springer, New York: ISBN 0-387-95457-0}.
+\end{bmisc}
+\endbibitem
+
+\bibitem[\protect\citeauthoryear{Wang, Smola and Tibshirani}{2014}]{wang2014falling}
+\begin{binproceedings}[author]
+\bauthor{\bsnm{Wang},~\bfnm{Yu-Xiang}\binits{Y.-X.}}, \bauthor{\bsnm{Smola},~\bfnm{Alex}\binits{A.}} \AND \bauthor{\bsnm{Tibshirani},~\bfnm{Ryan}\binits{R.}}
+(\byear{2014}).
+\btitle{The falling factorial basis and its statistical applications}.
+In \bbooktitle{International Conference on Machine Learning}
+\bpages{730--738}.
+\bpublisher{PMLR}.
+\end{binproceedings}
+\endbibitem
+
+\end{thebibliography}

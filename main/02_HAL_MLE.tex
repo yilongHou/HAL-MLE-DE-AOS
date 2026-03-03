@@ -1,0 +1,375 @@
+\section{HAL Density Estimation} \label{HAL Density Estimation}
+With the HAL assumptions and the same link function in \citet{kooperberg1992logspline}, we here form the density estimation technique, HAL-MLE. The intuition of this choice of link function is to assume that the log-likelihood of the density follows a càdlàg structure with bounded sectional variation, making it well-suited for modeling via HAL. This link function is also referred to as the histo-spline method \citep{leonard1978density, silverman1982estimation}. Specifically, when using zero-order HAL basis functions, the function \( f \) can be expressed as a histogram. One major benefit of this link function is that the resulting density belongs to the exponential family, ensuring the convexity of the MLE optimization with $L_1$ norm regularization.
+
+\subsection{HAL Construction.} \label{Estimation Construction}
+Proposition \ref{thm:HAL_representation} shows that we can represent any function $f \in D^{(k)}_U([0,1])$ by an infinite linear combination of the $k$-th order splines (bases). We then could construct our estimation with a finite-dimensional working model by approximating the integral with a sum. This explains the bias of HAL model by not including all the bases. We initialize the pre-selection working model by partitioning the integral into $n$ parts with knot points $x_1, \cdots, x_n$. Let $f_0\in D^{(k)}_U([0,1])$ be the truth, and $f_n$ be the estimation based on the $n$-knot points. Note that the dimension of the working model here refers to the parameters needed for modeling rather than the structure of observations.
+
+\[
+  f_n(x)
+  = \sum_{i=0}^k \frac{f^{(i)}(0)}{i!}\,x^i
+    + \sum_{j =1}^n \frac{\Delta\,f^{(k)}(x_j)}{k!}\,(x-x_j)_+^k \,.
+\]
+
+And we could summarize the basis system as follows:
+
+\[
+\phi_{i,0}(x) =  x^i, \quad i = 0, \ldots, k,
+\]
+\[
+\phi_{k,x_j}(x) = (x - x_j)_+^k, \quad j = 1, \ldots, n.
+\] \label{basis_d1}
+
+This basis naturally divides into:
+\begin{itemize}
+    \item The \textbf{parametric (global) part}: the global polynomial trend ($x^i$-type terms),
+    \item The \textbf{nonparametric (local) part}: the truncated power functions that allow flexible deviations at specified knots $x_{1:n}$.
+\end{itemize}
+
+\begin{remark}
+Such a basis system is also called the truncated power basis \citep[Theorem 8.51]{schumaker2007spline}, and each basis can be represented by a tuple of basis order and knot points, i.e., for the nonparametric part of the basis system, we index them each by a tuple $(k, u)$ for $k$-th order splines and any knot point $u \in (0,1]$. For the parametric part of the basis system, we index them each by a tuple $(i, 0)$, for $i \leq k$ and starting point 0.
+\end{remark}
+
+We denote this working model index set as $\mathcal{R}^k(n)$ with cardinality $n+k+1$. This is referred to as the initial working model, whereas the model after Lasso selection is called the post-selection working model, denoted as $\mathcal{R}_n$ with cardinality $J_n$. Notice that the initial working model involves $(n+k+1)$ parameters, and an element in this working model is of the form
+\[
+  f_{n,\beta}(x)
+  = \sum_{i=0}^k \beta_i\,\phi_{i,0}(x)
+    + \sum_{j=1}^n \beta_{k+j}\,\phi_{k,x_j}(x).
+\]
+Hence, its $k$-th order sectional variation norm is
+$\bigl\|f_{n,\beta}\bigr\|_{v,k}^* = \|\beta\|_1.$ And for a general loss \(L\), the empirical risk minimizer is
+\begin{align} \label{equation: HAL beta optimizer}
+ \beta_n(M)
+  = \arg\min_{\|\beta\|_1 \le M}
+    P_n\,L\bigl(f_{n,\beta}\bigr),
+  \qquad
+  f_n(x)=f_{n,\beta_n(M)}(x).   
+\end{align}
+$M$ here serves as a user-specified hyperparameter as the $L_1$ norm constraint of the basis coefficients. In practice, it could be tuned by cross validation and the corresponding choice of $M$ is denoted as $M_{cv}$, and the process is referred to as CV-HAL-MLE. The undersmoothening of HAL-MLE is achieved by choosing a $M' > M_{cv}$, the post-selection working model enlarges, but still indexed by the initial working model. The undersmoothened HAL-MLE reduces bias by including more bases, but increases variance as a trade-off. One can refer to Appendix~\ref{Appendix A: Notation, Definition} for more detailed definitions.
+
+\subsection{HAL-MLE with Link Function} \label{HAl_MLE with Link Function}
+
+As the setup in the introduction, let the $X\sim P_0$ be defined on $[0,1]$. We index the density $p_0 = \mathrm{d}P_0/\mathrm{d}\mu$ in terms of a $p_{f_0}$ for a function $f_0 \in D^{(k)}_U([0,1])$, where $\mu$ could be chosen as the Lebesgue measure for simplicity. Thus, the statistical model is defined as $\mathcal{M} = \{ p_{f} : f \in D^{(k)}_U([0,1]) \}$. The HAL-MLE of is then denoted as $f_{n, \beta_n(M)}$, and $\beta_n(M)$ is estimated as follows:
+\[
+\beta_n(M) = \arg \min_{\beta: \Vert \beta\Vert_1 < M} \sum_{i=1}^{n} L(f_{n, \beta})(X_i) = \arg \max_{\beta:  \Vert \beta\Vert_1 \leq M} \sum_{i=1}^{n} \sum_{j=1}^{n+k+1} \beta_j \phi_j(x_i) - n\log C(\beta),
+\] where \( x_{1:n} \sim  P_0,  i.i.d.\), $L = -\log p_f$ is the loss function, and the $C(\beta) = \int_0^1 \exp(f_{\beta}(x)) \mathrm{d}x$ is the normalizing constant. 
+
+\subsubsection{Comparison with NPMLE}
+Our set ${\cal R}^k(n)$ of $k$-th order spline basis functions is determined by data and its linear span is flexible enough to provide a strong approximation of any function in our class $D^{(k)}_U([0,1])$. Moreover, for large enough $U$, the latter class will contain the true $f_0$ identifying the true density $p_{f_0}$ of $X$. 
+Therefore, the HAL-MLE over the linear combination of basis in ${\cal R}_n$ with some $L_1$ norm upper bound, denoted as $D^{(k)}_U({\cal R}_n)$ approximates an MLE over the full class $D^{(k)}_U([0,1])$ containing the true $f_0$. Consequently we can view the HAL-MLE as  a Nonparametric Maximum Likelihood Estimation (NPMLE) method for estimating the true density of the data. An important distinction between HAL‑MLE and the traditional NPMLE methods, like the empirical distribution and Kaplan–Meier (KM) estimator \citep{kaplan1958nonparametric}, lies in the functional constraint HAL imposes. HAL‑MLE produces density estimates confined to the space $D^{(k)}_U([0,1])$. In contrast, traditional NPMLE imposes no smoothness or variation‑norm constraints on the densities. As a consequence, the NPMLE is attained at the (non-density) empirical discrete distribution that puts mass $1/n$ on each observation $x_i$. This is not even a real density, even when there are reasons to believe that the underlying true density is continuous. Similarly, the NPMLE of the failure time distribution for right-censored data under the assumption of independent censoring  is attained at a discrete failure time distribution, while the HAL-MLE analogue would result in a valid density estimator of the true failure time density.  
+NPMLE can still provide efficient plug-in estimators of smooth functionals of the density, such as a survivor function. The HAL-MLE, possibly extended with the HAL-TMLE, also yield efficient plug-in estimators of such smooth features, while it still also estimates the density well.
+\subsubsection{Uniform Grid vs Data Adaptive Grid}
+Uniform grid is a common choice in the literatures of univariate splines methods. PLSDE \citep{bak2021penalized} benefits from this choice for the representation of TV penalty with B-splines. TF \citep{tibshirani2022divided} also benefits from this choice for the simple recursion of the divided difference matrix. And theoretically, both uniform grid and data-adaptive grid could provide a strong approximation of any BTV function.
+
+In HAL-MLE, we prefer data-adaptive initialization rather than uniform knots, even though the matter is nuisance in the univariate case. When generalized to multivariate case, the uniform grid becomes an initialization of $n^d$ knots. However, a $d$-dimensional function has $2^d - 1$ sections, and HAL initialize $n(2^d - 1)$ knots, $n$ knots per section. We have a much smaller working model to begin with. 
+
+\section{Theoretical Properties for HAL-MLE} \label{Theoretical Properties}
+With the HAL assumptions and HAL-MLE setup, we here provide a comprehensive theoretical analysis of the convergence properties of spline density estimation with variational penalty, including $L^2$-convergence, pointwise asymptotic normality, and uniform consistency.
+
+
+\subsection{Rate of Convergence  of HAL-MLE in Loss-based Dissimilarity} \label{subsec:rate-of-convergence-hal-mle-loss-based-dissimilarity}
+% We should first state this result using that HAL-MLE is an MLE over $D^{(k)}_U([0,1])$ for which we have a covering number from the literature. We probably need this result as well in the proofs. This result also clarifies that we already get a clean result without any assumptions. It motivates why HAL might indeed select as set ${\cal R}_n$ with the approximation property we need in pointwise theorem. In the pointwise theorem we can state it in terms of ${\cal R}_{n,0}$ satisfying the property we need and of same size as $J_n$. So we dont have to make it equal to HAL applied to independent sample even though we think that will work. 
+
+We first establish the $L^2$ convergence rate of the HAL-MLE. This result is natural in the context of univariate spline methods penalized by total variation, 
+and similar conclusions have been obtained for related estimators 
+\citep{mammen1997locally, tibshirani2014adaptive, bak2021penalized}. 
+Our contribution is to demonstrate the $L^2$ convergence of the HAL-MLE without any assumptions, 
+using a standard proof strategy based on loss-based dissimilarity. 
+Recall that the loss-based dissimilarity, $d_{0}(f_{n},f_{0}) \equiv P_0{L(f_n)} - P_0{L(f_0)}$, coincides with the Kullback--Leibler divergence when $L = -\log p_f$. 
+Let
+\[
+\mathcal F := D^{(k)}_U([0,1]), 
+\qquad 
+f_{0} := \arg\min_{f \in \mathcal F} P_{0}L(f),
+\]
+where $D^{(k)}_U([0,1])$ denotes the $k$th-order bounded variation class on $[0,1]$. 
+For a user-specified $L_1$-norm constraint $M$ and a finite-dimensional index set $\mathcal{R}_n$, 
+define the empirical estimator
+\[
+f_{n} := \arg\min_{f \in D^{(k)}_M(\mathcal{R}_n)} P_{n}L(f).
+\]
+
+The proof relies on two facts.  
+\begin{enumerate}
+  \item (Positivity Condition) With the link function, for all $f \in \mathcal F$, there exists $\delta > 0$ such that $p_f \geq \delta$ uniformly.
+  \item (Second-order Loss Behavior Condition) When $L(f) = -\log p_f$ (negative log-likelihood), we have
+  \[
+  \sup_{f \in \mathcal F} 
+  \frac{P_{0}\!\bigl\{L(f) - L(f_{0})\bigr\}^{2}}{d_{0}(f,f_{0})}
+  = O(1) < \infty.
+  \]
+\end{enumerate}
+
+\begin{remark}
+For the first fact, note that under the bounded variation assumption, all 
+$f \in \mathcal F$ are uniformly bounded. Consequently, the link function is 
+uniformly bounded away from zero and bounded above, so the required positivity 
+condition holds automatically. The second fact follows directly from 
+\citet{van2004asymptotic}.
+\end{remark}
+
+\begin{remark} \label{remark:logspline-convergence}
+For the ones familiar with the logspline literature, the $L^2$ and $L^{\infty}$ convergence of logsplines in \citet{stone1990large} are very different from ours. First, they deal with a parametric MLE on equally spaced knots, whereas we deal with data-adaptive knots.Second, the convergence they showed is between the estimation and the parametric oracle MLE, which is defined as the argmax of the expected value of the parametric log-likelihood.
+\end{remark}
+
+\begin{theorem}[$L^2$ convergence of HAL-MLE]
+\label{thm:l2-convergence-hal-mle}
+If $f_0 \in D^{(k)}_U([0,1])$ and $L(f) = -\log p_f$, then,
+\[
+d_{0}(p_{f_n},p_{f_{0}}) = O_P\!\left(n^{-\frac{2k+2}{2k+3}}\right),
+\quad \text{and hence} \quad
+\lVert p_{f_n} - p_{f_{0}}\rVert_{L^2(\mu)} = O_P\!\left(n^{-\frac{k+1}{2k+3}}\right).
+\]
+\end{theorem}
+
+%A quick extension to the multivariate case on $[0,1]^d$ can be achieved by the exact representation of $f \in D^{(k)}_U([0,1]^d)$ included in Section 3 of \cite{vanderlaan2023higherordersplinehighly}. And then the properties of the link function and loss function as in the two facts mentioned above remain valid. Using the covering number with $L_2$ norm of $D^{(k)}_U([0,1]^d)$ as mentioned in \cite{ki2024mars, fang2021multivariate} and developed in \cite{bibaut2019fast,vanderlaan2023higherordersplinehighly}, we can derive the $L_2$ convergence directly for general dimension d and smoothness order k. 
+
+%\begin{theorem}[$L^2$ convergence of HAL-MLE for multivariate case]
+%  \label{thm:l2-convergence-hal-mle-multivariate}
+%  If $f_0 \in D^{(k)}_U([0,1]^d)$ and $L(f) = -\log p_f$, then, for an integer $k \geq 0$,
+%  \[
+%  d_{0}(p_{f_n},p_{f_{0}}) = O_P\!\left(n^{-\frac{2k+2}{2k+3}}(\log n)^{\frac{4k+4}{2k+3}(d-1)}\right),
+%  \]
+%  and hence
+%  \[
+%  \lVert p_{f_n} - p_{f_{0}}\rVert_{L^2(\mu)} = O_P\!\left(n^{-\frac{k+1}{2k+3}}(\log n)^{\frac{2k+2}{2k+3}(d-1)}\right).
+%  \]
+%\end{theorem}
+
+This rate agrees with the $L^2$ convergence rate for order $k=0$ and dimension $d=1$ in regression \citep{mammen1997locally, tibshirani2014adaptive, bibaut2019fast}.
+Our density estimation setting preserves this rate from the regression setting, which is sharp and without any assumptions.
+
+%and it demonstrates 
+%the property of HAL-MLE that it avoids the 
+%curse of dimensionality asymptotically.
+%When $k=1$, the rate agrees with \cite
+%{ki2024mars}. 
+
+\subsection{Pointwise Asymptotic Normality of the HAL-MLE}\label{subsect: Pointwise Asymptotic Normality of the HAL-MLE}
+Recall the link function, $p_{\beta}=p_{f_{\beta}}=\frac{\exp(f_{\beta})}{C(\beta)}$ where $C(\beta)=\int_0^1 \exp(f_{\beta}(x)) \mathrm{d}x$. The score for the log-likelihood loss is calculated as $S_{\beta}(\phi_j)=\frac{\mathrm{d}}{\mathrm{d}\beta(j)}\log p_{\beta}$ at $\beta$ for the $j$-th entry $\beta(j)$. Note that this equals
+\begin{align}
+S_{\beta}(\phi_j)=\phi_j(X)- P_{\beta}\phi_j,
+\end{align}
+where $P_{\beta}\phi_j\equiv \int \phi_j(x)p_{\beta}(x) \mathrm{d}x = \mathbb{E}_{\beta}[\phi_j]$. We use the notation $S_{\beta}(\phi)$ to denote the score vector, and $\phi \equiv (\phi_1, \cdots, \phi_{J_n})^\top$. By the linearity of expectation functional, we note $\phi\rightarrow S_{\beta}(\phi)$ is linear in $\phi$. 
+
+Recall that \(\mathcal R_n\subset \mathcal{R}^k(n)\) is a data‐adaptive index set of basis functions with cardinality $J_n$ corresponding with the non-zero coefficients in the HAL-MLE fit $f_{n,\beta_n}$, using a particular  $M_n$ for the $L_1$-norm constraint. The HAL-MLE implies a $J_n$-dimensional working model
+\[
+D^{(k)}(\mathcal R_n)
+= \Bigl\{f_{n,\beta}=\sum_{j\in\mathcal R_n}\beta_j\,\phi_j(x):\beta\Bigr\}
+\;\subset\;D^{(k)}([0,1]).
+\]
+The HAL‐MLE $f_n=f_{n,\beta_n}$ also equals a minimizer over this working model $D^{(k)}_{M_n}({\cal R}_n)$ so that
+\[
+f_n \;=\;\arg\min_{f\in D^{(k)}_{M_n}(\mathcal R_n)}\;-\,P_n\log p_f .
+\]
+
+One nice property of the link function is that the information matrix defined as the negative of the partial derivative of the expectation of the score, $-d/d\beta(i) P_0 S_{\beta}(\phi_j)$, equals the covariance of the scores $S_{\beta}(\phi_j)S_{\beta}(\phi_i)$ under $P_{\beta}$, which can be viewed as an inner product between the two basis functions $\phi_i$ and $\phi_j$. This inner product is an inner product for the linear space $D^{(k)}({\cal R}_n)$ providing an orthonormal basis that will make the information matrix for the reparametrized $D^{(k)}({\cal R}_n)$ a diagonal matrix and while making the scores orthogonal, and equivalently, uncorrelated w.r.t. $P_{\beta}$. This provides us with a powerful ingredient for our formal analysis of the HAL-MLE. 
+
+Specifically, for a basis function $\phi_i$ and its corresponding parameter $\beta(i)$, the $i$-th element of $\beta$,
+\begin{eqnarray} \label{eq:inner-product-score}
+-\frac{\mathrm{d}}{\mathrm{d}\beta(i)}P_0 S_{\beta}(\phi_j)
+&=& 0+ \frac{\mathrm{d}}{\mathrm{d}\beta(i)} P_0 \{P_{\beta}[\phi_j]\} \nonumber = \frac{\mathrm{d}}{\mathrm{d}\beta(i)} P_{\beta}[\phi_j]\\ &=& \int \phi_j(x) \frac{\mathrm{d}}{\mathrm{d}\beta(i)} p_{\beta}(x) \, \mathrm{d}x \nonumber 
+= \int \phi_j(x) S_{\beta}(\phi_i) p_{\beta}(x) \, \mathrm{d}x \nonumber \\
+&=& \int (\phi_j(x) - P_{\beta} \phi_j) S_{\beta}(\phi_i) p_{\beta}(x) \, \mathrm{d}x \nonumber 
+= P_{\beta} S_{\beta}(\phi_j) S_{\beta}(\phi_i) \nonumber \\
+&\equiv& \langle \phi_i, \phi_j \rangle_{\beta}.
+\end{eqnarray}
+%This allows us to construct an orthonormal basis in $D^{(k)}({\cal R}_n)$ that yields a diagonal information matrix and whose scores are uncorrelated. 
+W.r.t. the orthonormal basis parametrization of $D^{(k)}({\cal R}_n)$ for which the information matrix is diagonal, we can obtain a straightforward linearization of the HAL-MLE w.r.t. the oracle MLE $f_{{\cal R}_n,0}\equiv \arg\min_{f\in D^{(k)}_M({\cal R}_{n})}-P_0 \log p_f$ by being able to trivially invert the information matrix, thereby avoiding the delicate understanding of eigenvalues of the original information matrix in terms of the original parametrization of $D^{(k)}({\cal R}_n)$.
+
+
+Nonetheless, such an analysis runs into the following complication. 
+With this analysis, we can approximate $f_{n,\beta_n}-f_{{\cal R}_n,0}$ with an empirical mean of a function of $X_i$ where this function is indexed by ${\cal R}_n$, thereby not allowing the application of a central limit theorem. In other words, the data dependence of ${\cal R}_n$ makes it hard to push towards a CLT. One could resolve this by using a a priori set of $J_n$ knot-points and select $J_n$ (e.g. uniform knots) with cross-validation. However, the Lasso provides an effective way of selecting the right set of knot-points for fitting the true density so that this would be a practically inferior procedure, and the utility of the Lasso to select the working model is even more important for the extension to multivariate density estimation. 
+
+
+Therefore, for proving the pointwise asymptotic normality of the HAL-MLE, we create an independent version ${\cal R}_{n,0}$ of ${\cal R}_n$ that is independent of $P_n$ and yields a sup-norm approximation of $D^{(k)}_U([0,1])$ at rate $O(1/J_{n,0}^{k+1})$ up till a $\log n$ factor. Such sets have been shown to exist in \citet{vanderlaan2023higherordersplinehighly}. We could view  ${\cal R}_n=\hat{R}(P_n)$ as an algorithm that maps the data $P_n$ into a set of basis functions. Let $P_n^{\#}$ be the empirical probability measure of an independent sample of $n$ i.i.d. observations from $P_0$. We can then define a particular independent version as 
+\(\mathcal R_{n,0} = \hat{R}(P_n^{\#})\).
+We use this independent version to define an independent working model $D^{(k)}({\cal R}_{n,0})$ of dimension $J_{n,0}$, which can be viewed as an approximation of the data dependent working model $D^{(k)}({\cal R}_n)$. 
+This independent working model defines a different oracle MLE
+\[
+f_{n,0}=f_{{\cal R}_{n,0},0}
+\equiv\arg\min_{f\in D^{(k)}_M(\mathcal R_{n,0})}\;-\,P_0\log p_f
+\;=\;f_{{\cal R}_{n,0},\beta_{n,0}}.
+\] 
+To emphasize the two different working models we also use notation $f_{{\cal R}_n,\beta}$ and $f_{{\cal R}_{n,0},\beta}$ as parametrizations of the two working models $D^{(k)}({\cal R}_n)$ and $D^{(k)}({\cal R}_{n,0})$. Specifically, we also use notation $f_{{\cal R}_n,0}$ and $f_{{\cal R}_{n,0},0}$ for the two oracle MLEs,  where the latter is also denoted with $f_{n,0}$.
+We now analyze the HAL-MLE w.r.t.  the independent oracle MLE $f_{{\cal R}_{n,0},0}$ instead of $f_{{\cal R}_n,0}$, relying on showing that the HAL-MLE over $D^{(k)}({\cal R}_n)$ indeed can be viewed as an approximate MLE over $D^{(k)}({\cal R}_{n,0})$.
+%The idea of constructing this oracle sequence of models w.r.t $n$ is that we need theoretically the best model with n data points to be able to approximate the truth, whereas the $f_n$ estimated by a real world sample is an asymptotic linear estimator to the corresponding $f_{n,0}$.
+
+Although \(f_n\) is not a full MLE over \(D^{(k)}(\mathcal R_{n,0})\), it can be shown to act as an approximate MLE solving its score equations at close enough approximation so that $f_n$ not only acts as an MLE over the data dependent working model $D^{(k)}({\cal R}_n)$ but also as an MLE over the independent working model $D^{(k)}({\cal R}_{n,0})$. The approximation error in solving these score equations is a term in our analysis that is formally addressed in Appendix~\ref{App C: Score Analysis} by introducing the $L_1$ constrained score space. The HAL-MLE, $f_n$, has one $L_1$ norm constraint on the coefficients, and thus solves $J_n - 1$ score equations. We name the linear span of these $J_n - 1$ scores as the $L_1$ constrained score space, and this space is a closed linear subspace of $D^k(\mathcal{R}_n)$. 
+
+Let \(\{\phi_j^*: j\in\mathcal R_{n,0}\}\) be an orthonormal basis of \(\operatorname{span}\{\phi_j: j\in\mathcal R_{n,0}\}\) under the inner product
+\(\langle f,g\rangle_{\beta_{n,0}}\). We define a normalized score vector at \(x\) by
+\(
+\bar{\phi}_{n,x}(X)\equiv J_{n,0}^{-1/2}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X)\).
+Notice that  for each value $x\in [0,1]$, $\bar{\phi}_{n,x}$ is a function on $[0,1]$. Notice that $J_{n,0}^{-1/2} \bar{\phi}_{n,x}(X) = J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X)$, which is a linear combination of the orthonormal basis functions $\phi_j^*$, and we believe it to be uniformly bounded. Additionally, we use notation $O^+(r(n))$ if the term is $O(r(n)(\log n)^p)$ for some finite $p$, and similarly we define $O_p^+(r(n))$. Note that $p$ can be negative, and usually we can determine this $p$ based on undersmoothening, and it does not influence the main rate $r(n)$.
+\begin{theorem}[Asymptotic Linearity of HAL-MLE]
+\label{thm:asymptotic-linearity-hal-mle}
+Let $J_{n,0}$ satisfy $J_{n,0}^{-(k+1)}=o((J_{n,0}/n)^{1/2})$.
+Suppose the following conditions hold for an integer $k \geq 1$:
+\begin{enumerate}
+  \item (Basis boundedness) $J_{n,0}^{-1/2}\,\Vert  \bar\phi_{n,x}\Vert_{\infty}=O(1)$;
+  \item (Smoothness) $f_0\in D^{(k)}_U([0,1])$ for some $U<\infty$;
+  \item (Uniform Approximation of $D^{(k)}_U([0,1])$ by $D^{(k)}(\mathcal R_{n,0})$) 
+\[
+\sup_{f\in D^{(k)}_U([0,1])}\inf_{g\in D^{(k)}(\mathcal R_{n,0})}\Vert f-g \Vert_{\infty}
+=O^+\bigl(J_{n,0}^{-(k+1)}\bigr).
+\]
+  \item ($L^2(\mu)$ Approximation of $D^{(k)}_U([0,1])$ by $D^{(k)}({\cal R}_n)$)
+\[
+\sup_{f\in D^{(k)}_U([0,1])}\inf_{g\in D^{(k)}(\mathcal R_{n})}\Vert f-g \Vert_{L^2(\mu)}
+=O^+\bigl(J_{n}^{-(k+1)}\bigr),
+\]
+and can be extended to the corresponding $L_1$ constrained score space in $D^{(k)}(\mathcal R_{n})$.
+
+\end{enumerate}
+Then, with cross‐validated or slightly undersmoothened $f_n$, for each fixed $x\in[0,1]$,
+\[
+  \sqrt{\frac{n}{J_{n,0}}}\bigl(f_n(x)-f_{{0}}(x)\bigr)
+  =\sqrt{n}\,(P_n-P_0)\bigl[S_{f_{n,0}}(\bar\phi_{n,x})\bigr]
+  +o_P(1).
+\]
+The latter term equals $n^{1/2}$-scaled empirical mean of independent mean zero random variables $S_{f_{n,0}}(\bar{\phi}_{n,x})$ with finite variance. $\sqrt{J_{n,0}}S_{f_{n,0}}(\bar\phi_{n,x})$ serves as the influence curve of the HAL-MLE $f_n(x)$ considered as an estimator of the oracle $f_{n,0}(x)$.
+\end{theorem}
+%\Mark{Assumptions are missing clearly. I added that also ${\cal R}_n$ has to succeed in approximating the space. We need a link between ${\cal R}_n$ and ${\cal R}_{n,0}$. SO this would make sense. I believe there was a way to weaken it to an adaptive approximation, but maybe we just make that a remark.}
+
+Here we explain the plausibility and understanding for these approximation assumptions. The bias is identified as the uniform approximation error between the finite-dimensional working model $D^{(k)}(\mathcal R_{n,0})$ and $D^{(k)}_U([0,1])$. \citet[Appendices~D and~F]{vanderlaan2023higherordersplinehighly} show that such a set ${\cal R}_{n,0}$ of size $J_{n,0}$ exists for all sizes $J_{n,0}$. Therefore, we could simply select ${\cal R}_{n,0}$ as such a set and choose it for $J_{n,0}=J_n$.
+Moreover, in this article it is argued that, due to HAL achieving the $L^2$ rate of convergence $O_p(n^{-(k+1)/(2k+3)})$, the sets of non-zero coefficients in the HAL fit should satisfy an adaptive version of this approximation condition allowing this same approximation error w.r.t. true target function, and that under some undersmoothing it will satisfy the (non-adaptive) uniform approximation condition. 
+%YILONG: we use O^+ here when stating rate, but for d=1 I believe we have no log? 
+And the $L^2$ approximation error is a weaker condition on $D^{(k)}(\mathcal R_{n})$. Its extension to the $L_1$ constrained score space can be explained by approximating one basis function by other basis functions in the score space.
+
+\begin{remark}[The Necessity for Cross-Validation and Undersmoothing]
+The $L_1$-norm in the HAL-MLE drives the number of basis functions in ${\cal R}_n$. This number $J_n$ needs to balance between the bias $O^+\bigl(J_{n}^{-(k+1)}\bigr)$ of the working model $D^{(k)}({\cal R}_n)$ and variance $\sqrt{\frac{n}{J_{n}}}$ or the MLE for this working model. Cross-validation can guarantee the optimal choice \citep{van2003unified, vaart2006oracle}. One may need some undersmoothing so that the bias is reduced by a $\log n$ factor, making it negligible relative to the standard error. 
+\end{remark}
+
+%\Mark{I think the notation $f_{n,0}$ should be $f_{n,0}$ since the model depends on $n$, like an $n$-specific parameter $f_n$ which is then evaluated at $P_0$: $f_n(P_0)$ so that $f_{n,0}$ makese sense. Similarly, $f_{n,\beta_0}=f_{n,0}$ makes sense again. }
+
+\begin{theorem}[Pointwise Asymptotic Normality for HAL-MLE]
+\label{thm:density_HAL_asymptotic_normality}
+Under the conditions of Theorem~\ref{thm:asymptotic-linearity-hal-mle}, let $\sigma^2_{n,0}(x)=P_0(\bar{\phi}_{n,x}-P_{\beta_{n,0}}\bar{\phi}_{n,x})^2$, and then we have
+\begin{equation}
+    {\sigma}_{n,0}^{-1} \left( \frac{n}{J_{n,0}} \right)^{1/2} \bigl(f_n - f_{{0}}\bigr)(x) \Rightarrow_d N(0,1).
+\end{equation}
+\end{theorem}
+
+A natural question is whether we can extend these to the corresponding density estimation. Notice that what we demonstrated is the pointwise asymptotic normality instead of the weak convergence of $(f_n-f_0)$ in function space. Thus, we cannot even apply the functional delta method. 
+However, we construct the proof of the following corollary by recognizing that it is driven entirely by $f_n-f_0$, while the normalizing constant is a pathwise differentiable plug-in estimator with no contribution to the linearization.
+
+\begin{corollary}[Delta-method for Density Estimation] \label{coro: Delta-method for Density Estimation}
+    Under the conditions of Theorem~\ref{thm:asymptotic-linearity-hal-mle}, let $g(f)(x)=\log p_f(x)$, then we have,
+    \[
+    (n/J_{n,0})^{1/2}( g(f_n)(x)-g(f_0)(x))=(n/J_{n,0})^{1/2}(f_n(x)-f_0(x))+o_P(1).
+    \]
+    Therefore, $\log p_{f_n}(x)-\log p_{f_0}(x)$ behaves as $(f_n-f_0)(x)$, which proves that 
+    \[
+    (n/J_{n,0})^{1/2}(p_{f_n}-p_{f_0})(x)=p_0(x)(n/J_{n,0})^{1/2}(f_n-f_0)(x)+o_P(1).
+    \]
+\end{corollary}
+
+This extends the pointwise asymptotic normality and the uniform convergence from $f_n$ to $p_{f_n}$. 
+
+\subsection{Uniform Convergence for HAL-MLE} \label{subsct: uniform convergence for HAL-MLE}
+The uniform convergence of HAL-MLE is a direct consequence of the pointwise asymptotic normality.
+\begin{theorem}[Uniform Convergence for HAL-MLE]\label{thm:uniform-density-hal}
+Extending the Basis Boundedness Assumption to hold uniformly for $x \in [0,1]$ a.s., while maintaining the other assumptions of Theorem~\ref{thm:asymptotic-linearity-hal-mle}, then
+\[
+\sup_{x\in[0,1]}
+\sqrt{n/J_{n,0}}\,\lvert f_n(x)-f_0(x)\rvert
+= O_P(\sqrt{\log n}).\]
+By selecting $J_{n,0}\asymp n^{1/(2k+3)}$  up till $\log n$-factors, it follows
+\quad
+\[
+\|f_n - f_0\|_\infty
+= O_P^+\Bigl(n^{-(k+1)/(2k+3)}\Bigr).
+\]
+\end{theorem}
+%Yilong, can we check what my result on r(d,J) is for d=1, do we still have a log J factor with d=1. Then, this bias behaves as $1/J^{k+1}$ up till $\log J$ factor and we need it to give the optimal rate and also be smaller than (J/n)^{1/2}. f
+
+\begin{remark}[Zero‐order Case]
+When \(k=0\), the uniform rate above need not hold, but one still has
+\(\|f_n - f_0\|_\infty = o_P(1)\) based on \citet{van2017uniform}.
+\end{remark}
+
+In Remark~\ref{remark:logspline-convergence}, we mentioned the difference between the log-spline convergence and HAL-MLE convergence. Here we provide more details. First, in \citet{stone1990large}, they deal with a parametric MLE on uniform knots, whereas we deal with data-adaptive knots. Second, the convergence they showed is between the estimation and the parametric oracle MLE. Third, their uniform convergence rate relies on the assumption of the size of the post-selection working model to be $o(n^{\frac12 - \epsilon})$ for some $\epsilon > 0$; however, there is no theory suggesting that AIC or BIC can select the right size of the post-selection working model, unlike the theoretical guarantee in \citet{van2003unified} for cross-validation. Here, HAL-MLE shows a stronger result considering the bias between the oracle and the truth with the simplest setting of just using the data-adaptive knot points and cross-validation.
+
+\subsection{Generalizability of the Proofs} 
+%Yilong, this might be appendix stuff
+\label{subsect: Generalizability of the Proofs}
+Another interesting discussion is the generalizability of these proofs to different basis functions but asymptotically spanning the same function space, such as the B-splines and falling factorial basis. For the B-splines, they are linear combinations of the truncated power basis \citep{de1976splines}. For the falling factorial basis, they are identical to the truncated power basis up to a constant when $k=0$ and $k=1$. When $k \geq 2$, the proximity of the truncated power basis and the falling factorial basis is discussed in Chapter 10.1 of \citet{tibshirani2022divided}. Nevertheless, when $k \geq 1$, the falling factorial basis is continuous and therefore trivally càdlàg. Thus, these three basis systems should span the same space. The key assumptions of HAL-MLE proofs rely on i) bounding the SVN, ii) being an MLE on a fine enough working model. This is the reason why we have the same $L^2$ convergence rate as in the regression case in \citet{fang2021multivariate, ki2024mars}, even though the multivariate basis system is different. So our guess is that these proofs can be generalized to the B-splines and falling factorial basis under the same setting. However, the representation of TV is complicated for the B-splines with data-adaptive knots as mentioned in Section 3 of \citet{wang2014falling}.
+
+\subsection{Variance Estimation for Density}  \label{density_sd_section}
+Based on pointwise asymptotic normality, we propose a variance estimator using the Delta method, 
+analogous to the variance estimator for generalized linear models (GLMs). 
+Consider the parametric working model for HAL-MLE, i.e., 
+\[
+f_n(x) = \phi(x)^{\top}\beta_n,
+\]
+where $\phi$ denotes the vector of basis functions in $\mathcal{R}_n$. Consider this working model directly as a parametric model for the density itself with a truth $\beta_0$, we have a finite-dimensional parameter $\beta_n$, and $\beta_n \xrightarrow{P} \beta_0$. The density is then parameterized by $\beta_n$, and we denote $p_{f_n}(x) = p_{\beta_n}(x)$. Using the Delta method, we get the first-order Taylor expansion of $p_{f_n}(x)$ around $\beta_n$,
+\[
+p_{f_n}(x) = p_{\beta_n}(x) = p_{\beta_0}(x) + \nabla_\beta p_{\beta_n}(x) (\beta_n - \beta_0) + o_P(\Vert \beta_n - \beta_0 \Vert),
+\]
+where $\nabla_\beta p_{\beta_n}(x)$ is the gradient of $p_{\beta_n}(x)$ with respect to $\beta_n$.
+Ignoring the second-order term, and taking the variance of both sides, we get
+\[
+\Var(p_{f_n}(x)) = \Var(p_{\beta_n}(x) - p_{\beta_0}(x)) \approx \Var(\nabla_\beta p_{\beta_n}(x) (\beta_n - \beta_0)).
+\]
+
+% Let $f_{n,0} = f_{n, \beta_0}$ be the oracle MLE on $\mathcal{R}_n$, let $S_{f_n}(\phi)$ be the score vector, and let $I_{f_n} := P_{f_n}\bigl\{S_{f_n}(\phi)S_{f_n}(\phi)^{\top}\bigr\}$ be the corresponding Fisher information matrix under measure $P_{f_n}$.
+% The influence curve of the estimator $\beta_n$ is given by 
+% \[
+% I_{f_{n,0} }^{-1} S_{f_{n,0}}(\phi),
+% \]
+% with $I_{f_n}$ the Fisher information matrix and $S_{f_n}(\phi)$ the score vector. 
+% Then, the influence curve of $f_n$ at a fixed point $x$ is
+% \[
+% \phi(x)^{\top} I_{f_{n,0}}^{-1} S_{f_{n,0}}(\phi).
+% \]
+% By Corollary~\ref{coro: Delta-method for Density Estimation}, the influence curve of $p_{f_n}(x)$ is 
+% \[
+% p_0(x)\phi(x)^{\top} I_{f_{n,0}}^{-1} S_{f_{n,0}}(\phi).
+% \]
+
+% Consequently, the empirical variance estimator by plugging in $p_{f_n}(x)$ takes the form
+% \[
+% \sigma_n^2(x) 
+% = \frac{1}{n}(p_{f_n}(x))^2\phi(x)^{\top} I_{f_n}^{-1}\, P_n\!\bigl\{S_{f_n}(\phi)S_{f_n}(\phi)^{\top}\bigr\}\, I_{f_n}^{-1}\phi(x),
+% \]
+% where $P_n$ denotes the empirical distribution.
+
+Denoting $\Var(p_{\beta_n}(x))$ as $\sigma^2_{n}(x)$, we obtain a plug‑in estimator of the variance \(\sigma^2_{n,0}(x)\) defined in Theorem~\ref{thm:density_HAL_asymptotic_normality}, as follows:
+\begin{align} \label{eq:delta-method-variance-estimator}
+\sigma_n^2(x)
+=& (\nabla_\beta p_{\beta_n}(x))^\top
+\; \widehat{\cov}(\beta_n)\;
+(\nabla_\beta p_{\beta_n}(x)) \nonumber \\
+=& (p_{\beta_n}(x))^2\,
+\Bigl[S_{f_n}(\phi)(x)\Bigr]^\top 
+\widehat{\cov}(\beta_n)\,
+\Bigl[S_{f_n}(\phi)(x)\Bigr]. 
+\end{align}
+% \Mark{So our target is $\beta \phi(x)$ with $\phi$ the vector of basis functions in ${\cal R}_n$. The influence curve of $\beta_n$ is given by $I_{f_n}^{-1}S_{f_n}(\phi)$. So the delta-method says that the influence curve of $\beta_n \phi(x)$ at a given $x$ is given by $\phi(x)^{\top} I_{f_n}^{-1} S_{f_n}(\phi)$. You might as well state that. Then its empirical variance would be given by $\phi(x)^{\top}I_{f_n}^{-1} P_n S_{f_n}(\phi)S_{f_n}(\phi)^{\top} I_{f_n}^{-1}\phi(x)$. If we replace $I_{f_n}$ by its empirical mean version, then it becomes equal to the empirical mean of scores. So then this reduces to 
+% $\phi(x)^{\top} I_{f_n,\text{emp}}^{-1} \phi(x)$. If we keep $I_{f_n}$ as what it should be, then it stays this way with the sandwich formula. Your formula makes  no sense at all with $S_{f_n}(\phi(x))$ etc. The above is the influence curve for $f_{n,\beta_{n,0}}(x)$ at a point $x$. Do you want that? Or do you want to talk about the influence curve for the density itself, $p_{f_n}(x)$? You are not clearly stating this. In previous results, it was about $f_n$, and now we switch suddenly to $p_{f_n}$. Either way, that is a different delta-method as I show, involving the normalizing constant mapping. As I show, we can treat the normalizing constant as converging faster, so that it is all about $C(f_{n,0})^{-1} \exp(f_n)$, treating the constant as fixed. So then the influence curve is easy, just multiply by $\exp(f_n(x))$ the influence curve I showed above. }
+%\Mark{Yilong, you write $S_{f_n}(\phi(x))$ but that is not right I think. We should write $S_{f_n}(\phi)$ and that isa function of $X$. $S_{f_n}(\phi)$ depends on $\phi$ not only through $\phi(x)$, but it involves $P_{f_n}\phi$ which is a full mean. Or maybe this is left over of mess?}
+And the confidence interval can be constructed accordingly based on the $z$-statistic.
+The above formula $\sigma^2_{n,0}$ in Theorem \ref{thm:density_HAL_asymptotic_normality} for the asymptotic variance relies on the orthonormal basis formulation, which makes it not practical to estimate it. This delta-method formula is a standard sandwich variance estimator for a function of the parameters of the working model. The covariance matrix of $\beta_n$ is estimated with the empirical covariance of the inverse of the information matrix applied to the score vector $(S_{f_n}(\phi)$, where $\phi \equiv (\phi_1, \cdots, \phi_{J_n})^\top$, corresponds to robust estimation of the covariance matrix of the MLE for a misspecified parametric working model.
+In our case, note that this observed information matrix actually also equals the covariance of the scores under $P_{f_n}$:
+$I_n(\beta_n)(j_1,j_2)=P_{f_n}S_{f_n}(\phi_{j_1})S_{f_n}(\phi_{j_2})$. Since our working model $D^{(k)}({\cal R}_n)$ will approximate the true $f_0$, we could also replace $I_n(\beta_n)$ by $I_{{n,emp}(\beta_n)}=P_n S_{f_n}(\phi)S_{f_n}(\phi)^{\top}$. We claim that the latter is more robust than the one using $I_n(\beta_n)$ and is thus recommended.
+%$PSince our working model $D^{(k)}({\cal R}_n)$ is approximating the true $f_0$, we could also estimate the covariance matrix with the inverse of the information matrix or the covariance of the scores, but the latter would be less robust and is thus not recommended. 
+
+%\Mark{ so there is cleaning to do about this delta method as I give above. Just talk about the actual influence curve of $f_n(x)=\phi(x)\beta_n$ as estimator of $f_{n,0}(x)$, and then the resulting variance estimator. We need the influence curve since then we can also get covariances of $(f_n(x_j):j)$ across multiple points for simultaneous inference etc. So influence curve is more important than getting variance formula. The covariance of $\beta_n$ woudl be the covariance of $I_{f_n}^{-1}S_{f_n}(\phi)$. So you could state a variance of $\phi(x)^{\top}\beta_n$ as $\phi(x)^{\top}Cov_n(beta_n)\phi(x)$ if you want. After that we can talk about influence curve of $p_{f_{n,\beta_n}}(x)$, as I point out. Also dopnt write  $d/d\beta p_{f_n}$. Then write $d/dbeta_n p_{n,\beta_n}$, the gradient of your function of $\beta $ at $\beta_n$.}
+
+\subsubsection{\texorpdfstring{Covariance Estimation for $\beta_n$}{Covariance Estimation for beta\_n}} \label{covariance_beta}
+Our delta-method variance estimator relies on an inverse of the information matrix, such as  its empirical version
+\[
+I_{n,emp}(\beta_n) = \frac{1}{n}\sum_{i=1}^{n} S_{f_n}(\phi)(x_i)\,S_{f_n}(\phi)(x_i)^\top.
+\]
+%\Mark{Note that the actual inforemation matrix would take a mean under $P_{f_n}$ isntead of $P_n$. WOuld that not help stabilizing the inverse? i.e. like taking a large sample from $P_{f_n}$ and then taking the empirical mean. Or is it hard to take a sample from $P_{f_n}$? Probably not hard for the univariate case}
+
+The inverse can become unstable when some of the basis functions are highly correlated. 
+For numerical stability, we might add a ridge regularization to the diagonal of $I_n(\beta_n)$ before inverting, in case it is nearly singular. Following the uniform convergence theory of the HAL, the convergence rate is $\sqrt{\frac{J_{n,0}}{n}}$. Thus, the $\sigma_n^2(x)=O_p(\frac{J_{n,0}}{n})$, and this implies $I_n(\beta_n)^{-1}=O_p(J_{n,0})$. So, its minimum eigenvalue should be of order $\frac{1}{J_{n,0}}$. 
+
+
+%\Mark{for $k=1$ we have $J_{n,0}\sim n^{1/5}$, you are using $n^{2/5}$. Have we tried to use a smaller regularization parameter, such as $\delta= n^{-1/5}$? If we see overestimation of variance w.r.t. oracle that might be wortwhile.} 
+
+For the first order HAL, $J_{n,0}\asymp^+(n^{\frac{1}{5}})$. Thus, we should add a regularization parameter at least smaller than $O_p(n^{-\frac{1}{5}})$. On the other hand, this delta-method variance estimator ignores the bias of the working model so that some overestimation of this variance would be welcome for better coverage. 
+Overall, the robust selection of such a constant is an interesting problem to be addressed in future work. In our practical simulations, we added a regularization parameter of size  $O_p(n^{-\frac{1}{5}})$.  
+
+%\begin{remark}The problem of this variance estimator is that we know it is biased but we do not know the direction it biases towards. On the one hand, we are using the variance estimator for the MLE of the parametric working model $D^{(k)}({\cal R}_n)$ as the variance estimator for the nonparametric model HAL-MLE, which might cause underestimating. On the other hand, the inverse of observed Fisher information might be overestimating the variance requiring us to use some regularization.  When we move to the next section, where we would like to use the estimated density for pathwise differentiable functionals, we prefer to include TMLE and use the influence-curve based variance estimation.\end{remark}

@@ -1,0 +1,136 @@
+\section{Notation, Definition, and Representation} \label{Appendix A: Notation, Definition}
+\subsection{Notation}
+\paragraph{Acronym}~\\
+TV: Total Variation \\
+BTV: Bounded Total Variation \\
+SVN: Sectional Variational Norm \\
+BSVN: Bounded Sectional Variational Norm \\
+HAL: Highly Adaptive Lasso \\
+TMLE: Target Maximum Likelihood Estimator (or Minimum Loss)\\
+HAL-TMLE: TMLE that uses HAL for estimation of nuisance functions \\
+HAL-MLE: Highly Adaptive Lasso Maximum Likelihood Estimator
+KDE: Kernel Density Estimation \\
+LAS: Local Adaptive Splines \\
+TF: Trend Filtering \\
+TFPP: Trend Filtering with Penalty on the Parametric Part \\
+LSDE: Logspline Density Estimation \\
+PLSDE: TV-penalized Logspline Density Estimation \\
+KM: Kaplan-Meier Estimator \\
+CV: Cross Validation \\
+cadlag function: multivariate real-valued function on (say) unit cube $[0, 1]^d$ that is right-continuous with left-hand limits \\
+CDF: generalized cumulative distribution function.\\
+DGP: Data-Generating Process. \\
+LLFP: local least favorable path \\
+ULFP: universal least favorable path \\
+
+\paragraph{Mathematical Notation}~\\
+$\sim$: We say $X \sim P_0$ if the random variable $X$ has distribution $P_0$. \\
+$\lesssim$: We say $a \lesssim b$ if $a \leq Cb$ for some constant $C$.\\
+$\asymp$: We say $a \asymp b$ if $cb \leq a \leq Cb$ for some constant $c$ and $C$. \\
+$\asymp^+$: We say $a \asymp^+ b$ if $cb \leq a \leq 
+Cb(\log n)^p$ for some constant $c$, $C$, and finite $p$. Note that $p$ can be negative. \\
+$\equiv$: Definition.
+$\mathrm{TV}(\cdot)$: Total variation functional as defined in Section 9.1 of \citet{tibshirani2022divided}. When the function $f$ is a càdlàg function, $\mathrm{TV}(f) = \int_0^1 |df(u)|$. This is also referred to as the total variation norm (a seminorm), denoted as $|f|_v$. \\
+$X$: Euclidean valued observed random variable. \\
+$P_0$: True data-generating distribution of X or the truth expectation operator in empirical process. \\
+$P_n$: Empirical data-generating distribution of X or the empirical expectation operator in empirical process. \\
+$P_{f_n}$: Expectation operator with measure $Q_n$. \\
+$P_{f_0}$: Expectation operator with measure $f_0$, which is the truth $P_0$. \\
+$(\mathbb{G}_n(f) : f \in \mathcal{F})$: denotes empirical process $\mathbb{G}_n = n^{1/2}(P_n - P) \in \ell^{\infty}(\mathcal{F})$ indexed by a class of functions $\mathcal{F}$.\\
+$\mathcal{M}$: Statistical model, the set of possible probability distributions for $P_0$.\\
+$O^+(r(n))$: We use notation $O^+(r(n))$ if the term is $O(r(n)(\log n)^p)$ for some finite $p$, and the $+$ notation is also used in $O_p^+$. In words, it is described as "up till a $\log n$ factor".\\
+$d_0(f, f_0)$: loss-based dissimilarity between $f$ and $f_0$ defined by $d_0(f, f_0) = P_0L(f) - P_0L(f_0)$ for some general loss $L$.\\
+$P_0 \in \mathcal{M}$: $P_0$ is known to be an element of the statistical model $\mathcal{M}$.\\
+$\mathrm{d}f/\mathrm{d}\mu$: Radon-Nikodym derivative of measure implied by cadlag function $f$ w.r.t. Lebesgue measure $\mu$.\\
+$p = \mathrm{d}P/\mathrm{d}\mu$: Density of $P$ w.r.t. dominating measure $\mu$\\
+$p_0$: True density of data-generating distribution $P_0$ w.r.t. appropriate dominating measure $\mu$\\
+$p_f$: The density $p$ indexed by a function $f$ through a link function.\\
+$\| f \|_v$: variation norm of cadlag function $f$.\\
+$f^{(k)}$: k-th order Lebesgue-Radon-Nikodym derivative of cadlag function $f$. \\
+$N(\varepsilon, \mathcal{F}, \| \cdot \|)$: the covering number of class $\mathcal{F}$ w.r.t. some metric defined as the minimal number of balls with radius $\varepsilon$ needed to cover $\mathcal{F}$.\\
+$J(\delta, \mathcal{F}, \| \cdot \|)$: the entropy integral for class $\mathcal{F}$ w.r.t. some metric defined as $\int_0^{\delta} \sqrt{\log N(\varepsilon, \mathcal{F}, \| \cdot \|)} \mathrm{d}\varepsilon$. $J_{\infty}(\delta, \mathcal{F})$ is used when the norm is the supremum norm. $J_{2}(\delta, \mathcal{F})$ is used when the norm is the $L^2$ norm.\\
+$\Pi$: projection operator.\\
+$S_f$: score operator at $f$.\\
+$D^*(P)$: canonical gradient (efficient influence curve) of a pathwise differentiable parameter at $P$.\\
+
+\paragraph{Definition}~\\
+$f_n$: we use subscript n for estimations, like $\beta_n$ or $C_n$. Here in this paper, $f_n$ means the HAL-MLE.\\
+$f_{n, \beta_n(M)}$: the HAL-MLE with a user-specified M. So it is parameterized by the coefficient $\beta_n$ under the $L_1$ constraint less than M. $f_{n, \beta_n(M)}$ is the MLE over $D^{(k)}_M(\mathcal{R}_n)$\\
+$M_{cv}$: the hyperparameter M chosen by CV.\\
+$f_n^{rel}$: Relaxed HAL-MLE. Relax the HAL-MLE $f_{n, \beta_n(M)}$ by loosening the $L_1$ constraint with a larger constant $C > M$, such that it is a MLE over $D^{(k)}_C(\mathcal{R}_n)$. Notice that we use the word "fully relaxed" when we drop the $L_1$ constraint completely \\
+Undersmooth: The behavior that we intentionally include more basis to reduce the bias, which will increase variance. Practically, we can choose $M' > M_{cv}$ to realize this. It represents the trade off between bias and variance. \\
+$f_{n,0}$: The oracle HAL-MLE over a sample of size n. Such that $f_{n,0}=\arg\min_{f\in D^{(k)}_M({\cal R}_{n,0} )}-P_0 \log p_{f}$. \\
+$\tilde f_n$: The projection of $f_n$ to some other linear subspace. Typically, we used $\tilde f_n$ to denote the projection of $f_n$ on $ D^{(k)}_M({\cal R}_{n,0})$ in Appendix~\ref{appendix_D: proof of asymptotic normality}. \\
+$f_n^k$: the k-th step TMLE update, shorthand notation of $f_{n, \varepsilon_n^k}$. $f_n$ is also $f_n^0$. \\
+$f^{(k)}$: the k-th order derivative of f. \\
+$C_n$: The normalizing constant of $\tilde f_n$, also denoted as $C(\tilde f_n)$, or $C(\tilde \beta_n)$. \\
+$C_{n,0}$: The oracle normalizing constant, also denoted as $C(f_{n,0})$, or $C(\beta_{n,0})$. \\
+$\| f \|_v^*$: sectional variation norm $\| f \|_v^* = \int_{[0,1]^d} | df(u) |$.\\
+$D^{(0)}_U([0, 1]^d)$: Space of real valued cadlag functions on $[0, 1]^d$ with BSVN for some $U < \infty$. We use $D^{(0)}_U([0, 1])$ for our univariate case.\\
+$\| f \|_{v,k}^*$: $k$-th order sectional variation norm of f.\\
+$D^{(k)}_U([0, 1])$: functions $f$ in $D^{(0)}_U([0, 1])$ for which all k-th order Lebesgue-Radon-Nikodym derivatives exist and $\| f \|_{v,k}^* < U < \infty$\\
+$\mathcal{R}_0$: complete infinite index set of basis.\\
+$\mathcal{R}_n$: a finite data-adaptive index set of basis. The active set after Lasso selection. For the nonparametric part of the basis system, we index them each by a tuple $(k, u)$ for $k$-th order splines and any knot point $u \in (0,1]$. For the parametric part of the basis system, we index them each by a tuple $(i, 0)$, for $i \leq k$ and starting point 0. As such, we could define the total index set as a union of all these. \\
+$D^{(k)}(\mathcal{R}_n)$: for a given subset $\mathcal{R}_n \subset \mathcal{R}_0$, this is defined as the space of functions that are in closure of linear span of $\{\phi_{k,u} : (k, u) \in \mathcal{R}_n\}$. \\
+$D^{(k)}_M(\mathcal{R}_n)$: the subset of $D^{(k)}(\mathcal{R}_n)$ with a user-specified $M$ as the $L_1$ norm constraint of the basis.\\
+$D^{(k)}_M(\mathcal{R}_{n,0})$: an independent oracle space with a user-specified $M$ as the $L_1$ norm constraint of the basis. A technique used for proving pointwise asymptotic normality.\\
+$J_n$: the effective dimension of $D^{(k)}_M(\mathcal{R}_n)$. The number of active basis. \\
+$J_{n,0}$: the effective dimension of $D^{(k)}_M(\mathcal{R}_{n,0})$. The number of active basis. \\
+$\phi_j^*$: some orthonormal basis function on $D^{(k)}_M(\mathcal{R}_{n,0})$.\\
+$\bar \phi_{n,x}$: a special basis function at point $x$ defined as $\bar \phi_{n,x} = J_{n,0}^{-1/2} \sum_{j \in \mathcal{R}_{n,0}} \phi_j^*(x) \phi_j^*$. Used interchangably with $\bar \phi$.\\
+$\tilde \phi_j$: the projection of $\phi_j^*$ onto some linear span, like $D^{(k)}_M(\mathcal{R}_n)$. In general, we use the tilde sign above an element to denote its projection on some other spaces, e.g. $\tilde \phi_{n,x}$, $\tilde f_n$.\\
+
+
+
+
+\subsection{Representation Theorem} \label{App:representation thm}
+This is the proof for Proposition \ref{thm:HAL_representation}
+
+\begin{proof}
+\textit{Base case:} For $k = 0$ (with $u_0 = u$),
+\[
+  f(x)
+  = f(0) + \int_{(0, x]} \mathrm{d}\,f(u)
+  = f(0) + \int_{(0, 1]} I\{u \le x\}\,\mathrm{d}\,f(u)
+  = f(0) + \int_0^1 (x - u)_+^0 \,\mathrm{d}\,f(u).
+\]
+
+\textit{Induction:} If, for a $k$‑times differentiable function $f$, the representation holds true, we now show it for a $(k+1)$‑times differentiable $f$.
+
+Since $f^{(k)}$ is differentiable,
+\[
+  \mathrm{d}\,f^{(k)}(u_k) = f^{(k+1)}(u_k)\,\mathrm{d}u_k,
+  \quad f^{(k+1)}(u_k)\in D^{(0)}_U([0,1]).
+\]
+Starting from the inductive hypothesis,
+\begin{align*}\label{HAL_representation_formula}
+  f(x)
+  &= \sum_{i = 0}^k \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1 \frac{1}{k!}(x - u_k)_+^k\,\mathrm{d}\,f^{(k)}(u_k) \\
+  &= \sum_{i = 0}^k \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1 \frac{1}{k!}(x - u_k)_+^k\,f^{(k+1)}(u_k)\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^k \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1 \frac{1}{k!}(x - u_k)_+^k \\
+  &\quad \times \Bigl(f^{(k+1)}(0)
+    + \int_0^{u_k} \mathrm{d}\,f^{(k+1)}(u_{k+1})\Bigr)\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^k \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1 \frac{1}{k!}(x - u_k)_+^k\,f^{(k+1)}(0)\,\mathrm{d}u_k \\
+  &\quad + \int_0^1 \frac{1}{k!}\int_0^{u_k}(x - u_k)_+^k\,\mathrm{d}\,f^{(k+1)}(u_{k+1})\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^k \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + f^{(k+1)}(0)\int_0^x \frac{1}{k!}(x - u_k)^k\,\mathrm{d}u_k \\
+  &\quad + \int_0^1 \frac{1}{k!}\int_0^{u_k}(x - u_k)_+^k\,\mathrm{d}\,f^{(k+1)}(u_{k+1})\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^{k+1} \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1 \frac{1}{k!}\int_0^{u_k}(x - u_k)_+^k\,\mathrm{d}\,f^{(k+1)}(u_{k+1})\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^{k+1} \frac{1}{i!}f^{(i)}(0)\,x^{i} \\
+  &\quad + \int_0^1 \frac{1}{k!}\int_0^1(x - u_k)^k I\{u_{k+1}\le u_k\le x\}\,\mathrm{d}\,f^{(k+1)}(u_{k+1})\,\mathrm{d}u_k \\
+  &= \sum_{i = 0}^{k+1} \frac{1}{i!}f^{(i)}(0)\,x^{i} \\
+  &\quad + \int_0^1 \frac{1}{k!}\int_0^1(x - u_k)^k I\{u_{k+1}\le u_k\le x\}\,\mathrm{d}u_k\,\mathrm{d}\,f^{(k+1)}(u_{k+1}) \\
+  &\qquad\text{(by Fubini's theorem)}\\
+  &= \sum_{i = 0}^{k+1} \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1\frac{1}{k!}\Bigl(\int_{u_{k+1}}^{x}(x - u_k)^k\,\mathrm{d}u_k\Bigr)\,\mathrm{d}\,f^{(k+1)}(u_{k+1})\\
+  &= \sum_{i = 0}^{k+1} \frac{1}{i!}f^{(i)}(0)\,x^{i}
+    + \int_0^1\frac{1}{(k+1)!}(x - u_{k+1})_+^{k+1}\,\mathrm{d}\,f^{(k+1)}(u_{k+1}).
+\end{align*}
+
+Then, by induction, the representation holds for all \(k\).
+\end{proof}

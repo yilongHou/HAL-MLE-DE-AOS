@@ -1,0 +1,163 @@
+\section{\texorpdfstring{$L^2$}{L2} Convergence Analysis} \label{appB: $L^2$ Convergence Analysis}
+We start with the $L^2$ convergence proof, which is a standard proof based on the convergence of loss-based dissimilarity. Let \(\mathcal F := D^{(k)}_U([0,1])\), and define \(f_{0} \;=\; \arg\min_{f\in\mathcal F} P_{0}L(f)\). Let $M$ be the user-supplied $L_1$ norm constraint and $\mathcal{R}_n$ be the index set of the finite-dimensional working model, and define 
+\(f_{n} \;=\; \arg\min_{f\in D^{(k)}_M(\mathcal{R}_n)} P_{n}L(f).\)
+Define the loss-based dissimilarity to be
+\(d_{0}(f_{n},f_{0}) \;=\; P_{0}L(f_{n}) - P_{0}L(f_{0}).\) Notice that $d_{0}(f_{n},f_{0})$ is just the KL divergence of the true density $p_{f_{0}}$ and the estimated density $p_{f_{n}}$ when $L$ is $-\log p_f$. Knowing the fact that KL divergence is equivalent to the squared $L^2$-norm when the positivity assumption in Theorem~\ref{thm:density_HAL_asymptotic_normality} holds true, we can show the $L^2$ convergence of HAL-MLE by showing the convergence of $d_{0}(f_{n},f_{0})$. Again, the positivity assumption is guaranteed by the link function.
+
+\subsection{Proof of Theorem~\ref{thm:l2-convergence-hal-mle}}
+We show the convergence by discussing the covering number of $D^{(k)}_U([0,1]^d)$ and its relationship to the covering number of $\mathcal{F}_L := \{L(f) - L(f_0): f \in \mathcal F\}$.
+The sup–norm covering number of $D^k_M[0,1]^d$ is covered in Lemma 29 of \citep{vanderlaan2023higherordersplinehighly}, and this implies the $L^2$ covering number of $D^k_M[0,1]^d$. However, for the univariate case, it is sufficient—and conventional—to rely directly on existing \(L^{2}\) results for functions whose \(k^{\text{th}}\) derivative has bounded total variation. The equivalency is already stated in Section~\ref{Relationship with TV}. The earliest source we have been able to locate is \citep{birman1967piecewise}, which establishes the sharp bound
+\(
+\log N\!\Bigl(\varepsilon,\; D^{(k)}_U([0,1]),\; L^2(\mu)\Bigr)
+\;\lesssim\;
+\Bigl(\tfrac{C}{\varepsilon}\Bigr)^{\frac{1}{\,k+1\,}},
+\) where $C$ is a constant.
+Similar results and follow-up applications also appear in \citep{mammen1997locally}, \citep{tibshirani2014adaptive}, and \citep{sadhanala2019additive}. Consequently, we adopt the one-dimensional \(L_{2}\) entropy bound throughout; it is fully compatible with—and indeed implied by the broader sup–norm result in \citep{vanderlaan2023higherordersplinehighly}.
+
+To show the connection between $N\!\Bigl(\varepsilon,\; \mathcal{F},\; L^2(\mu)\Bigr)$ and $N\!\Bigl(\varepsilon,\; \mathcal{F}_L,\; L^2(P_0)\Bigr)$, we list two key assumptions.
+
+\begin{assumption}[Quadratic loss-based dissimilarity assumption]\label{as1}
+For the loss function \(L\) and loss–based dissimilarity 
+\(d_{0}(f,f_{0}) = P_{0}L(f) - P_{0}L(f_{0})\),
+assume 
+\[
+\sup_{f \in \mathcal{F}}
+\frac{P_{0}\!\bigl\{L(f) - L(f_{0})\bigr\}^{2}}
+     {d_{0}(f,f_{0})}
+\;= O(1) <\;\infty.
+\]
+\end{assumption}
+
+\begin{remark}
+When \(L(f) = -\log p_f\) (negative log-likelihood), then Assumption~\ref{as1} becomes a fact \citet{van2004asymptotic}.
+\end{remark}
+
+\begin{assumption}[Norm comparison]\label{as2}
+Let \(\lVert\cdot\rVert\) be the norm used for  $N\!\Bigl(\varepsilon,\; \mathcal{F},\; \lVert\cdot\rVert\Bigr)$.  
+Assume
+\[
+\sup_{f \in \mathcal{F}}
+\frac{P_{0}\!\bigl\{L(f) - L(f_{0})\bigr\}^{2}}
+     {\lVert f - f_{0}\rVert^{2}}
+\; = O(1) <\;\infty.
+\]
+\end{assumption}
+
+\begin{remark}
+If \(\lVert\cdot\rVert\) is chosen as either \(L_{2}(\mu)\) or \(L_{\infty}\),
+then Assumption~\ref{as1} implies Assumption~\ref{as2}, based on the equivalency of KL divergence and the squared $L^2$ distance under positivity assumption.
+\end{remark}
+
+\begin{theorem}[Covering number equivalency]\label{Covering number equivalency}
+For a choice of \(\lVert\cdot\rVert\) such that Assumption~\ref{as2} holds (e.g. $L^2$ and $L_{\infty}$), Assumption~\ref{as2} implies that $N\!\Bigl(\varepsilon,\; \mathcal{F},\; \lVert\cdot\rVert\Bigr) \asymp N\!\Bigl(\varepsilon,\; \mathcal{F}_L,\; L^2(P_0)\Bigr)$.
+\end{theorem}
+
+\begin{proof}
+Let $\{f_j^\varepsilon: j = 1, \cdots, N(\varepsilon)\}$ be an $\varepsilon$-covering number on $\mathcal{F}$, then there $\exists j$, such that for any $f \in \mathcal{F}$, $\lVert f_j^\varepsilon - f\lVert < \varepsilon $. Notice that for negative log-likelihood loss, there is a one-to-one relationship between $\mathcal{F}$ and $\mathcal{F}_L$.
+
+And this implies that any element in $\mathcal{F}_L$ can be expressed as $L(f) - L(f_0)$. Constructing a net $\{L(f_j^\varepsilon) - L(f_0): j = 1, \cdots, N(\varepsilon)\}$ on $\mathcal{F}_L$ based on that covering number, then $\lVert((L(f_j^\varepsilon) - L(f_0)) - (L(f) - L(f_0))\lVert_{L^2(P_0)}^2 = \lVert L(f_j^\varepsilon) - L(f)\lVert_{L^2(P_0)}^2 = P_0\{L(f_j^\varepsilon) - L(f) \}^2 =O(\lVert f_j^\varepsilon - f\rVert^{2}) = O(\varepsilon^2)$. The second last step is implied by Assumption~\ref{as2}. So this net is a covering number on $\mathcal{F}_L$ which indicates the equivalence of the covering number of both classes.
+\end{proof}
+
+Now we have developed all the tools needed for proving Theorem~\ref{thm:l2-convergence-hal-mle}. 
+
+\begin{proof}
+Let \( J(\delta, \mathcal{F}_L, L^2(P_0)) \) be the entropy integral of $\mathcal{F}_L$; for brevity we write \(J_2(\delta)\). Based on Theorem~\ref{Covering number equivalency}, $\mathcal{F}_L$ and $\mathcal{F}$ shares the same entropy integral \(J_2(\delta) = \delta^\frac{2k+1}{2k+2}\).
+
+Define \( \mathbb{G}_n = n^{1/2} (P_n - P_0) \) to be the empirical process. \(P_{n}\) is the empirical measure and
+\(P_{0}\) the true data-generating measure. Formal definitions of covering numbers and entropy integrals can be found in
+Section 2.2 of \citet{van1996weak}.
+
+\begin{align}
+0
+\;\le\;
+d_{0}(f_{n},f_{0})
+&= -\bigl(P_{n}-P_{0}\bigr)\bigl\{L(f_{n})-L(f_{0})\bigr\}
+    + P_{n}\bigl\{L(f_{n})-L(f_{0})\bigr\} \notag\\
+&\le -\bigl(P_{n}-P_{0}\bigr)\bigl\{L(f_{n})-L(f_{0})\bigr\} \text{, because $f_n$ is the empirical risk minimizer} \notag\\ 
+&\le n^{-1/2}\,
+   \sup_{\substack{f\in\mathcal F_{L}\\ \lVert f\rVert_{L^{2}(P_{0})}\leq\delta}}
+   \bigl\lvert \mathbb{G}_{n}(f) \bigr\rvert \notag \\
+&\lesssim n^{-1/2} J_2(\delta) \left( 1 + \frac{J_2(\delta)}{\delta^2 n^{1/2}} \right) \text{Section 3.4.2 of \citep{van1996weak}.}  \notag
+\end{align}
+\( J_2(\delta) \) dominates \( \frac{J_2(\delta)^2}{\delta^2 n^{1/2}} \) when \( J_2(\delta) \lesssim \delta^2 n^{1/2} \). For any \( \delta \geq \delta_n \asymp n^{-\frac{k+1}{2k+3}} \), we can use \( J_2(\delta) \) as the upper bounded for \( \mathbb{E}_{P_0}\sup_{\substack{f\in\mathcal F_{L}\\ \lVert f\rVert_{L_{2}(P_{0})}<\delta}}
+   \bigl\lvert \mathbb{G}_{n}(f) \bigr\rvert\).
+
+The sketch of the following proof is to create a sequence of $\delta \geq \delta_n$, denote as $\delta_k$, to iteratively solve for the optimal rate. We start with the trivially large radius \(\delta_{0}=1\) (and the corresponding $J(\delta_0) = O_p(1)$), which yields  
+\(
+d_{0}(f_{n},f_{0}) = O_{p}\!\bigl(n^{-1/2}\bigr).
+\)
+By Assumption~\ref{as1},
+\[
+P_{0}\!\bigl\{L(f_{n})-L(f_{0})\bigr\}^{2}=O_{p}\!\bigl(d_{0}(f_{n},f_{0})\bigr)=O_{p}\!\bigl(n^{-1/2}\bigr),
+\qquad
+\bigl\lVert L(f_{n})-L(f_{0})\bigr\rVert_{L_{2}(P_{0})}
+        =O_{p}\!\bigl(n^{-1/4}\bigr).
+\]
+Hence we update the radius to \(\delta_{1}\asymp n^{-1/4}\), which is still
+larger than or equal to \(\delta_n\).
+We repeat the argument, iteratively shrinking \(\delta\) until convergence.
+At convergence the \((k+1)\)-st update equals the \(k\)-th, i.e. 
+\(\delta_{k+1}=\delta_{k}=\delta\), and the fixed point solves
+\[
+\delta
+=\sqrt{n^{-1/2}J_2(\delta)}
+= n^{-1/4}\,\delta^{\frac{2k+1}{4k+4}}
+=\delta_n.
+\]
+Plugging \(\delta_n\) back into \(J_2(\delta)\) gives
+\[
+d_{0}(f_{n},f_{0})
+\;=\;
+O_{p}\!\bigl(n^{-1/2}J(\delta_n)\bigr)
+\;=\;
+O_{p}\!\bigl(n^{-\frac{2k+2}{2k+3}}\bigr).
+\]
+The positivity of density holds, which implies that 
+\(d_{0}(f_{n},f_{0})\asymp\lVert p_{f_{n}}-p_{f_{0}}\rVert_{L^{2}(\mu)}^{2}\);
+therefore
+\[
+\lVert p_{f_{n}}-p_{f_{0}}\rVert_{L^{2}(\mu)}
+=O_{P}\!\bigl(n^{-\frac{k+1}{2k+3}}\bigr).
+\]
+
+\end{proof}
+
+
+%\subsection{Proof of Theorem~\ref{thm:l2-convergence-hal-mle-multivariate}}
+%\label{app_subsct:proof-of-theorem-l2-convergence-hal-mle-multivariate}
+
+%\begin{proof}
+%\The multivariate case follows exactly the same proof as the univariate case. The only difference is that we need to replace the covering number of $D^{(k)}_U([0,1])$ with the covering number of $D^{(k)}_U([0,1]^d)$. As mentioned in Section~\ref{subsec:rate-of-convergence-hal-mle-loss-based-dissimilarity}, the $L_2$ covering number of $D^{(k)}_U([0,1]^d)$ is mentioned in \cite{ki2024mars,fang2021multivariate,bibaut2019fast, vanderlaan2023higherordersplinehighly}. 
+%\[
+%log N_2\!\Bigl(\varepsilon,\; D^{(k)}_U([0,1]^d)) \lesssim \left(\frac{1}{\varepsilon}\right)^{\frac{1}{k+1}}(-\log(\varepsilon))^{2(d - 1)},
+%\]
+%\and then the entropy integral is
+%\[
+%J_2(\delta) \lesssim \delta^\frac{2k+1}{2k+2} (\log(\delta))^{d - 1},
+%\]
+%based on Lemma 2 from \cite{bibaut2019fast}.
+
+%\The rest of the proof is exactly the same as the univariate case.
+%\\[
+%delta_n = n^{-\frac{k+1}{2k+3}} (\log n)^{\frac{2k+2}{2k+3}(d-1)},
+%\]
+%\and thus
+%\[
+%J_2(\delta_n) \lesssim n^{\frac{2k+1}{4k+6}}(\log n)^{\frac{4k+4}{2k+3}(d-1)}.
+%\]
+%\We have 
+%  \[
+%d_{0}(f_{n},f_{0})
+%\;=\;
+%O_{p}\!\bigl(n^{-1/2}J_2(\delta_n)\bigr)
+%\;=\;
+%O_{p}\!\bigl(n^{-\frac{2k+2}{2k+3}}(\log n)^{\frac{4k+4}{2k+3}(d-1)}\bigr).
+%\]
+%\and also
+%\[
+%\lVert p_{f_{n}}-p_{f_{0}}\rVert_{L^{2}(\mu)}
+%=O_{P}\!\bigl(n^{-\frac{k+1}{2k+3}}(\log n)^{\frac{2k+2}{2k+3}(d-1)}\bigr).
+%\]
+%\end{proof}
+
+

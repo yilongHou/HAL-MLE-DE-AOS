@@ -1,0 +1,55 @@
+\section{Proof of Uniform Convergence} \label{appendix_E: Uniform Convergence Rate}
+This appendix includes the proof of Theorem~\ref{thm:uniform-density-hal}.
+\begin{proof}
+We extended the Basis Boundedness Assumption in Theorem~\ref{thm:density_HAL_asymptotic_normality} such that $R_{1n}(\bar{\phi}_{n,x})$ and $\tilde{r}_n(\bar{\phi}_{n,x})$ hold uniformly in $x\in [0,1]$. 
+The uniform convergence result is obtained by using empirical process bounds in terms of the entropy integral to the empirical process  $(n^{1/2}(P_n-P_0)S: S\in {\cal S}_n)$ with ${\cal S}_n=\{S_{f_{n,0}}(\bar{\phi}_{n,x}):x\in [0,1]\}$. 
+Notice that, by orthonormality and boundedness,
+\[
+\|J_{n,0}^{-\frac12}\bar\phi_{n,x}\|_{L^2(P_{f_{n,0}})}^2
+=J_{n,0}^{-2}\sum_{j\in\mathcal R_{n,0}}\phi_j^*(x)^2
+\;\lesssim\; J_{n,0}^{-1},
+\]
+hence we may take $\|J_{n,0}^{-\frac12}S_{f_{n,0}}(\bar{\phi}_{n,x})\|_{L^2(P)} \lesssim J_{n,0}^{-1/2}$. That is to say, the $L^2$-norm of these functions shrinks to zero at the rate $J_{n,0}^{-1/2}$. Also, because $x\mapsto \bar\phi_{n,x}$ is a one--dimensional mapping of x, its covering numbers satisfy
+\[
+\log N\!\bigl(\epsilon,\ \mathcal S_n,\ L^2(P_{f_{n,0}})\bigr)\ \lesssim\ \log(1/\epsilon),
+\]
+uniformly in $n$. Consequently, the entropy integral obeys the VC-1 form
+\[
+J(\delta,\mathcal S_n,L^2(P_{f_{n,0}}))
+\;\equiv\;\int_0^\delta \sqrt{\log(1/\epsilon)}\,\mathrm{d}\varepsilon
+\ \asymp \delta\sqrt{\log(1/\delta)}.
+\]
+
+So, let function class $\mathcal F_{S_n}$ be the function class that shrinks every function $s \in \mathcal S_n$ by $J_{n,0}^{\frac12}$. Then this function class $\mathcal F_{S_n}$ has a shrinkage $L^2$-norm and an entropy integral $J_2(\delta,\mathcal S_n)$
+
+Recall that 
+\begin{align*}
+    \sqrt{\frac{n}{J_{n,0}}}\bigl(f_n - f_{0}\bigr)(x) 
+     &= -\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)
+     + o_P(1).
+\end{align*}
+
+Then, with a similar approach of bounding the empirical process in Appendix~\ref{appB: $L^2$ Convergence Analysis}, 
+\begin{align*}
+    \sup_{x\in[0,1]} |\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)| &=  
+    J_{n,0}^{\frac12} \sup_{x\in[0,1]} |n^{1/2}(P_n-P_0) \Bigr(\frac{S_{f_{n,0}}(\bar\phi)}{J_{n,0}^{\frac12}} \Bigl) | \\
+    &= J_{n,0}^{\frac12} \sup_{f \in \mathcal F_{S_n}, \|f\|_2 < \delta}|\mathbb G_n(f)| \\
+    &\lesssim J_{n,0}^{\frac12} J_2(\delta_n, \mathcal F_{S_n}), \text{with a $\delta_n$ that makes $J_2(\delta_n)$ dominate} \\
+    &= J_{n,0}^{\frac12} \delta_n\sqrt{\log(1/\delta_n)}.
+\end{align*}
+
+We know that $f \in \mathcal F_{S_n}, \|f\|_2 < J_{n,0}^{-1/2}$, then we can choose $\delta_n \asymp J_{n,0}^{-1/2}$. First, it is a valid choice for $J_2(\delta)$ to dominate, because $J_2(\delta_n) \asymp \delta_n\log(1/\delta_n) \lesssim \delta_n^2 n^{1/2}$. Then, $J_{n,0}^{\frac12} J_2(\delta_n, \mathcal F_{S_n}) = \sqrt{\log(1/\delta_n)} \asymp \sqrt{\log n}.$
+
+With $J_{n,0} \asymp^+ n^{1/(2k+3)}$ this reads
+\[
+\sup_{x\in[0,1]}\, \big|\sqrt{n}(P_n-P_0)S_{f_{n,0}}(\bar\phi_{n,x})\big|
+\;=\; O_p\!\Big(\sqrt{\log n}\Big).
+\]
+
+Then it follows:
+ \[
+(n/J_{n,0})^{1/2}\| f_n-f_0\|_{\infty}=O_P(\sqrt{\log n}),
+\]
+so that $ \| f_n-f_0\|_{\infty}=O_P^+(n^{-\frac{(k+1)}{(2k+3)}})$.
+
+\end{proof}

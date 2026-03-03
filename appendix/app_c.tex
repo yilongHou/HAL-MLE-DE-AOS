@@ -1,0 +1,83 @@
+\section{Score Equation Analysis for HAL-MLE} \label{App C: Score Analysis}
+HAL-MLE, unlike the log-splines, is not a full parametric MLE on the working model. Instead, we have a $L_1$ norm constraint on the coefficients. So we pay a price that the  empirical score equation is not exactly 0. In this appendix, we will show that the scores we need can be approximately solved with a negligible error.
+
+Recall the definition of the score. Let $S_{\beta}(\phi_j)=\frac{\mathrm{d}}{\mathrm{d}\beta(j)}\log p_{\beta}$ be the score at $\beta$ for $\beta(j)$, the $j$-th coefficient of $\beta$. We also denote this score as $S_{f_{\beta}}(\phi_j)$.
+Note that this equals
+\[
+S_{\beta}(\phi_j)=\phi_j(X)-P_{\beta}\phi_j, \]
+where $P_{\beta}\phi_j\equiv \int \phi_j(x)p_{\beta}(x) \mathrm{d}x$.
+We note $\phi\rightarrow S_{\beta}(\phi)$ is linear. HAL-MLE has one $L_1$ norm constraint and solves $J_n - 1$ scores. We name the linear span of these $J_n - 1$ scores as the $L_1$ constrained score space, and notice that this space is a closed linear subspace of $D^k(\mathcal{R}_n)$. In the latter proof in Appendix~\ref{appendix_D: proof of asymptotic normality} and Appendix~\ref{appendix_E: Uniform Convergence Rate}, we will construct $\bar{\phi}_{n,x}$ as defined before Theorem~\ref{thm:asymptotic-linearity-hal-mle} and we want to elaborate on the rate of $P_n S_{f_n}(\bar{\phi}_{n,x})$.
+
+Let $\tilde{\phi}_{n,x}$ be the projection of $\bar{\phi}_{n,x}$ onto the $L_1$ constrained score space, that is, the linear span of scores $S_{f_n}(\tilde{\phi}_j)$, $j\in {\cal R}_n$ that HAL solves exactly so that $P_n S_{f_n}(\tilde{\phi}_j)=0$ for $j\in {\cal R}_n$. Then, $P_n S_{f_n}(\tilde{\phi}_{n,x})=0$, and thus we have
+\[
+P_n S_{f_n}(\bar{\phi}_{n,x})=P_n \{S_{f_n}(\bar{\phi}_{n,x})-S_{f_n}(\tilde{\phi}_{n,x})\}.
+\]
+We note that the $L^2(P_{f_{n,0}})$-norm of $\bar{\phi}_{n,x}$ is bounded:
+\begin{align} \label{eq:bar-phi-norm-L2P0}
+\Vert \bar{\phi}_{n,x} \Vert_{\beta_{n,0}}=J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\{\phi_j^*(x)\}^2=O(1).
+\end{align}
+%YILONG: should this be $p_{f_n}$ or $p_{f_{n,0}}$?
+We have $p_{f_{n,0}}>\delta>0$ on $[0,1]$, so that we also have 
+\begin{align} \label{eq:bar-phi-norm-mu-Lebesgue}
+\Vert \bar{\phi}_{n,x} \Vert_{\mu}=O(1).
+\end{align}
+
+Recall the $L^2$ Approximation Error Assumption between $D^k(\mathcal{R}_n)$ and $D^k_U([0,1])$ in Theorem~\ref{thm:asymptotic-linearity-hal-mle} 
+\[
+\sup_{f\in D^{(k)}_U([0,1])}\inf_{g\in D^{(k)}(\mathcal R_{n})}\|f-g\|_{\mu}
+=O^+\bigl(J_{n}^{-(k+1)}\bigr).
+\]
+
+The idea of this assumption is that we can select a rich enough set of basis functions that can approximate the truth in $L^2(\mu)$-norm. The $L_1$ constrained score space has only one less basis than $D^k(\mathcal{R}_n)$, so it is reasonable to extend this assumption to the $L_1$ constrained score space. 
+
+\begin{theorem}[Negligibility of Score Approximation Error for HAL-MLE] \label{thm:score-approximation-negligibility-hal-mle}
+Suppose that the $L^2(\mu)$-Approximation Error Assumption can be extended to the $L_1$ constrained score space, then the empirical score equation satisfies
+\[
+n^{1/2}P_n S_{f_n}(\bar{\phi}_{n,x}) = o_P(1).
+\]
+\end{theorem}
+
+\begin{proof}
+If the $L^2(\mu)$-Approximation Error Assumption holds for $\bar{\phi}_{n,x}$ and its projection $\tilde{\phi}_{n,x}$ as well, then,  
+\[
+\Vert \bar{\phi}_{n,x} - \tilde{\phi}_{n,x} \Vert_{L^2(\mu)} = O^+(J_n^{-(k+1)}),
+\]
+
+\begin{align*}
+P_n S_{f_n}(\bar{\phi}_{n,x}) &= P_n \{S_{f_n}(\bar{\phi}_{n,x})-S_{f_n}(\tilde{\phi}_{n,x})\} \\
+&= (P_n - P_0) \{\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\} - (P_{f_n} - P_0) \{\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\} \\
+\end{align*}    
+
+The first term can be bounded by an empirical process, where we shorthanded $\|\cdot\|_{L^2(\mu)}$ by $\|\cdot\|_{\mu}$,
+\begin{align*}
+    (P_n - P_0) \{\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\} &= J_{n,0}^{\frac{1}{2}} n^{-\frac12} \sup_{\substack{f\in\mathcal D^{(k)}_U([0,1])\\ \lVert f\rVert_{L^{2}(P_{0})}\leq\delta}}
+    \bigl\lvert \mathbb{G}_{n}(f) \bigr\rvert   \\
+    &= J_{n,0}^{\frac{1}{2}} n^{-\frac12} J(\delta_n) \\
+    &= J_{n,0}^{\frac{1}{2}} n^{-\frac12} \delta_n^{\frac{2k+1}{2k+2}} \\
+    &= O_P^+(J_{n,0}^{\frac{1}{2}} n^{-\frac12} (J_n^{-1/k+1})^{(2k+1)/(2k+2)}) \\
+    &= O_P^+(n^{-\frac{1}{4k+6}} n^{-\frac12} (n^{-\frac{2k+1}{4k+6}})) \\
+    &= O_P^+(n^{-\frac{4k+5}{4k+6}}) \\
+    &= o_p(n^{-\frac{1}{2}}) \\
+\end{align*}
+We here used the same empirical process as in Appendix~\ref{appB: $L^2$ Convergence Analysis}, and the $\delta_n$ is the is the $L^2(P_0)$ convergencerate of $J_n^{-\frac{1}{2}}(\bar{\phi}_{n,x}-\tilde{\phi}_{n,x})$ going to 0. This rate is implied by the $L^2$ Approximation Error Assumption and the positivity of the true density $p_{0}$.
+
+The second term can be bounded by Cauchy-Schwarz inequality.
+\begin{align*}
+    (P_{f_n} - P_0) \{\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\} &\leq \|p_{f_n} - p_0\|_{\mu} \cdot \left\|\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\right\|_{\mu} \\
+    &= \|p_{f_n} - p_0\|_{\mu} \cdot \left\|\bar{\phi}_{n,x}-\tilde{\phi}_{n,x}\right\|_{\mu} \\
+    &= O_P^+(n^{-\frac{k+1}{2k+3}} J_n^{-(k+1)})  \\
+    &= O_P^+(n^{-\frac{2k+2}{2k+3}}) \\
+    &= o_p(n^{-\frac{1}{2}}) \\
+\end{align*}
+And thus, we have
+\begin{align*}
+    P_n S_{f_n}(\bar{\phi}_{n,x}) &= O_P^+(n^{-\frac{2k+2}{2k+3}}),
+\end{align*}
+and 
+\begin{align*}
+    n^{1/2}P_n S_{f_n}(\bar{\phi}_{n,x}) &= o_P(1).
+\end{align*}
+\end{proof}
+
+%\Yilong{I think we can even have a sharper bound, like $P_n S_{f_n}(\bar{\phi}_{n,x})$ is $O_P^+(n^{-\frac{2k+2}{2k+3}})$. Don't know if needed.
+%MARK: Let's state teh bound we really have instead of saying $o_P(n^{-1/2})$}

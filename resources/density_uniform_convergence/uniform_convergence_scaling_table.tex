@@ -1,0 +1,18 @@
+% Auto-generated scaling law summary table
+\begin{table}[H]
+  \centering
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Metric & TN & GS3 & GA3 & GS5 & Step & Sine \\
+    \midrule
+    $\alpha$ (Decay Exponent) & 0.5009 & 0.4304 & 0.4532 & 0.3168 & 0.0649 & 0.3641 \\
+    $R^2$ (Goodness of Fit) & 0.9993 & 0.9998 & 0.9997 & 0.9223 & 0.9901 & 0.9630 \\
+    Significant ($p < 0.05$) & Yes & Yes & Yes & Yes & Yes & Yes \\
+    \bottomrule
+  \end{tabular}
+  \caption{Uniform convergence scaling analysis. $\alpha$ represents the decay exponent in the power law $\text{error} \propto n^{-\alpha}$. $R^2$ measures goodness of fit on the log-log scale. Significance tests $H_0: \text{slope} = 0$ vs $H_1: \text{slope} \neq 0$ at $\alpha = 0.05$.}
+  \label{tab:uniform_convergence_scaling}
+\end{table}

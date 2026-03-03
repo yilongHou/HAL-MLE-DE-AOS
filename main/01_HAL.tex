@@ -1,0 +1,132 @@
+\section{The Highly Adaptive Lasso (HAL) Assumptions} 
+\label{The Highly Adaptive Lasso (HAL) Assumptions}
+
+The HAL assumptions refer to \emph{càdlàg} functions with bounded sectional variational norm (BSVN), and the modeling of HAL is a natural extension from the exact representation of this function class. In the univariate case, a \emph{c\`adl\`ag} function could be considered as a function that can be approximated by a linear combination of simple indicator functions that jumps from 0 to 1 at a knot-point. The function class includes the linear combination of cumulative distribution functions.  \citet{gill2001inefficient} showed that the concept of SVN extends the Donsker property of univariate \emph{càdlàg} functions with bounded total variation to multivariate cases. Some follow-up works of this results appear in \citet{van2017generally, rytgaard2023estimation}. A detailed discussion on \emph{c\`adl\`ag} functions with BSVN and their measurability is provided in \citet[Section~2]{munch2024estimating}. A similar result also appears in \citet{radulovic2017weak}. And in some literature like \citet{radulovic2017weak, ki2024mars}, the SVN is referred to as the Hardy-Krause variation. We here introduce these concepts and their relationship to HAL.
+
+\subsection{Basic Concepts.} \label{Basic Concepts}
+We first introduce the function class of \emph{c\`adl\`ag} functions with BSVN (upper bounded by some \(U < \infty\)) without assuming any order of differentiability, denoted as $D^{(0)}_U([0,1]^d)$.
+\begin{definition}[\emph{Càdlàg} Functions with Bounded Sectional Variational Norm (BSVN)]\label{assump:cadlag with BSVN}
+The function $f\in D^{(0)}_U([0,1]^d)$ is the function that can be represented as follows:
+\[
+  f(x)
+  = f(0)
+    + \sum_{s\subset\{1,\dots,d\}}
+      \int_{(0(s),\,x(s)]} f\bigl(du_s,0(-s)\bigr),
+\]
+where \(s\) is any nonempty subset of \(\{1,\dots,d\}\), and $-s \equiv \{1,\dots,d\} \setminus s$. Here, $x(s)$ denotes the components of $x$ with indices in $s$, while $0(s)$ is the zero vector of the same length as $x(s)$, so that $(0(s), x(s)]$ is a left-open right-closed cube within the $\vert s \vert$-dimensional unit cube. Accordingly, the SVN is defined by
+\[
+  \Vert f \Vert_v^*
+  = \bigl|f(0)\bigr|
+    + \sum_{s\subset\{1,\dots,d\}}
+      \int_{(0(s),\,x(s)]}
+      \Bigl|\,f\bigl(du(s),0(-s)\bigr)\Bigr|.
+\]
+This is a stronger assumption than the bounded total variation (BTV) assumption, since it requires bounded variation not only on the full coordinate set \(s=\{1,\dots,d\}\) but on all lower‑dimensional sections \(s\subset\{1,\dots,d\}\).  
+\end{definition}
+
+In the univariate case $D^{(0)}_U([0,1])$, these definitions simplify to
+\begin{align}
+    f(x)
+  = f(0) + \int_{(0,x]} f(du),
+  \quad
+  \Vert f \Vert_v^*
+  = \bigl|f(0)\bigr|
+    + \int_{(0,x]}
+      \Bigl|\,f(du)\Bigr|.
+\end{align}
+
+When \(f\) is also $k$-th order differentiable, we define the $k$-th order sectional variational norm, \( \Vert f \Vert_{v,k}^*\), and the function subclass of $D^{(0)}_U([0,1])$ with bounded \( \Vert f \Vert_{v,k}^*\), $D^{(k)}_U([0,1])$, as follows: 
+
+\begin{definition}[The Function with k-th order BSVN]\label{assump:DkM}
+For the smoothness order $k\ge1$ and a large enough constant $U>0$, we say $f\in D^{(k)}_U([0,1])$ if the following hold:
+\begin{enumerate}
+  \item $f\in D^{(0)}_U([0,1])$.
+  \item For each $1\le i\le k$, the $i$‑th Lebesgue–Radon–Nikodym derivative of $f$ exists
+    \[
+      f^{(i)}(u)\;=\;\frac{\mathrm{d}}{\mathrm{d}u}f^{(i-1)}(u)
+    \]
+    and $f^{(i)}\in D^{(0)}_U([0,1])$.
+  \item The $k$‑th order sectional variation norm of $f$,
+    in the univariate case, simplified as
+    \[
+      \Vert f \Vert_{v,k}^*
+      \;=\sum_{i=0}^k |f^{(i)}(0)| + \mathrm{TV}\bigl(f^{(k)}\bigr),
+    \]
+    satisfies
+    \[
+      \Vert f \Vert_{v,k}^* \;\le\; U, \text{for some $U < \infty$}
+    \]
+\end{enumerate}
+\end{definition}
+A quick note on the notation: We use $\mathrm{TV}(\cdot)$ to denote the total variation functional as defined in Section 9.1 of \citet{tibshirani2022divided}. When the function $f$ is a càdlàg function, $\mathrm{TV}(f) = \int_0^1 |df(u)|$. This is also referred to as the total variation norm (a seminorm), denoted as $|f|_v$. We then write $(x - u)_+^k = (x - u)^k\,I\{u\le x\}$ where $I$ is the indicator, and this truncated $k$-th order spline with knot point $u \in [0,1]$ is $k$-th order weakly differentiable. Notice that the following representation theorem and its derivation are specialized to the univariate case, and we include it here because it motivates and unifies the parametrization of such a function class. Here we demonstrate the exact representation for $f\in D^{(k)}_U([0,1])$ with the concepts above. 
+\begin{proposition}[Univariate Exact Representation]
+\label{thm:HAL_representation}
+
+Any $f\in D^{(k)}_U([0,1])$ could be represented as follows:
+\[
+  f(x)
+  = \sum_{i=0}^k \frac{1}{i!}\,f^{(i)}(0)\,x^i
+    + \int_0^1 \frac{1}{k!}\,(x-u_k)_+^k \,d\,f^{(k)}(u_k).
+\]
+\end{proposition}
+
+The multivariate or higher‑order spline exact representation is included in \citet[Section 3]{vanderlaan2023higherordersplinehighly}. 
+
+\subsection{Relationship with TV} \label{Relationship with TV}
+% In the regression problem, TV is introduced to avoid the major theoretical limitation of linear smoothers. These linear smoothers, whose fitted values depend linearly on the observed responses, include smoothing splines \citep{wahba1990spline}, kernel regression \citep{stone1982optimal}, etc. These methods are only optimal, in terms of $L_2$ convergence, in Sobolev or Hölder spaces \citep{tsybakov2009nonparametric}, and suboptimal elsewhere in the function class with bounded total variation. A concrete example of suboptimality is when the true function is smooth in some parts of its domain and wiggly in other parts \cite{tibshirani2014adaptive}. 
+
+BTV is a classic assumption of spline methods for the regression problem. The implementation is to derive TV as a function of the coefficients of the bases. Thus, different basis systems have different representations of the TV. The HAL assumptions seem to be stricter by Definition~\ref{assump:cadlag with BSVN}, but there is actually no loss comparing to the BTV assumption in the univariate case. LAS uses the same truncated power basis as in univariate HAL, and therefore we argue the equivalency of the two assumptions through analyzing the estimation of LAS.
+
+\subsubsection{A Review of Locally Adaptive Regression Splines (LAS):}
+%YILONG: they assume kth order differentiability, so that is for sure cadlag.  I am also not clear in what sense HAL is stricter? Can you make precise what you mean, are they working with a bigger class, which one because this one looks not bigger. what does kth order differentiable mean if k=0? at this point I findthis section 2.2 not clear and wonder if it should go to an appendix, but either way it needs to be very clear.
+Suppose $f$ is a $k$-th order differentiable function, and $f^{(k)}$ is the $k$-th order derivative of $f$. By convention $f^{(0)} \equiv f$, or WLOG we can adopt the term that $f^{(k)}$ is the $k$-th weak derivative of $f$ from \citet{tibshirani2014adaptive}.
+\citet{mammen1997locally} proposed LAS, which  achieved optimal $L^2$ convergence rates in $\mathcal{F}_k$, where 
+
+\[
+\mathcal{F}_k
+\;=\;
+\bigl\{\,f : [0,1]\to\mathbb{R}
+\;\big|\;
+f\text{ is $k$-th order differentiable and }
+\mathrm{TV}\bigl(f^{(k)}\bigr)<\infty
+\bigr\}.
+\]
+The optimization over $\mathcal{F}_k$ is referred to as the unrestricted LAS method as follows:
+\begin{equation}\label{eq:ula-spline}
+\hat f \;\in\;\arg\min_{f\in\mathcal{F}_k}
+\frac{1}{2}\sum_{i=1}^n \bigl(y_i - f(x_i)\bigr)^2
+\;+\;\lambda\,\mathrm{TV}\bigl(f^{(k)}\bigr),
+\end{equation}
+Due to the difficulty of implementation, especially when $k \ge 2$, they proposed the restricted LAS method as an asymptotic solution, as follows:
+
+\begin{align*}
+\mathcal{F}_{n,k}
+&=
+\bigl\{\,f:[0,1]\to\mathbb{R}
+\;\big|\;
+f\text{ is the linear combination of the $k$-th order splines with knots in }x_{1:n},\\
+&\qquad\mathrm{TV}\bigl(f^{(k)}\bigr)<\infty
+\bigr\},
+\end{align*}
+and the optimization problem becomes
+\begin{equation}\label{eq:rla-spline}
+\hat f \;\in\;\arg\min_{f\in\mathcal{F}_{n,k}}
+\frac{1}{2}\sum_{i=1}^n \bigl(y_i - f(x_i)\bigr)^2
+\;+\;\lambda\,\mathrm{TV}\bigl(f^{(k)}\bigr).
+\end{equation}
+
+\citet{mammen1997locally} showed the asymptotic convergence of the solutions of the two problems when the distances among $x_{1:n}$ are close enough. In \citet[Theorem~9]{mammen1997locally}, they showed that, for the truth $g_{0,n}$ in a generic function class $\mathcal{G}$ with $\mathrm{BTV}$, if one can choose a good enough linear subspace $\mathcal{G}_{n,k}$ with an oracle $g_{1,n}$, then the solution $\hat{g}$ on $\mathcal{G}_{n,k}$ preserves the optimal $L^2$ convergence on $\mathcal{G}$. Thus, the asymptotic conclusion holds by choosing $\mathcal{G}$ with $\mathrm{BTV}$ to be $\mathcal{F}_{k}$, and $\mathcal{G}_{n,k}$ to be $\mathcal{F}_{n,k}$.
+
+\subsubsection{The Missing \emph{C\`adl\`ag} Perspective:}
+As discussed, the restricted LAS uses a finite linear combination of truncated power basis as the estimation, and thus the estimation is always a \emph{c\`adl\`ag} function. Its generalization to non-\emph{c\`adl\`ag} functions is achieved through the equivalency of a class of functions with the same $\mathrm{TV}$. In order words, one can make a function into a \emph{c\`adl\`ag} function by shifting finite points while maintaining the same $\mathrm{TV}$, and the LAS provides the same estimation. The $L^2$ convergence still holds for this finite pointwise difference. For example, $I(x<1)$ is left continuous, moving the point at $x = 1$ up to 1 provides $I(x \le 1)$ which is \emph{c\`adl\`ag}, and they are indistinguishable under the same TV penalty. That is to say, among this set of indistinguishable functions, there must be a \emph{c\`adl\`ag} function. And the convergence to non-\emph{c\`adl\`ag} functions achieved by the LAS ignores pointwise behavior.
+
+We claim that, by the representation in Proposition \ref{thm:HAL_representation}, $D^{(k)}_U([0,1])$ is the closure of the infinite linear combination of $k$-th order truncated power splines. Thus, we conclude that the solution based on the finite-dimensional working model $\mathcal{F}_{n,k}$ is a finite-dimensional approximation of $f$ in $D^{(k)}_U([0,1])$, where $f$ is the indistinguishable \emph{c\`adl\`ag} function of the truth $f_0$. Noticing that the pointwise behavior does not hurt $L^2$ convergence, but we need the rigorous \emph{c\`adl\`ag} assumption for proving uniform convergence in Section~\ref{Theoretical Properties}.
+
+\subsubsection{Conclusion:}
+In the univariate case, when $k = 0$, the SVN only requires the existence of $|f(0)|$ and BTV. And when $k \ge 1$, the \emph{c\`adl\`ag} assumption and the existence of $|f^{(i)}(0)|$ for all $1 \le i \le k$ is implied by differentiability, and so BSVN and BTV are equivalent assumptions.
+
+\begin{remark} We could argue that we only need the Lebesgue–Radon–Nikodym derivative, and relax our assumption by a null set with Lebesgue measure 0. But they could be augmented in a similar manner as well. This is the reason \citet{tibshirani2014adaptive} introduced weak differentiability for the function class and the working model in Section 3 therein. 
+\end{remark}
+
+
+

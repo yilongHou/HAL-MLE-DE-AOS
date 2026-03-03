@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HAL-MLE Log-Splines Density Estimation
+%% Formatted for: The Annals of Statistics [AOS]
+%% Migrated from NeurIPS-2024 template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[aos]{imsart}
+
+%% Packages
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[authoryear]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{graphicx}
+
+%% Additional packages used by the paper
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{cleveref}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{grffile}
+\usepackage{wrapfig}
+
+\startlocaldefs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Theorem environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{problem}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\crefname{assumption}{Assumption}{Assumptions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Custom math commands and symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{template/symbols}
+
+%% Color and author-comment macros (for drafting)
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\definecolor{b2}{RGB}{51,153,255}
+\definecolor{myGreen}{RGB}{80,180,0}
+\definecolor{myGold}{rgb}{0.75,0.6,0.12}
+\definecolor{myBlue}{RGB}{100,100,255}
+
+\newcommand{\Yilong}[1]{{\color{myGreen}[Yilong: #1]}}
+\newcommand{\Mark}[1]{{\color{myGold}[Mark: #1]}}
+\newcommand{\Zzp}[1]{{\color{myBlue}[Zzp: #1]}}
+
+\newcommand{\vct}{\boldsymbol}
+\newcommand{\sR}{\mathfrak{R}}
+
+\endlocaldefs
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{HAL-MLE Log-Splines Density Estimation (Part I: Univariate)}
+\runtitle{HAL-MLE Log-Splines Density Estimation}
+
+\begin{aug}
+\author[A]{\fnms{Yilong}~\snm{Hou}\ead[label=e1]{yilong\_hou@berkeley.edu}},
+\author[B]{\fnms{Zhengpu}~\snm{Zhao}\ead[label=e2]{zhengpu@berkeley.edu}},
+\author[A]{\fnms{Yi}~\snm{Li}\ead[label=e3]{yi\_li@berkeley.edu}}
+\and
+\author[A]{\fnms{Mark}~\snm{van der Laan}\ead[label=e4]{laan@berkeley.edu}}
+
+\address[A]{Division of Biostatistics, University of California, Berkeley, CA\printead[presep={,\ }]{e1,e3,e4}}
+\address[B]{Department of Statistics, University of California, Berkeley, CA\printead[presep={,\ }]{e2}}
+\end{aug}
+
+\begin{abstract}
+We study nonparametric maximum likelihood estimation of probability densities under a total variation (TV) type penalty, sectional variation norm (also named as Hardy-Krause variation). TV regularization has a long history in regression and density estimation, including results on $L^2$ and KL divergence convergence rates. Here, we revisit this task using the Highly Adaptive Lasso (HAL) framework. We formulate a HAL-based maximum likelihood estimator (HAL-MLE) using the log-spline link function from \citet{kooperberg1992logspline}, and show that in the univariate setting the bounded sectional variation norm assumption underlying HAL coincides with the classical bounded TV assumption. This equivalence directly connects HAL-MLE to existing TV-penalized approaches such as local adaptive splines \citep{mammen1997locally}. 
+We establish three new theoretical results: (i) the univariate HAL-MLE is asymptotically linear, (ii) it admits pointwise asymptotic normality, and (iii) it achieves uniform convergence at rate $n^{-(k+1)/(2k+3)}$ up to logarithmic factors for the smoothness order $k \geq 1$. These results extend existing results from \citet{van2017uniform}, which previously guaranteed only uniform consistency without rates when $k=0$. We will include the uniform convergence for general dimension $d$ in the follow-up work of this paper. The intention of this paper is to provide a unified framework for the TV-penalized density estimation methods, and to connect the HAL-MLE to the existing TV-penalized methods in the univariate case, despite that the general HAL-MLE is defined for multivariate cases. 
+\end{abstract}
+
+\begin{keyword}[class=MSC]
+\kwd[Primary ]{62G07}
+\kwd{62G20}
+\kwd[; secondary ]{62G05}
+\end{keyword}
+
+\begin{keyword}
+\kwd{cadlag functions}
+\kwd{delta method}
+\kwd{efficient influence curve}
+\kwd{pathwise differentiability}
+\kwd{variational optimization}
+\end{keyword}
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Main text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{main/00_intro}
+\input{main/01_HAL}
+\input{main/02_HAL_MLE}
+\input{main/03_HAL_TMLE}
+\input{main/04_optimization_dis}
+\input{main/05_simulation}
+\input{main/06_case_study}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Discussion (without acknowledgments — those go in \begin{acks})
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion} \label{sec:discussion}
+We constructed a nonparametric density estimation technique based on HAL-MLE. We proved and verified the pointwise asymptotic normality and the uniform convergence for the univariate case when \(k\ge1\); we also give a practical delta-method confidence interval for the density and show that plug-in HAL-MLE and HAL-TMLE are asymptotically efficient for pathwise differentiable statistical estimands. We proposed an EIC-based variance estimation accordingly. Specialized proximal-Newton/L-BFGS/AdaGrad solvers scale and select knots effectively. We compared the performance of  different univariate density estimators, including KDE, TF(PP), log-spline, and HAL-MLE, over the same benchmark. We used a galaxy-velocity case study to visualize the convergence, confidence intervals, and targetings. The limitation of this paper is that we only focused on the univariate case to compare and connect the classical density estimation methods in such setting. In the future, we can consider the generalization of the assumptions and extend the results to the multivariate case. We can also consider the adaptation to different data structures, such as censored/coarsened data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Acknowledgments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{acks}[Acknowledgments]
+We would like to first thank Professor Ryan Tibshirani for his valuable comments and suggestions on the implementation of TF and TFPP. We had multiple discussions with him on the theoretical and practical aspects of the falling factorial basis and truncated power basis. We also learned a lot about convex optimization and the specialized ADMM algorithm for TF from him. We thank Zhexiao Lin for the detailed feedback and editing. We also acknowledge the anonymous reviewers for their helpful comments and suggestions.
+\end{acks}
+
+%\begin{funding}
+%\end{funding}
+
+%\begin{supplement}
+%\stitle{Supplementary Material}
+%\sdescription{Additional proofs and simulation results.}
+%\end{supplement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{imsart-nameyear}
+\bibliography{ref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendix}
+
+\input{appendix/app_a}
+
+\input{appendix/app_b}
+
+\input{appendix/app_c}
+
+\input{appendix/app_d_asy_norm}
+
+\input{appendix/app_e_uniform}
+
+\input{appendix/app_f_asy_eff}
+
+\input{appendix/app_g_dgp_setup}
+
+\input{appendix/app_h_TF_ADMM}
+
+\input{appendix/app_i_additional_simulation}
+
+\input{appendix/app_j_knot_selection}
+
+\end{appendix}
+
+\end{document}

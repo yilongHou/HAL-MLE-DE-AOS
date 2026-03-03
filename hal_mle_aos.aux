@@ -1,0 +1,499 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{kooperberg1992logspline}
+\citation{mammen1997locally}
+\citation{van2017uniform}
+\citation{mammen1997locally}
+\citation{tibshirani2014adaptive}
+\citation{bak2021penalized,sadhanala2024exponential}
+\citation{bak2021penalized}
+\citation{kooperberg1991study,kooperberg1992logspline}
+\citation{kooperberg1992logspline}
+\gdef\hy@title{HAL-MLE Log-Splines Density Estimation (Part I: Univariate)}
+\thanksnewlabel{e1@email}{{yilong\_hou@berkeley.edu}{1}}
+\thanksnewlabel{e2@email}{{zhengpu@berkeley.edu}{1}}
+\thanksnewlabel{e3@email}{{yi\_li@berkeley.edu}{1}}
+\thanksnewlabel{e4@email}{{laan@berkeley.edu}{1}}
+\thanksnewlabel{Athanks}{{1}{1}}
+\thanksnewlabel{e1thanks}{{a}{1}}
+\thanksnewlabel{e3thanks}{{b}{1}}
+\thanksnewlabel{e4thanks}{{c}{1}}
+\thanksnewlabel{Bthanks}{{2}{1}}
+\thanksnewlabel{e2thanks}{{d}{1}}
+\gdef\hy@author{Yilong Hou, Zhengpu Zhao, Yi Li and Mark van der Laan}
+\gdef\hy@subject{Submitted to the Annals of Statistics }
+\gdef\hy@keywords{62G07, 62G20, 62G05, cadlag functions, delta method, efficient influence curve, pathwise differentiability, variational optimization}
+\gdef\author@num{4}
+\newlabel{intro}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{intro@cref}{{[section][1][]1}{[1][1][]1}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{stone1990large}
+\citation{bak2021penalized}
+\citation{van2017generally}
+\citation{benkeser2016highly}
+\citation{van2017generally,van2023efficient}
+\citation{leonard1978density,silverman1982estimation,kooperberg1992logspline,rytgaard2023estimation}
+\citation{gill2001inefficient}
+\citation{van2017generally,rytgaard2023estimation}
+\citation{munch2024estimating}
+\citation{radulovic2017weak}
+\citation{radulovic2017weak,ki2024mars}
+\newlabel{Link_function}{{1.1}{2}{Introduction}{equation.1.1}{}}
+\newlabel{Link_function@cref}{{[equation][1][1]1.1}{[1][2][]2}{}{}{}}
+\newlabel{The Highly Adaptive Lasso (HAL) Assumptions}{{2}{3}{The Highly Adaptive Lasso (HAL) Assumptions}{section.2}{}}
+\newlabel{The Highly Adaptive Lasso (HAL) Assumptions@cref}{{[section][2][]2}{[1][2][]3}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Highly Adaptive Lasso (HAL) Assumptions}{3}{section.2}\protected@file@percent }
+\newlabel{Basic Concepts}{{2.1}{3}{Basic Concepts}{subsection.2.1}{}}
+\newlabel{Basic Concepts@cref}{{[subsection][1][2]2.1}{[1][3][]3}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Basic Concepts.}{3}{subsection.2.1}\protected@file@percent }
+\newlabel{assump:cadlag with BSVN}{{2.1}{3}{\emph {Càdlàg} Functions with Bounded Sectional Variational Norm (BSVN)}{theorem.2.1}{}}
+\newlabel{assump:cadlag with BSVN@cref}{{[theorem][1][2]2.1}{[1][3][]3}{}{}{}}
+\newlabel{assump:DkM}{{2.2}{3}{The Function with k-th order BSVN}{theorem.2.2}{}}
+\newlabel{assump:DkM@cref}{{[theorem][2][2]2.2}{[1][3][]3}{}{}{}}
+\citation{tibshirani2022divided}
+\citation{vanderlaan2023higherordersplinehighly}
+\citation{tibshirani2014adaptive}
+\citation{mammen1997locally}
+\newlabel{thm:HAL_representation}{{2.3}{4}{Univariate Exact Representation}{theorem.2.3}{}}
+\newlabel{thm:HAL_representation@cref}{{[theorem][3][2]2.3}{[1][4][]4}{}{}{}}
+\newlabel{Relationship with TV}{{2.2}{4}{Relationship with TV}{subsection.2.2}{}}
+\newlabel{Relationship with TV@cref}{{[subsection][2][2]2.2}{[1][4][]4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Relationship with TV}{4}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}A Review of Locally Adaptive Regression Splines (LAS):}{4}{subsubsection.2.2.1}\protected@file@percent }
+\citation{mammen1997locally}
+\citation{mammen1997locally}
+\citation{tibshirani2014adaptive}
+\citation{kooperberg1992logspline}
+\citation{leonard1978density,silverman1982estimation}
+\newlabel{eq:ula-spline}{{2.2}{5}{A Review of Locally Adaptive Regression Splines (LAS):}{equation.2.2}{}}
+\newlabel{eq:ula-spline@cref}{{[equation][2][2]2.2}{[1][4][]5}{}{}{}}
+\newlabel{eq:rla-spline}{{2.3}{5}{A Review of Locally Adaptive Regression Splines (LAS):}{equation.2.3}{}}
+\newlabel{eq:rla-spline@cref}{{[equation][3][2]2.3}{[1][5][]5}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}The Missing \emph  {C\`adl\`ag} Perspective:}{5}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Conclusion:}{5}{subsubsection.2.2.3}\protected@file@percent }
+\citation{schumaker2007spline}
+\newlabel{HAL Density Estimation}{{3}{6}{HAL Density Estimation}{section.3}{}}
+\newlabel{HAL Density Estimation@cref}{{[section][3][]3}{[1][5][]6}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}HAL Density Estimation}{6}{section.3}\protected@file@percent }
+\newlabel{Estimation Construction}{{3.1}{6}{HAL Construction}{subsection.3.1}{}}
+\newlabel{Estimation Construction@cref}{{[subsection][1][3]3.1}{[1][6][]6}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}HAL Construction.}{6}{subsection.3.1}\protected@file@percent }
+\newlabel{basis_d1}{{3.1}{6}{HAL Construction}{subsection.3.1}{}}
+\newlabel{basis_d1@cref}{{[subsection][1][3]3.1}{[1][6][]6}{}{}{}}
+\citation{kaplan1958nonparametric}
+\citation{bak2021penalized}
+\citation{tibshirani2022divided}
+\newlabel{equation: HAL beta optimizer}{{3.1}{7}{HAL Construction}{equation.3.1}{}}
+\newlabel{equation: HAL beta optimizer@cref}{{[equation][1][3]3.1}{[1][6][]7}{}{}{}}
+\newlabel{HAl_MLE with Link Function}{{3.2}{7}{HAL-MLE with Link Function}{subsection.3.2}{}}
+\newlabel{HAl_MLE with Link Function@cref}{{[subsection][2][3]3.2}{[1][7][]7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}HAL-MLE with Link Function}{7}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Comparison with NPMLE}{7}{subsubsection.3.2.1}\protected@file@percent }
+\citation{mammen1997locally,tibshirani2014adaptive,bak2021penalized}
+\citation{van2004asymptotic}
+\citation{stone1990large}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Uniform Grid vs Data Adaptive Grid}{8}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{Theoretical Properties}{{4}{8}{Theoretical Properties for HAL-MLE}{section.4}{}}
+\newlabel{Theoretical Properties@cref}{{[section][4][]4}{[1][8][]8}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Theoretical Properties for HAL-MLE}{8}{section.4}\protected@file@percent }
+\newlabel{subsec:rate-of-convergence-hal-mle-loss-based-dissimilarity}{{4.1}{8}{Rate of Convergence of HAL-MLE in Loss-based Dissimilarity}{subsection.4.1}{}}
+\newlabel{subsec:rate-of-convergence-hal-mle-loss-based-dissimilarity@cref}{{[subsection][1][4]4.1}{[1][8][]8}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Rate of Convergence of HAL-MLE in Loss-based Dissimilarity}{8}{subsection.4.1}\protected@file@percent }
+\newlabel{remark:logspline-convergence}{{4.2}{8}{}{theorem.4.2}{}}
+\newlabel{remark:logspline-convergence@cref}{{[theorem][2][4]4.2}{[1][8][]8}{}{}{}}
+\citation{mammen1997locally,tibshirani2014adaptive,bibaut2019fast}
+\newlabel{thm:l2-convergence-hal-mle}{{4.3}{9}{$L^2$ convergence of HAL-MLE}{theorem.4.3}{}}
+\newlabel{thm:l2-convergence-hal-mle@cref}{{[theorem][3][4]4.3}{[1][8][]9}{}{}{}}
+\newlabel{subsect: Pointwise Asymptotic Normality of the HAL-MLE}{{4.2}{9}{Pointwise Asymptotic Normality of the HAL-MLE}{subsection.4.2}{}}
+\newlabel{subsect: Pointwise Asymptotic Normality of the HAL-MLE@cref}{{[subsection][2][4]4.2}{[1][9][]9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Pointwise Asymptotic Normality of the HAL-MLE}{9}{subsection.4.2}\protected@file@percent }
+\newlabel{eq:inner-product-score}{{4.2}{9}{Pointwise Asymptotic Normality of the HAL-MLE}{equation.4.2}{}}
+\newlabel{eq:inner-product-score@cref}{{[equation][2][4]4.2}{[1][9][]9}{}{}{}}
+\citation{vanderlaan2023higherordersplinehighly}
+\citation{vanderlaan2023higherordersplinehighly}
+\citation{van2003unified,vaart2006oracle}
+\newlabel{thm:asymptotic-linearity-hal-mle}{{4.4}{11}{Asymptotic Linearity of HAL-MLE}{theorem.4.4}{}}
+\newlabel{thm:asymptotic-linearity-hal-mle@cref}{{[theorem][4][4]4.4}{[1][10][]11}{}{}{}}
+\newlabel{thm:density_HAL_asymptotic_normality}{{4.6}{11}{Pointwise Asymptotic Normality for HAL-MLE}{theorem.4.6}{}}
+\newlabel{thm:density_HAL_asymptotic_normality@cref}{{[theorem][6][4]4.6}{[1][11][]11}{}{}{}}
+\citation{van2017uniform}
+\citation{stone1990large}
+\citation{van2003unified}
+\citation{de1976splines}
+\citation{tibshirani2022divided}
+\citation{fang2021multivariate,ki2024mars}
+\citation{wang2014falling}
+\newlabel{coro: Delta-method for Density Estimation}{{4.7}{12}{Delta-method for Density Estimation}{theorem.4.7}{}}
+\newlabel{coro: Delta-method for Density Estimation@cref}{{[theorem][7][4]4.7}{[1][12][]12}{}{}{}}
+\newlabel{subsct: uniform convergence for HAL-MLE}{{4.3}{12}{Uniform Convergence for HAL-MLE}{subsection.4.3}{}}
+\newlabel{subsct: uniform convergence for HAL-MLE@cref}{{[subsection][3][4]4.3}{[1][12][]12}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Uniform Convergence for HAL-MLE}{12}{subsection.4.3}\protected@file@percent }
+\newlabel{thm:uniform-density-hal}{{4.8}{12}{Uniform Convergence for HAL-MLE}{theorem.4.8}{}}
+\newlabel{thm:uniform-density-hal@cref}{{[theorem][8][4]4.8}{[1][12][]12}{}{}{}}
+\newlabel{subsect: Generalizability of the Proofs}{{4.4}{12}{Generalizability of the Proofs}{subsection.4.4}{}}
+\newlabel{subsect: Generalizability of the Proofs@cref}{{[subsection][4][4]4.4}{[1][12][]12}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Generalizability of the Proofs}{12}{subsection.4.4}\protected@file@percent }
+\newlabel{density_sd_section}{{4.5}{13}{Variance Estimation for Density}{subsection.4.5}{}}
+\newlabel{density_sd_section@cref}{{[subsection][5][4]4.5}{[1][13][]13}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Variance Estimation for Density}{13}{subsection.4.5}\protected@file@percent }
+\newlabel{eq:delta-method-variance-estimator}{{4.4}{13}{Variance Estimation for Density}{equation.4.4}{}}
+\newlabel{eq:delta-method-variance-estimator@cref}{{[equation][4][4]4.4}{[1][13][]13}{}{}{}}
+\newlabel{covariance_beta}{{4.5.1}{14}{\texorpdfstring {Covariance Estimation for $\beta _n$}{Covariance Estimation for beta\_n}}{subsubsection.4.5.1}{}}
+\newlabel{covariance_beta@cref}{{[subsubsection][1][4,5]4.5.1}{[1][13][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Covariance Estimation for $\beta _n$}{14}{subsubsection.4.5.1}\protected@file@percent }
+\newlabel{section:HAL-MLE for Pathwise Differentiable Statistical Estimands}{{5}{14}{HAL-MLE for Pathwise Differentiable Statistical Estimands}{section.5}{}}
+\newlabel{section:HAL-MLE for Pathwise Differentiable Statistical Estimands@cref}{{[section][5][]5}{[1][14][]14}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}HAL-MLE for Pathwise Differentiable Statistical Estimands}{14}{section.5}\protected@file@percent }
+\newlabel{Plug-in HAL-MLE}{{5.1}{14}{"Naive" Approach: Plug-in}{subsection.5.1}{}}
+\newlabel{Plug-in HAL-MLE@cref}{{[subsection][1][5]5.1}{[1][14][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}"Naive" Approach: Plug-in}{14}{subsection.5.1}\protected@file@percent }
+\newlabel{thm:Efficient Influence Curve Approximation}{{5.1}{14}{Efficient Influence Curve Approximation}{theorem.5.1}{}}
+\newlabel{thm:Efficient Influence Curve Approximation@cref}{{[theorem][1][5]5.1}{[1][14][]14}{}{}{}}
+\newlabel{thm:plugin_HAL_asymptotic_efficiency}{{5.2}{15}{Asymptotic Efficiency of Plug‐in HAL‐MLE}{theorem.5.2}{}}
+\newlabel{thm:plugin_HAL_asymptotic_efficiency@cref}{{[theorem][2][5]5.2}{[1][15][]15}{}{}{}}
+\newlabel{HAL-TMLE}{{5.2}{15}{HAL-TMLE}{subsection.5.2}{}}
+\newlabel{HAL-TMLE@cref}{{[subsection][2][5]5.2}{[1][15][]15}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}HAL-TMLE}{15}{subsection.5.2}\protected@file@percent }
+\newlabel{lfm}{{5.1}{15}{HAL-TMLE}{equation.5.1}{}}
+\newlabel{lfm@cref}{{[equation][1][5]5.1}{[1][15][]15}{}{}{}}
+\citation{van2017generally}
+\citation{van2016one}
+\citation{van2018targeted}
+\newlabel{thm:single-step-hal-tmle}{{5.3}{16}{Asymptotic Efficiency of Single-step HAL‐TMLE}{theorem.5.3}{}}
+\newlabel{thm:single-step-hal-tmle@cref}{{[theorem][3][5]5.3}{[1][16][]16}{}{}{}}
+\citation{van2017generally}
+\citation{van2017generally}
+\newlabel{subsec: EIC-based-variance-estimation}{{5.3}{17}{Theoretical Property and Variance Estimation}{subsection.5.3}{}}
+\newlabel{subsec: EIC-based-variance-estimation@cref}{{[subsection][3][5]5.3}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Theoretical Property and Variance Estimation}{17}{subsection.5.3}\protected@file@percent }
+\newlabel{sct: opt_alg}{{6}{17}{Optimization Algorithm}{section.6}{}}
+\newlabel{sct: opt_alg@cref}{{[section][6][]6}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Optimization Algorithm}{17}{section.6}\protected@file@percent }
+\newlabel{constraint opt}{{6.1}{17}{Optimization Algorithm}{equation.6.1}{}}
+\newlabel{constraint opt@cref}{{[equation][1][6]6.1}{[1][17][]17}{}{}{}}
+\newlabel{lag opt}{{6.2}{17}{Optimization Algorithm}{equation.6.2}{}}
+\newlabel{lag opt@cref}{{[equation][2][6]6.2}{[1][17][]17}{}{}{}}
+\newlabel{subsct: cand_alg}{{6.1}{17}{Candidate Algorithms}{subsection.6.1}{}}
+\newlabel{subsct: cand_alg@cref}{{[subsection][1][6]6.1}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Candidate Algorithms}{17}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {6.1.0.1}Standard Algorithm:}{18}{paragraph.6.1.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {6.1.0.2}Large-scale Adjustment:}{18}{paragraph.6.1.0.2}\protected@file@percent }
+\newlabel{subsct: exploration_of_optimization_algorithms}{{6.2}{18}{Exploration of Optimization Algorithms}{subsection.6.2}{}}
+\newlabel{subsct: exploration_of_optimization_algorithms@cref}{{[subsection][2][6]6.2}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Exploration of Optimization Algorithms}{18}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dominant per\,-\,iteration computational complexity. Here $n$ is the number of samples, $G$ the number of midpoint intervals used for normalization, $K$ the number of basis coefficients, $s$ the active set size in coordinate descent, and $L_k$ the number of line\,-\,search objective evaluations at iteration $k$.}}{19}{table.1}\protected@file@percent }
+\newlabel{tab:complexity-summary}{{1}{19}{Dominant per\,-\,iteration computational complexity. Here $n$ is the number of samples, $G$ the number of midpoint intervals used for normalization, $K$ the number of basis coefficients, $s$ the active set size in coordinate descent, and $L_k$ the number of line\,-\,search objective evaluations at iteration $k$}{table.1}{}}
+\newlabel{tab:complexity-summary@cref}{{[table][1][]1}{[1][18][]19}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Optimization algorithm comparison for Truncated Normal (2nd order basis): knot selection per iteration (top left), knot selection per FLOP (top right), loss convergence per iteration (bottom left), and loss convergence per FLOP (bottom right).}}{19}{figure.1}\protected@file@percent }
+\newlabel{fig:opt-algorithms-tn}{{1}{19}{Optimization algorithm comparison for Truncated Normal (2nd order basis): knot selection per iteration (top left), knot selection per FLOP (top right), loss convergence per iteration (bottom left), and loss convergence per FLOP (bottom right)}{figure.1}{}}
+\newlabel{fig:opt-algorithms-tn@cref}{{[figure][1][]1}{[1][19][]19}{}{}{}}
+\citation{akiba2019optuna}
+\citation{akiba2019optuna}
+\newlabel{rem:comp_comparison}{{6.2}{20}{Computational comparison with B-splines}{theorem.6.2}{}}
+\newlabel{rem:comp_comparison@cref}{{[theorem][2][6]6.2}{[1][19][]20}{}{}{}}
+\newlabel{sec:simulation}{{7}{20}{Simulation}{section.7}{}}
+\newlabel{sec:simulation@cref}{{[section][7][]7}{[1][20][]20}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Simulation}{20}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}DGPs}{20}{subsection.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Six DGPs: (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{20}{figure.2}\protected@file@percent }
+\newlabel{fig:dgps}{{2}{20}{Six DGPs: (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.2}{}}
+\newlabel{fig:dgps@cref}{{[figure][2][]2}{[1][20][]20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Implementation of Cross-Validation with Optuna}{20}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}HAL-MLE density estimation}{21}{subsection.7.3}\protected@file@percent }
+\newlabel{subsec:simulation_uniform_convergence}{{7.3.1}{21}{Uniform convergence (sup\textendash norm error)}{subsubsection.7.3.1}{}}
+\newlabel{subsec:simulation_uniform_convergence@cref}{{[subsubsection][1][7,3]7.3.1}{[1][21][]21}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.1}Uniform convergence (sup\textendash norm error)}{21}{subsubsection.7.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Uniform\textendash convergence sup\textendash norm error (log\textendash scale) by DGP. Panels (row\textendash wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{21}{figure.3}\protected@file@percent }
+\newlabel{fig:uniform_convergence}{{3}{21}{Uniform\textendash convergence sup\textendash norm error (log\textendash scale) by DGP. Panels (row\textendash wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.3}{}}
+\newlabel{fig:uniform_convergence@cref}{{[figure][3][]3}{[1][21][]21}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Uniform convergence scaling analysis. $\alpha $ represents the decay exponent in the power law $\text  {error} \propto n^{-\alpha }$. $R^2$ measures goodness of fit on the log-log scale. Significance tests $H_0: \text  {slope} = 0$ vs $H_1: \text  {slope} \neq  0$ at $\alpha = 0.05$.}}{21}{table.2}\protected@file@percent }
+\newlabel{tab:uniform_convergence_scaling}{{2}{21}{Uniform convergence scaling analysis. $\alpha $ represents the decay exponent in the power law $\text {error} \propto n^{-\alpha }$. $R^2$ measures goodness of fit on the log-log scale. Significance tests $H_0: \text {slope} = 0$ vs $H_1: \text {slope} \neq 0$ at $\alpha = 0.05$}{table.2}{}}
+\newlabel{tab:uniform_convergence_scaling@cref}{{[table][2][]2}{[1][21][]21}{}{}{}}
+\newlabel{subsec:simulation_asymptotic_normality}{{7.3.2}{22}{Asymptotic normality: pointwise SE, CI width, and coverage}{subsubsection.7.3.2}{}}
+\newlabel{subsec:simulation_asymptotic_normality@cref}{{[subsubsection][2][7,3]7.3.2}{[1][22][]22}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2}Asymptotic normality: pointwise SE, CI width, and coverage.}{22}{subsubsection.7.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Coverage probabilities (\%) for 95\% confidence intervals across DGPs and sample sizes.}}{22}{table.3}\protected@file@percent }
+\newlabel{tab:coverage_analysis}{{3}{22}{Coverage probabilities (\%) for 95\% confidence intervals across DGPs and sample sizes}{table.3}{}}
+\newlabel{tab:coverage_analysis@cref}{{[table][3][]3}{[1][22][]22}{}{}{}}
+\newlabel{subsec:simulation_asymptotic_efficiency_of_plug_in_hal_mle_and_hal_tmle}{{7.3.3}{22}{Asymptotic efficiency of plug-in HAL-MLE and HAL-TMLE}{subsubsection.7.3.3}{}}
+\newlabel{subsec:simulation_asymptotic_efficiency_of_plug_in_hal_mle_and_hal_tmle@cref}{{[subsubsection][3][7,3]7.3.3}{[1][22][]22}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.3}Asymptotic efficiency of plug-in HAL-MLE and HAL-TMLE.}{22}{subsubsection.7.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Representative asymptotic\textendash efficiency comparison (DGP: GA3). Columns show four statistical estimands (Mean, Median, Survival at 0.5, Second Moment) and rows show three metrics (MSE, Variance, $|$Bias$|$/SE). Curves compare the asymptotically efficient estimator (green), HAL\textendash MLE (blue), and HAL\textendash TMLE (red).}}{23}{figure.4}\protected@file@percent }
+\newlabel{fig:efficiency-comparison-ga3}{{4}{23}{Representative asymptotic\textendash efficiency comparison (DGP: GA3). Columns show four statistical estimands (Mean, Median, Survival at 0.5, Second Moment) and rows show three metrics (MSE, Variance, $|$Bias$|$/SE). Curves compare the asymptotically efficient estimator (green), HAL\textendash MLE (blue), and HAL\textendash TMLE (red)}{figure.4}{}}
+\newlabel{fig:efficiency-comparison-ga3@cref}{{[figure][4][]4}{[1][22][]23}{}{}{}}
+\newlabel{subsec:simulation_eic-based-variance-estimation}{{7.4}{23}{EIC\textendash based variance estimation for statistical estimands}{subsection.7.4}{}}
+\newlabel{subsec:simulation_eic-based-variance-estimation@cref}{{[subsection][4][7]7.4}{[1][23][]23}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}EIC\textendash based variance estimation for statistical estimands.}{23}{subsection.7.4}\protected@file@percent }
+\citation{ramdas2016fast}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Coverage for mean}}{24}{table.4}\protected@file@percent }
+\newlabel{tab:coverage_targeting_mean}{{4}{24}{Coverage for mean}{table.4}{}}
+\newlabel{tab:coverage_targeting_mean@cref}{{[table][4][]4}{[1][23][]24}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Coverage for second moment}}{24}{table.5}\protected@file@percent }
+\newlabel{tab:coverage_targeting_second_moment}{{5}{24}{Coverage for second moment}{table.5}{}}
+\newlabel{tab:coverage_targeting_second_moment@cref}{{[table][5][]5}{[1][23][]24}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Coverage for survival at 0.5}}{24}{table.6}\protected@file@percent }
+\newlabel{tab:coverage_targeting_survival_0_5}{{6}{24}{Coverage for survival at 0.5}{table.6}{}}
+\newlabel{tab:coverage_targeting_survival_0_5@cref}{{[table][6][]6}{[1][24][]24}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Coverage for median}}{24}{table.7}\protected@file@percent }
+\newlabel{tab:coverage_targeting_median}{{7}{24}{Coverage for median}{table.7}{}}
+\newlabel{tab:coverage_targeting_median@cref}{{[table][7][]7}{[1][24][]24}{}{}{}}
+\newlabel{subsec:comparative_benchmarks}{{7.5}{25}{Comparison with Existing Methods}{subsection.7.5}{}}
+\newlabel{subsec:comparative_benchmarks@cref}{{[subsection][5][7]7.5}{[1][24][]25}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Comparison with Existing Methods}{25}{subsection.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.5.1}Hyperparameter selection.}{25}{subsubsection.7.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bias at $n=800$ across six DGPs (columns) for five estimators (legend).}}{25}{figure.5}\protected@file@percent }
+\newlabel{fig:methods-bias-n800}{{5}{25}{Bias at $n=800$ across six DGPs (columns) for five estimators (legend)}{figure.5}{}}
+\newlabel{fig:methods-bias-n800@cref}{{[figure][5][]5}{[1][25][]25}{}{}{}}
+\citation{tibshirani2022divided}
+\citation{wang2014falling}
+\citation{wang2014falling}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Variance at $n=800$ across six DGPs (columns) for five estimators (legend).}}{26}{figure.6}\protected@file@percent }
+\newlabel{fig:methods-variance-n800}{{6}{26}{Variance at $n=800$ across six DGPs (columns) for five estimators (legend)}{figure.6}{}}
+\newlabel{fig:methods-variance-n800@cref}{{[figure][6][]6}{[1][25][]26}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces MSE at $n=800$ across six DGPs (columns) for five estimators (legend).}}{26}{figure.7}\protected@file@percent }
+\newlabel{fig:methods-mse-n800}{{7}{26}{MSE at $n=800$ across six DGPs (columns) for five estimators (legend)}{figure.7}{}}
+\newlabel{fig:methods-mse-n800@cref}{{[figure][7][]7}{[1][26][]26}{}{}{}}
+\citation{bak2021penalized}
+\citation{venables2002modern}
+\citation{postman1986probes}
+\citation{roeder1990density}
+\citation{bak2021penalized}
+\newlabel{sec:case-study}{{8}{27}{Case Study}{section.8}{}}
+\newlabel{sec:case-study@cref}{{[section][8][]8}{[1][27][]27}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Case Study}{27}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Data and preprocessing}{27}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Density fit and variance estimation}{27}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Galaxy velocities: histogram of the data with 50 bins, HAL–MLE density, and variance estimation for the density via the delta method (blue band) compared with a nonparametric bootstrap (red band).}}{28}{figure.8}\protected@file@percent }
+\newlabel{fig:galaxy-density-variance}{{8}{28}{Galaxy velocities: histogram of the data with 50 bins, HAL–MLE density, and variance estimation for the density via the delta method (blue band) compared with a nonparametric bootstrap (red band)}{figure.8}{}}
+\newlabel{fig:galaxy-density-variance@cref}{{[figure][8][]8}{[1][27][]28}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Plug-in HAL-MLE versus HAL-TMLE}{28}{subsection.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Mean functional: plug–in HAL–MLE versus HAL–TMLE with the sample mean shown as the asymptotically efficient benchmark. Left: full scale; right: zoom around the dominant mode.}}{28}{figure.9}\protected@file@percent }
+\newlabel{fig:galaxy-mean}{{9}{28}{Mean functional: plug–in HAL–MLE versus HAL–TMLE with the sample mean shown as the asymptotically efficient benchmark. Left: full scale; right: zoom around the dominant mode}{figure.9}{}}
+\newlabel{fig:galaxy-mean@cref}{{[figure][9][]9}{[1][28][]28}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Median functional: plug–in HAL–MLE versus HAL–TMLE with the sample median shown for reference. Targeting nudges the estimate to align with the efficient score for the quantile.}}{29}{figure.10}\protected@file@percent }
+\newlabel{fig:galaxy-median}{{10}{29}{Median functional: plug–in HAL–MLE versus HAL–TMLE with the sample median shown for reference. Targeting nudges the estimate to align with the efficient score for the quantile}{figure.10}{}}
+\newlabel{fig:galaxy-median@cref}{{[figure][10][]10}{[1][28][]29}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Survival functional $S(t)$: plug–in HAL–MLE versus HAL–TMLE, compared to the empirical survival curve. Right panel overlays EIC–based intervals for representative $t$.}}{29}{figure.11}\protected@file@percent }
+\newlabel{fig:galaxy-survival}{{11}{29}{Survival functional $S(t)$: plug–in HAL–MLE versus HAL–TMLE, compared to the empirical survival curve. Right panel overlays EIC–based intervals for representative $t$}{figure.11}{}}
+\newlabel{fig:galaxy-survival@cref}{{[figure][11][]11}{[1][29][]29}{}{}{}}
+\newlabel{sec:discussion}{{9}{29}{Discussion}{section.9}{}}
+\newlabel{sec:discussion@cref}{{[section][9][]9}{[1][29][]29}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{29}{section.9}\protected@file@percent }
+\bibstyle{imsart-nameyear}
+\bibdata{ref}
+\bibcite{akiba2019optuna}{{1}{2019}{{Akiba et~al.}}{{}}}
+\bibcite{bak2021penalized}{{2}{2021}{{Bak et~al.}}{{}}}
+\bibcite{benkeser2016highly}{{3}{2016}{{Benkeser and Van Der~Laan}}{{}}}
+\bibcite{bibaut2019fast}{{4}{2019}{{Bibaut and van~der Laan}}{{}}}
+\bibcite{birman1967piecewise}{{5}{1967}{{Birman and Solomjak}}{{}}}
+\bibcite{de1976splines}{{6}{1976}{{De~Boor}}{{}}}
+\bibcite{fang2021multivariate}{{7}{2021}{{Fang, Guntuboyina and Sen}}{{}}}
+\bibcite{gill2001inefficient}{{8}{2001}{{Gill, van~der Laan and Wellner}}{{}}}
+\bibcite{kaplan1958nonparametric}{{9}{1958}{{Kaplan and Meier}}{{}}}
+\bibcite{ki2024mars}{{10}{2024}{{Ki, Fang and Guntuboyina}}{{}}}
+\bibcite{kooperberg1991study}{{11}{1991}{{Kooperberg and Stone}}{{}}}
+\bibcite{kooperberg1992logspline}{{12}{1992}{{Kooperberg and Stone}}{{}}}
+\bibcite{leonard1978density}{{13}{1978}{{Leonard}}{{}}}
+\bibcite{mammen1997locally}{{14}{1997}{{Mammen and Van De~Geer}}{{}}}
+\bibcite{munch2024estimating}{{15}{2024}{{Munch et~al.}}{{}}}
+\bibcite{postman1986probes}{{16}{1986}{{Postman, Huchra and Geller}}{{}}}
+\bibcite{radulovic2017weak}{{17}{2017}{{Radulovi{\'c}, Wegkamp and Zhao}}{{}}}
+\bibcite{ramdas2016fast}{{18}{2016}{{Ramdas and Tibshirani}}{{}}}
+\bibcite{roeder1990density}{{19}{1990}{{Roeder}}{{}}}
+\bibcite{rytgaard2023estimation}{{20}{2023}{{Rytgaard, Eriksson and van~der Laan}}{{}}}
+\bibcite{sadhanala2019additive}{{21}{2019}{{Sadhanala and Tibshirani}}{{}}}
+\bibcite{sadhanala2024exponential}{{22}{2024}{{Sadhanala et~al.}}{{}}}
+\bibcite{schumaker2007spline}{{23}{2007}{{Schumaker}}{{}}}
+\bibcite{silverman1982estimation}{{24}{1982}{{Silverman}}{{}}}
+\bibcite{stone1990large}{{25}{1990}{{Stone}}{{}}}
+\bibcite{tibshirani2011solution}{{26}{2011}{{Tibshirani}}{{}}}
+\bibcite{tibshirani2014adaptive}{{27}{2014}{{Tibshirani}}{{}}}
+\bibcite{tibshirani2022divided}{{28}{2022}{{Tibshirani et~al.}}{{}}}
+\@writefile{toc}{\contentsline {section}{Acknowledgments}{30}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{30}{section*.4}\protected@file@percent }
+\bibcite{vaart2006oracle}{{29}{2006}{{Vaart, Dudoit and Laan}}{{}}}
+\bibcite{van2017generally}{{30}{2017}{{van~der Laan}}{{}}}
+\bibcite{vanderlaan2023higherordersplinehighly}{{31}{2023}{{van~der Laan}}{{}}}
+\bibcite{van2023efficient}{{32}{2023}{{van~der Laan, Benkeser and Cai}}{{}}}
+\bibcite{van2017uniform}{{33}{2017}{{van~der Laan and Bibaut}}{{}}}
+\bibcite{van2003unified}{{34}{2003}{{Van Der~Laan and Dudoit}}{{}}}
+\bibcite{van2004asymptotic}{{35}{2004}{{van~der Laan, Dudoit and Keles}}{{}}}
+\bibcite{van2016one}{{36}{2016}{{van~der Laan and Gruber}}{{}}}
+\bibcite{van2018targeted}{{37}{2018}{{Van~der Laan and Rose}}{{}}}
+\bibcite{van1996weak}{{38}{1996}{{Van Der~Vaart et~al.}}{{}}}
+\bibcite{venables2002modern}{{39}{2002}{{Venables and Ripley}}{{}}}
+\bibcite{wang2014falling}{{40}{2014}{{Wang, Smola and Tibshirani}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Notation, Definition, and Representation}{31}{appendix.A}\protected@file@percent }
+\newlabel{Appendix A: Notation, Definition}{{A}{31}{Notation, Definition, and Representation}{appendix.A}{}}
+\newlabel{Appendix A: Notation, Definition@cref}{{[section][1][]A}{[1][31][]31}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Notation}{31}{subsection.A.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {A.1.0.1}Acronym}{31}{paragraph.A.1.0.1}\protected@file@percent }
+\citation{tibshirani2022divided}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {A.1.0.2}Mathematical Notation}{32}{paragraph.A.1.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {A.1.0.3}Definition}{32}{paragraph.A.1.0.3}\protected@file@percent }
+\newlabel{App:representation thm}{{A.2}{33}{Representation Theorem}{subsection.A.2}{}}
+\newlabel{App:representation thm@cref}{{[subsection][2][1]A.2}{[1][33][]33}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Representation Theorem}{33}{subsection.A.2}\protected@file@percent }
+\citation{vanderlaan2023higherordersplinehighly}
+\citation{birman1967piecewise}
+\citation{mammen1997locally}
+\citation{tibshirani2014adaptive}
+\citation{sadhanala2019additive}
+\citation{vanderlaan2023higherordersplinehighly}
+\citation{van2004asymptotic}
+\@writefile{toc}{\contentsline {section}{\numberline {B}$L^2$ Convergence Analysis}{35}{appendix.B}\protected@file@percent }
+\newlabel{appB: $L^2$ Convergence Analysis}{{B}{35}{\texorpdfstring {$L^2$}{L2} Convergence Analysis}{appendix.B}{}}
+\newlabel{appB: $L^2$ Convergence Analysis@cref}{{[section][2][]B}{[1][35][]35}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Proof of Theorem~\ref {thm:l2-convergence-hal-mle}}{35}{subsection.B.1}\protected@file@percent }
+\newlabel{as1}{{B.1}{35}{Quadratic loss-based dissimilarity assumption}{theorem.B.1}{}}
+\newlabel{as1@cref}{{[theorem][1][2]B.1}{[1][35][]35}{}{}{}}
+\newlabel{as2}{{B.3}{35}{Norm comparison}{theorem.B.3}{}}
+\newlabel{as2@cref}{{[theorem][3][2]B.3}{[1][35][]35}{}{}{}}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\citation{van1996weak}
+\newlabel{Covering number equivalency}{{B.5}{36}{Covering number equivalency}{theorem.B.5}{}}
+\newlabel{Covering number equivalency@cref}{{[theorem][5][2]B.5}{[1][35][]36}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Score Equation Analysis for HAL-MLE}{37}{appendix.C}\protected@file@percent }
+\newlabel{App C: Score Analysis}{{C}{37}{Score Equation Analysis for HAL-MLE}{appendix.C}{}}
+\newlabel{App C: Score Analysis@cref}{{[section][3][]C}{[1][37][]37}{}{}{}}
+\newlabel{eq:bar-phi-norm-L2P0}{{C.1}{37}{Score Equation Analysis for HAL-MLE}{equation.C.1}{}}
+\newlabel{eq:bar-phi-norm-L2P0@cref}{{[equation][1][3]C.1}{[1][37][]37}{}{}{}}
+\newlabel{eq:bar-phi-norm-mu-Lebesgue}{{C.2}{37}{Score Equation Analysis for HAL-MLE}{equation.C.2}{}}
+\newlabel{eq:bar-phi-norm-mu-Lebesgue@cref}{{[equation][2][3]C.2}{[1][37][]37}{}{}{}}
+\newlabel{thm:score-approximation-negligibility-hal-mle}{{C.1}{37}{Negligibility of Score Approximation Error for HAL-MLE}{theorem.C.1}{}}
+\newlabel{thm:score-approximation-negligibility-hal-mle@cref}{{[theorem][1][3]C.1}{[1][37][]37}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Proof of Pointwise Asymptotic Normality}{39}{appendix.D}\protected@file@percent }
+\newlabel{appendix_D: proof of asymptotic normality}{{D}{39}{Proof of Pointwise Asymptotic Normality}{appendix.D}{}}
+\newlabel{appendix_D: proof of asymptotic normality@cref}{{[section][4][]D}{[1][38][]39}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Outline}{39}{subsection.D.1}\protected@file@percent }
+\newlabel{app_d_lemma:R1n_phi_j}{{D.1}{41}{}{theorem.D.1}{}}
+\newlabel{app_d_lemma:R1n_phi_j@cref}{{[theorem][1][4]D.1}{[1][41][]41}{}{}{}}
+\newlabel{eq:Taylor_exp_norm_const}{{D.3}{41}{The Term of $R_{1n}(\bar \phi )$}{equation.D.3}{}}
+\newlabel{eq:Taylor_exp_norm_const@cref}{{[equation][3][4]D.3}{[1][41][]41}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Proof of Corollary~\ref {coro: Delta-method for Density Estimation}}{44}{subsection.D.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Proof of Uniform Convergence}{45}{appendix.E}\protected@file@percent }
+\newlabel{appendix_E: Uniform Convergence Rate}{{E}{45}{Proof of Uniform Convergence}{appendix.E}{}}
+\newlabel{appendix_E: Uniform Convergence Rate@cref}{{[section][5][]E}{[1][45][]45}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Proof of Asymptotic Efficiency}{46}{appendix.F}\protected@file@percent }
+\newlabel{app_f: Asymp Efficiency}{{F}{46}{Proof of Asymptotic Efficiency}{appendix.F}{}}
+\newlabel{app_f: Asymp Efficiency@cref}{{[section][6][]F}{[1][46][]46}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Proof of Theorem~\ref {thm:Efficient Influence Curve Approximation}}{46}{subsection.F.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {F.1.0.1}Bounding the First Empirical Process Term}{46}{paragraph.F.1.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {F.1.0.2}Bounding the Second Term}{47}{paragraph.F.1.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.2}Proof of Theorem~\ref {thm:plugin_HAL_asymptotic_efficiency}}{47}{subsection.F.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.3}Verification of the Assumptions for Median}{47}{subsection.F.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {F.3.0.1}Verification of the Second Assumption}{48}{paragraph.F.3.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {F.3.0.2}Verification of the Third Assumption}{48}{paragraph.F.3.0.2}\protected@file@percent }
+\citation{van2017generally}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.4}Proof of Theorem~\ref {thm:single-step-hal-tmle}}{49}{subsection.F.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {G}Simulation Data Generating Process Setup}{49}{appendix.G}\protected@file@percent }
+\newlabel{app:dgp_setup}{{G}{49}{Simulation Data Generating Process Setup}{appendix.G}{}}
+\newlabel{app:dgp_setup@cref}{{[section][7][]G}{[1][49][]49}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Data Generating Process for Section~\ref {sec:simulation}}{49}{subsection.G.1}\protected@file@percent }
+\newlabel{app_g_1:dgp_definitions}{{G.1.1}{49}{DGP Definitions and Parameters}{subsubsection.G.1.1}{}}
+\newlabel{app_g_1:dgp_definitions@cref}{{[subsubsection][1][7,1]G.1.1}{[1][49][]49}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {G.1.1}DGP Definitions and Parameters}{49}{subsubsection.G.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.1}1. Truncated Normal Distribution}{49}{paragraph.G.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.2}2. Sinusoidal Distribution}{49}{paragraph.G.1.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.3}3. Truncated GMM Symmetric Three Components}{49}{paragraph.G.1.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.4}4. Truncated GMM Five Spikes}{49}{paragraph.G.1.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.5}5. Truncated GMM Asymmetric Three Components}{50}{paragraph.G.1.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {G.1.1.6}6. Step Function Distribution}{50}{paragraph.G.1.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {G.1.2}Population Parameters}{50}{subsubsection.G.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Population Parameters for Data Generating Processes}}{50}{table.8}\protected@file@percent }
+\newlabel{tab:dgp_population_params}{{8}{50}{Population Parameters for Data Generating Processes}{table.8}{}}
+\newlabel{tab:dgp_population_params@cref}{{[table][8][]8}{[1][50][]50}{}{}{}}
+\newlabel{app_g_2:random_seed}{{G.2}{50}{Random Seed Generation}{subsection.G.2}{}}
+\newlabel{app_g_2:random_seed@cref}{{[subsection][2][7]G.2}{[1][50][]50}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.2}Random Seed Generation}{50}{subsection.G.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {H}Trend Filtering with a Specialized ADMM Algorithm for Density Estimation}{50}{appendix.H}\protected@file@percent }
+\newlabel{app:tf_admm}{{H}{50}{Trend Filtering with a Specialized ADMM Algorithm for Density Estimation}{appendix.H}{}}
+\newlabel{app:tf_admm@cref}{{[section][8][]H}{[1][50][]50}{}{}{}}
+\citation{ramdas2016fast}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Problem Formulation}{51}{subsection.H.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.1.1}Uniform Grid Construction}{51}{subsubsection.H.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.1.2}Likelihood Construction and Reparameterization}{51}{subsubsection.H.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.1.3}Total Variation Penalty}{51}{subsubsection.H.1.3}\protected@file@percent }
+\citation{ramdas2016fast}
+\citation{ramdas2016fast}
+\citation{tibshirani2011solution}
+\citation{wang2014falling}
+\citation{wang2014falling}
+\newlabel{eq:tf_admm_problem}{{H.1}{52}{Total Variation Penalty}{equation.H.1}{}}
+\newlabel{eq:tf_admm_problem@cref}{{[equation][1][8]H.1}{[1][51][]52}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}ADMM Algorithm}{52}{subsection.H.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.2.1}Augmented Lagrangian}{52}{subsubsection.H.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.2.2}ADMM Iterations}{52}{subsubsection.H.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {H.2.2.1}$\theta $-step (Non-smooth Optimization):}{52}{paragraph.H.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {H.2.2.2}$\alpha $-step (Fused Lasso):}{52}{paragraph.H.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {H.2.2.3}Dual Update:}{52}{paragraph.H.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {H.2.3}Convergence Criteria}{52}{subsubsection.H.2.3}\protected@file@percent }
+\citation{wang2014falling}
+\newlabel{subsec:tfpp}{{H.3}{53}{TFPP}{subsection.H.3}{}}
+\newlabel{subsec:tfpp@cref}{{[subsection][3][8]H.3}{[1][52][]53}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}TFPP}{53}{subsection.H.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {I}Additional Simulation Results}{53}{appendix.I}\protected@file@percent }
+\newlabel{app_i:addl-sim}{{I}{53}{Additional Simulation Results}{appendix.I}{}}
+\newlabel{app_i:addl-sim@cref}{{[section][9][]I}{[1][53][]53}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {I.0.0.1}Contents of this appendix}{53}{paragraph.I.0.0.1}\protected@file@percent }
+\newlabel{app_i_subsec:asymptotic_normality_and_var_est}{{I.1}{53}{Asymptotic normality and variance estimation}{subsection.I.1}{}}
+\newlabel{app_i_subsec:asymptotic_normality_and_var_est@cref}{{[subsection][1][9]I.1}{[1][53][]53}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {I.1}Asymptotic normality and variance estimation}{53}{figure.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces 95\% coverage probabilities across DGPs and sample sizes (rotated for full\textendash page display).}}{54}{figure.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces 95\% confidence\textendash interval widths across DGPs and sample sizes (rotated for full\textendash page display).}}{55}{figure.13}\protected@file@percent }
+\newlabel{app_i_subsec:asymptotic_efficiency}{{I.2}{56}{Asymptotic efficiency}{subsection.I.2}{}}
+\newlabel{app_i_subsec:asymptotic_efficiency@cref}{{[subsection][2][9]I.2}{[1][56][]56}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Asymptotic\textendash efficiency comparison for TN.}}{56}{figure.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Asymptotic\textendash efficiency comparison for GS3.}}{56}{figure.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Asymptotic\textendash efficiency comparison for GA3.}}{57}{figure.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Asymptotic\textendash efficiency comparison for GS5.}}{57}{figure.17}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Asymptotic\textendash efficiency comparison for Step.}}{58}{figure.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Asymptotic\textendash efficiency comparison for Sine.}}{58}{figure.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {I.2}Asymptotic efficiency}{58}{figure.19}\protected@file@percent }
+\newlabel{app_i_subsec:eic-based-variance-estimation}{{I.3}{59}{EIC\textendash based variance estimation for statistical estimands}{subsection.I.3}{}}
+\newlabel{app_i_subsec:eic-based-variance-estimation@cref}{{[subsection][3][9]I.3}{[1][58][]59}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces EIC\textendash based variance estimation for TN: CI width.}}{59}{figure.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces EIC\textendash based variance estimation for TN: coverage.}}{59}{figure.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces EIC\textendash based variance estimation for GS3: CI width.}}{60}{figure.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces EIC\textendash based variance estimation for GS3: coverage.}}{60}{figure.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces EIC\textendash based variance estimation for GA3: CI width.}}{61}{figure.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces EIC\textendash based variance estimation for GA3: coverage.}}{61}{figure.25}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces EIC\textendash based variance estimation for GS5: CI width.}}{62}{figure.26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces EIC\textendash based variance estimation for GS5: coverage.}}{62}{figure.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces EIC\textendash based variance estimation for Step: CI width.}}{63}{figure.28}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces EIC\textendash based variance estimation for Step: coverage.}}{63}{figure.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces EIC\textendash based variance estimation for Sine: CI width.}}{64}{figure.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces EIC\textendash based variance estimation for Sine: coverage.}}{64}{figure.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {I.3}EIC\textendash based variance estimation for statistical estimands}{64}{figure.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {J}Optimization Algorithm Performance Analysis}{65}{appendix.J}\protected@file@percent }
+\newlabel{app:knot-selection}{{J}{65}{Optimization Algorithm Performance Analysis}{appendix.J}{}}
+\newlabel{app:knot-selection@cref}{{[section][10][]J}{[1][65][]65}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.1}Notation and setup}{65}{subsection.J.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.2}Per-iteration FLOP derivations}{65}{subsection.J.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {J.2.0.1}FISTA.}{65}{paragraph.J.2.0.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {J.2.0.2}Proximal AdaGrad.}{65}{paragraph.J.2.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {J.2.0.3}Proximal Newton (full).}{65}{paragraph.J.2.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {J.2.0.4}Proximal Newton L\,-\,BFGS.}{65}{paragraph.J.2.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {J.3}From iterations to cumulative FLOPs}{65}{subsection.J.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Per-iteration loss convergence for optimization algorithms across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{66}{figure.32}\protected@file@percent }
+\newlabel{fig:opt-per-iter-loss}{{32}{66}{Per-iteration loss convergence for optimization algorithms across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.32}{}}
+\newlabel{fig:opt-per-iter-loss@cref}{{[figure][32][]32}{[1][65][]66}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Per-FLOP-normalized loss convergence across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{67}{figure.33}\protected@file@percent }
+\newlabel{fig:opt-per-flop-loss}{{33}{67}{Per-FLOP-normalized loss convergence across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.33}{}}
+\newlabel{fig:opt-per-flop-loss@cref}{{[figure][33][]33}{[1][66][]67}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Per-iteration knot selection for optimization algorithms across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{68}{figure.34}\protected@file@percent }
+\newlabel{fig:opt-per-iter-knot}{{34}{68}{Per-iteration knot selection for optimization algorithms across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.34}{}}
+\newlabel{fig:opt-per-iter-knot@cref}{{[figure][34][]34}{[1][68][]68}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Per-FLOP-normalized knot selection across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}}{69}{figure.35}\protected@file@percent }
+\newlabel{fig:opt-per-flop-knot}{{35}{69}{Per-FLOP-normalized knot selection across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine}{figure.35}{}}
+\newlabel{fig:opt-per-flop-knot@cref}{{[figure][35][]35}{[1][69][]69}{}{}{}}
+\gdef \@abspage@last{69}

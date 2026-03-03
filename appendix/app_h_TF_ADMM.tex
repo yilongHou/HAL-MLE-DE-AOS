@@ -1,0 +1,123 @@
+\section{Trend Filtering with a Specialized ADMM Algorithm for Density Estimation}
+\label{app:tf_admm}
+
+In this appendix, we describe how we extend the Trend Filtering (TF) method to our density estimation framework. We start from the equivalency between zero-order falling factorial basis and zero-order truncated power basis. This allows us to reparameterize our zero-order HAL-MLE to TF with zero-order divided differences. We start with the likelihood function $p_{\text{fn}}$ and construct the likelihood using linear combinations of basis functions through the link function. By reparameterizing our $\phi \beta$ as $\theta$, we face the challenge of the normalizing constant $\int_0^1 \exp(\phi \beta) dx$, which we approximate by breaking the integral into a sum over grid bins, yielding the normalizing constant $\sum_j \exp(\theta_j) \Delta x_j$.
+
+\subsection{Problem Formulation}
+
+\subsubsection{Uniform Grid Construction}
+
+Our current implementation in \path{methods/non_HAL_method/TF_CVXPY} uses a \emph{uniform} grid on $[0,1]$ (rather than a data-adaptive grid). This avoids numerical pathologies caused by extremely small gaps in data-adaptive grids when $n$ is large, and matches the grid choice used elsewhere in our experiments.
+
+\begin{enumerate}
+\item Choose the number of bins $J = n+1$ (so the parameter dimension is comparable to the legacy data-adaptive choice).
+\item Define uniform knots: $x_j = j/J$ for $j = 0,1,\ldots,J$.
+\item Create bins: $[x_0, x_1), [x_1, x_2), \ldots, [x_{J-1}, x_J]$ with widths $\Delta x_j = x_{j+1}-x_j = 1/J$.
+\end{enumerate}
+
+Given observations $x_1,\ldots,x_n$, let $c_j$ be the histogram count in bin $j$:
+\[
+c_j \;=\; \#\{i:\; x_i \in [x_j,x_{j+1})\}, \qquad j=0,1,\ldots,J-1,
+\]
+so that $\sum_{j=0}^{J-1} c_j = n$.
+
+\subsubsection{Likelihood Construction and Reparameterization}
+
+We start with the likelihood function $p_{\text{fn}}$ and construct the likelihood using linear combinations of basis functions through the link function. The key insight is that the TF basis functions are equivalent to truncated power basis functions, allowing us to reparameterize our original $\phi \beta$ parameters as $\theta$.
+
+We model the log-density as piecewise constant over the grid:
+\begin{align*}
+\log p_\theta(x) = \theta_j, \quad x \in [x_j, x_{j+1}), \quad j = 0, 1, \ldots, J-1.
+\end{align*}
+
+As in the implementation, we fix an identifiability constraint $\theta_0=0$ and optimize over the full vector $\theta=(\theta_0,\ldots,\theta_{J-1})\in\mathbb{R}^J$ subject to this constraint.
+
+The normalizing constant is approximated by a Riemann sum on the grid:
+\begin{align*}
+Z(\theta) = \sum_{j=0}^{J-1} \exp(\theta_j)\,\Delta x_j.
+\end{align*}
+
+The corresponding density function is:
+\begin{align*}
+p_\theta(x) = \frac{\exp(\theta_j)}{Z(\theta)}, \quad x \in [x_j, x_{j+1}).
+\end{align*}
+
+Using the binned likelihood (i.e., grouping observations by their bin counts), the negative log-likelihood becomes:
+\begin{align*}
+f(\theta) = -\sum_{j=0}^{J-1} c_j \theta_j + n \log Z(\theta).
+\end{align*}
+
+\subsubsection{Total Variation Penalty}
+
+The total variation representation of TF is the $\ell_1$ norm of $\phi^{-1} \theta$. Since TF does not penalize the parametric part, this representation simplifies to the $\ell_1$ norm of the zero-order divided difference of $\theta$. We can further extend this to $k$-th order divided differences.
+
+The $k$-th order difference matrix $D^{(k)}$ is constructed recursively by Eq(3) of \citep{ramdas2016fast}.
+
+The complete optimization problem is:
+\begin{align} \label{eq:tf_admm_problem}
+\boxed{
+\min_{\theta \in \mathbb{R}^{J}} f(\theta)
+\quad \text{s.t.}\quad \theta_0 = 0,\;\; \|D^{(k+1)}\theta\|_1 \leq C
+}
+\end{align}
+
+This constrained form is equivalent (under standard constraint qualification conditions) to a penalized form with a Lagrange multiplier $\lambda\ge 0$:
+\[
+\min_{\theta:\,\theta_0=0}\; f(\theta) + \lambda \|D^{(k+1)}\theta\|_1.
+\]
+
+\subsection{ADMM Algorithm}
+
+Following the approach in the trend filtering literature, we adapt the specialized ADMM algorithm for trend filtering to our density estimation case. The algorithm still consists three steps.
+
+\subsubsection{Augmented Lagrangian}
+
+We introduce auxiliary variables $\alpha = D^{(k)} \theta$. And we use $0$ as a placeholder for $\theta_0$ and such that $\theta = (0, \tilde{\theta})$ is the full parameter vector. The normalization is achieved by $Z(\theta)$. The augmented Lagrangian is:
+\begin{align*}
+\mathcal{L}_\rho(\theta, \alpha, u) &= f(\theta) + \lambda \|D^{(1)} \alpha\|_1 \\
+&\quad + \frac{\rho}{2} \|\alpha - D^{(k)} \theta + u\|_2^2 - \frac{\lambda}{2} \|u\|_2^2
+\end{align*}
+where $u$ is the scaled dual variable and in practice we choose $\rho = \lambda$ in practice \citet{ramdas2016fast}.
+
+\subsubsection{ADMM Iterations}
+
+The ADMM algorithm alternates between three updates:
+
+\paragraph{$\theta$-step (Non-smooth Optimization):}
+\begin{align*}
+\tilde{\theta}^{t+1} = \arg\min_{\tilde{\theta}} f(\tilde{\theta}) + \frac{\rho}{2} \|\alpha^t - D^{(k)} (0, \tilde{\theta}^t) + u^t\|_2^2
+\end{align*}
+
+The first step no longer has a closed-form solution like in the regression case \citet{ramdas2016fast} due to the likelihood. So we have to solve it using the L-BFGS algorithm.
+
+\paragraph{$\alpha$-step (Fused Lasso):}
+\begin{align*}
+\alpha^{t+1} = \arg\min_\alpha \frac{1}{2} \|\alpha - v^t\|_2^2 + \frac{\lambda}{\rho} \|D^{(1)} \alpha\|_1
+\end{align*}
+where $v^t = D^{(k)} \theta^{t+1} - u^t$.
+
+This is a standard fused lasso problem that can be solved using the solution path algorithm \citep{tibshirani2011solution}.
+
+\paragraph{Dual Update:}
+\begin{align*}
+u^{t+1} = u^t + \alpha^{t+1} - D^{(k)} (0, \tilde\theta^{t+1})
+\end{align*}
+
+\subsubsection{Convergence Criteria}
+
+We monitor primal and dual residuals:
+\begin{align*}
+r^t &= \alpha^t - D^{(k)} \theta^t \quad \text{(primal residual)} \\
+s^t &= \rho D^{(k)T} (\alpha^t - \alpha^{t-1}) \quad \text{(dual residual)}
+\end{align*}
+
+The algorithm terminates when:
+\begin{align*}
+\|r^t\|_2 \leq \varepsilon_{\text{pri}} \quad \text{and} \quad \|s^t\|_2 \leq \varepsilon_{\text{dual}}
+\end{align*}
+with tolerances $\varepsilon_{\text{pri}} = 10^{-4} \sqrt{m}$ and $\varepsilon_{\text{dual}} = 10^{-4} \sqrt{n}$, where $m$ is the dimension of $\alpha$.
+
+\subsection{TFPP} \label{subsec:tfpp}
+We include the variant of TF with penalty on the parametric part as TFPP, by replacing the divided difference matrix $D^{(k)}$ with the variant $H$ in Eq(10) and Eq(11) of \citet{wang2014falling}. And so others can be adapted accordingly. Notice that Eq(10) and Eq(11) of \citet{wang2014falling} are for the data-adaptive knots, and we use the uniform knots here simply by replacing the diagonal matrix $\Delta^{(k)}$ with an scaled identity matrix, such that the ADMM algorithm can be adapted accordingly.
+
+One problem of adapting this construction to data-adaptive knots is that the entries of the inverse of matrix H can be extremely large when we sample from the distribution defined on $[0,1]$. The data points can get extremely close to each other which a gap of $10^{-16}$ or smaller. This can cause numerical instability when we iterate the $D^{(k)}$, and the optimization can diverge. We address this by computing the inverse of matrix H using \citet[Algorithm 2]{wang2014falling}. This algorithm is more stable because the matrix H, with entries of $10^{16}$ or larger, can be calculated implicitly. However, a similar ADMM algorithm for TFPP density estimation with data-adaptive knots is still under development and will be addressed in the future.

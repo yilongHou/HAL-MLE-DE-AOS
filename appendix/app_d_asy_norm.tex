@@ -1,0 +1,267 @@
+\section{Proof of Pointwise Asymptotic Normality} \label{appendix_D: proof of asymptotic normality}
+
+This appendix includes the proof of Theorem~\ref{thm:asymptotic-linearity-hal-mle}, Theorem~\ref{thm:density_HAL_asymptotic_normality}, and Corollary~\ref{coro: Delta-method for Density Estimation}.
+
+\begin{proof}
+Again, recall that the HAL‐MLE over $D^{(k)}_M(\mathcal R_n)$ by
+\[
+f_n \;=\;\arg\min_{f\in D^{(k)}_M(\mathcal R_n)}\;-\,P_n\log p_f = f_{\beta_n}.
+\]
+For the proof, we need to build an auxiliary tool with a set ${\cal R}_{n,0}$ that is independent of $P_n$ instead of ${\cal R}_n$. Let \(\mathcal R_{n,0} = \mathcal R(P_n^{\#})\), using the same selection algorithm on an independent sample \(P_n^{\#}\sim P_0\).
+Define the oracle MLE over $D^{(k)}_M(\mathcal R_{n,0})$ as
+\[f_{n,0}=\arg\min_{f\in D^{(k)}_M(\mathcal R_{n,0})}\;-\,P_0\log p_f \;=\;f_{\beta_{n,0}},\] the oracle is represented as $f_{n,0}=\sum_{j=1}^{J}\beta_{n,0,j}\,\phi_j^{\ast}$, and it solves the score equation at $f_{n,0}$, \[P_0 S_{f_{n,0}}(\phi_j^{\ast}) = 0\;\;(\forall j).\]
+Suppose \(D^{(k)}_M(R_{n,0})\) has effective dimension \(J_{n,0}\) with orthonormal basis
+\(\phi^* \equiv \{\phi_j^{\ast}\}_{j=1}^{J_{n,0}}\), and we can project $f_n =  \Pi(f_n\mid D^{(k)}_M({\cal R}_{n,0}))$ from \(D^{(k)}_M(R_{n,0})\) to \(D^{(k)}_M(R_{n})\), denoted by $\tilde f_n$. Since $\tilde f_n$ is an element on $D^{(k)}_M(\mathcal R_{n,0})$, we can also represent $\tilde f_n $ in terms of \(\{\phi_j^{\ast}\}_{j=1}^{J_{n,0}}\), and we have $\tilde f_n = \sum_{j=1}^{J_{n,0}}\tilde \beta_{n}(j)\,\phi_j^{\ast}$. 
+
+\subsection{Outline}
+We here give an outline of the proof first and then argue the rates of each terms along the process. Denote the score equation at $f_n$ as $r_n(\cdot) \;=\; P_n S_{f_n}(\cdot)$, and denote the score equation at $\tilde f_n$ as $\tilde r_n(\cdot) \;=\; P_n S_{\tilde f_n}(\cdot)$. Define a linear operator T of an vector with $J$ elements such that \(T(b)(\cdot)=\sqrt{\frac{n}{J}}\sum_{j=1}^{J} b_j\,\phi_j^{\ast}(\cdot)\). Previously in Section~\ref{HAl_MLE with Link Function},  we define the normalized score vector at \(x\) by
+\(
+\bar{\phi}_{n,x}(\cdot)\equiv J_{n,0}^{-1/2}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(\cdot)\).
+Notice that $T(\phi^*(x))(\cdot) = \bar\phi_{n,x}$, and we shorthand it to be $\bar\phi$ in the following outline.
+
+
+
+
+% =========================
+% Chain of equalities
+% =========================
+
+\begin{align*}
+&\sqrt{\frac{n}{J_{n,0}}}\bigl(\tilde f_n(x) - f_{n,0}(x)\bigr) \\
+&\quad= T(\tilde \beta_n - \beta_{n,0})(x) \\
+&\quad= T\!\Bigl(
+      -\frac{\mathrm{d}}{\mathrm{d}\beta_{n,0}}
+      P_0 S_{f_{n,0}}(\phi^{\ast})
+      \,( \tilde \beta_n - \beta_{n,0})
+    \Bigr)(x) &&\text{(Identity Outer Product)} \\[2pt]
+&\quad= T\!\bigl(
+        - P_0\{S_{\tilde f_n}-S_{f_{n,0}}\}(\phi^{\ast})
+        + R_{1n}(\phi^{\ast})\bigr)(x) &&\text{(Taylor Expansion)} \\[2pt]
+&\quad= T\!\bigl(
+        -P_0\{S_{\tilde f_n}-S_{f_n}\}
+        - P_0\{S_{f_n}-S_{f_{n,0}}\}
+        + R_{1n}
+      \bigr)(\phi^{\ast}) &&\text{(Add\&subtract $P_0 S_{f_n}$)} \\[2pt]
+&\quad= T\!\bigl(
+        -\{P_{\tilde f_n}-P_{f_n}\}
+        + (P_n-P_0)S_{f_n}
+        - r_n + R_{1n}
+      \bigr)(\phi^{\ast}) &&\text{(Score expression)} \\[3pt]
+&\quad= -n^{1/2}\bigl((P_{\tilde f_n} - P_{f_n})(\bar\phi)\bigr) + n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi) +  \\
+&\qquad\quad (P_n-P_0)\bigl\{S_{f_n}(\bar\phi)-S_{f_{n,0}}(\bar\phi)\bigr\} - n^{1/2}r_n(\bar\phi)
+     + n^{1/2}R_{1n}(\bar\phi) &&\text{(Linearity of $T$)} \\[3pt]
+&\quad= - o_P(1)
+     + n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi) + 0\\
+&\qquad\quad - o_P(1) + o_P(1) &&\text{(Rate substitution)} \\[3pt]
+&\quad = n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi) + o_P(1).
+\end{align*}
+
+$\sqrt{J_{n,0}}S_{f_{n,0}}(\bar\phi)$ serves as the influence curve of HAL-MLE, and it is a function of $x$ since $\bar\phi$ is a function of $x$. For an application of the CLT we need that the variance under $P_0$ of $S_{\beta_{n,0}}(\bar{\phi})$ is $O(1)$. We have \[S_{\beta_{n,0}}(\bar{\phi})=\bar{\phi}(X)-P_{\beta_{n,0}}\bar{\phi}.\] Therefore this variance can be bounded by $\| \bar{\phi}\|_{P_0}^2$. 
+Recall the Positivity Condition for Theorem~\ref{thm:l2-convergence-hal-mle}, the density $p_f$ is bounded away from zero uniformly for all $f \in \mathcal F$. And the BSVN condition implies that the density $p_f$ is uniformly bounded from above by some constant as well, and then this should generally be true for the oracle MLE. Then, it follows that 
+\[
+\| \bar{\phi}\|_{P_0}=O(\| \bar{\phi}\|_{P_{\beta_{n,0}} } )=O( J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\{\phi_j^*(x)\}^2)=O(1).
+\]
+Let $\sigma^2_{n,0}\equiv P_0 \{S_{\beta_{n,0}}(\bar{\phi})\}^2$. We can then apply the empirical process theory here because $S_{f_{n,0}}(\bar\phi)$ is independent from the sample data based on our construction of oracle MLE.
+
+Then the rest of the proof of the pointwise asymptotic normality from the projection $\tilde f_n$ to the oracle $f_{n,0}$ depends on the rates of the terms $n^{1/2}\bigl(P_{\tilde f_n} - P_{f_n})(\bar\phi)\bigr)$, $n^{1/2}r_n(\bar\phi)$, and $n^{1/2}R_{1n}(\bar\phi)$. By Appendix~\ref{App C: Score Analysis}, we have that $n^{1/2} r_n(\bar \phi)$ is $o_P(1)$. For the rest of the terms, we will discuss them in the following subsections.
+
+We want the property from HAL-MLE $f_n$ to the truth $f_0$, thus we need to deal with the projection error from $f_n$ to $\tilde{f}_n$ and the oracle approximation error from $f_{n,0}$ to $f_0$. And both of the errors could be bounded by the Uniform Approximation Assumption in Theorem~\ref{thm:asymptotic-linearity-hal-mle} of this working model w.r.t. $D^{(k)}_U([0,1])$. Since $f_n\in D^{(k)}_U([0,1])$, we certainly have that $\| f_n-\tilde{f}_n\|_{\infty} = O^+(1/J_{n,0}^{k+1})$. And $\|f_{n,0} - f_0\|_{\infty} = O^+(J_{n,0}^{-(k+1)})$. They become negligible when choosing $(n/J_{n,0})^{1/2}\asymp^+ J_{n,0}^{(k+1)}$. By adding these two terms, we achieve the pointwise asymptotic normality of HAL-MLE $f_n$ to the truth $f_0$, as follows:
+\begin{align*}
+    \sqrt{\frac{n}{J_{n,0}}}\bigl(f_n - f_{n,0}\bigr)(x) = -\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)
+     + o_P(1) + \sqrt{\frac{n}{J_{n,0}}}O^{+}\!\bigl(J_{n,0}^{-(k+1)}\bigr),
+\end{align*}
+and thus, 
+\begin{align}
+    \sqrt{\frac{n}{J_{n,0}}}\bigl(f_n - f_{0}\bigr)(x) &= -\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)
+     + o_P(1) + \sqrt{\frac{n}{J_{n,0}}}O^{+}\!\bigl(J_{n,0}^{-(k+1)}\bigr) \nonumber \\
+     &= -\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)
+     + o_P(1),
+\end{align}
+or equivalently, $\sigma^{-1}_{n,0} n^{1/2}(P_n-P_0)S_{\beta_{n,0}}(\bar{\phi}_{n,x})$ converges in distribution to $N(0,1)$, while $\sigma^2_{n,0}=O(1)$.
+
+\subsection*{The Term of $R_{1n}(\bar\phi)$}
+Here, we argue why $n^{1/2}R_{1n}(\bar\phi)$ is $o_P(1)$.
+We get the $R_{1n}(\phi_j^*)$ term as a function of some basis function $\phi_j^*$ by the Taylor expansion of the score function $S_{f_n}(\phi_j^*)$ around $f_{n,0}$.
+\begin{align}
+   R_{1n}(\phi_j^*) &= P_0 \{S_{\tilde \beta_n}(\phi_j^*) - S_{\beta_{n,0}}(\phi_j^*)\} - \frac{\mathrm{d}}{\mathrm{d}\beta_{n,0}}P_{\beta_{n,0}}(\phi_j^*)(\tilde \beta_n - \beta_{n,0}) \nonumber \\
+   &= P_{\tilde \beta_n}(\phi_j^*) - P_{\beta_{n,0}}(\phi_j^*) - \frac{\mathrm{d}}{\mathrm{d}\beta_{n,0}}P_{\beta_{n,0}}(\phi_j^*)(\tilde \beta_n - \beta_{n,0}) \nonumber \\
+   &= -\int \phi_j^* (p_{\tilde \beta_n} - p_{\beta_{n,0}}) - \frac{\mathrm{d}}{\mathrm{d}\beta_{n,0}}p_{\beta_{n,0}}(\tilde \beta_n - \beta_{n,0}) \mathrm{d}x.
+\end{align}
+Denoting $R_{1n}(\tilde{f}_n,f_{n,0}) \equiv p_{\tilde \beta_n} - p_{\beta_{n,0}} - \frac{\mathrm{d}}{\mathrm{d}\beta_{n,0}}p_{\beta_{n,0}}(\tilde \beta_n - \beta_{n,0})$, and using the shorthanded notation $C(\tilde f_n)=C_n$ and $C(f_{n,0})=C_{n,0}$ for the normalizing constant, then we have the following lemma.
+
+\begin{lemma}\label{app_d_lemma:R1n_phi_j}
+\begin{align*}
+R_{1n}(\phi_j) &= - \int \phi_j R_{1n}(\tilde{f}_n,f_{n,0}) \mathrm{d}x\\
+ &= -C_{n,0}^{-2}\int \phi_j \exp(f_{n,0})\mathrm{d}x \cdot \tfrac{1}{2} \int \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2 \mathrm{d}x\\
+ &\quad +(C_n-C_{n,0})^2/(C_nC_{n,0}^2)\int \phi_j \exp(f_{n,0}) \mathrm{d}x\\
+ &\quad +C_{n,0}^{-1}\tfrac{1}{2}\int \phi_j \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2\mathrm{d}x\\
+ &\quad -(C_n-C_{n,0})/(C_nC_{n,0})\int \phi_j (\exp(\tilde{f}_n)-\exp(f_{n,0}))\mathrm{d}x .
+\end{align*}
+\end{lemma}
+
+\noindent{\bf Proof:}
+Let $C_n=C_n$ and $C_{n,0}=C_{n,0}$. 
+We have
+\begin{align*}
+p_{\tilde{f}_n}-p_{f_{n,0}} 
+ &= C_n^{-1}\exp(\tilde{f}_n)-C_{n,0}^{-1}\exp(f_{n,0})\\
+ &= \{C_n^{-1}-C_{n,0}^{-1}\}\exp(f_{n,0})+C_n^{-1}(\exp(\tilde{f}_n)-\exp(f_{n,0}))\\
+ &= (C_{n,0}-C_n)/(C_nC_{n,0}) \exp(f_{n,0})+C_n^{-1}(\exp(\tilde{f}_n)-\exp(f_{n,0}))\\
+ &= - (C_n-C_{n,0})/C_{n,0}^2 \exp(f_{n,0})+(C_n-C_{n,0})^2/(C_nC_{n,0}^2)\exp(f_{n,0})\\
+ &\quad + C_{n,0}^{-1}(\exp(\tilde{f}_n)-\exp(f_{n,0}))-(C_n-C_{n,0})/(C_nC_{n,0})(\exp(\tilde{f}_n)-\exp(f_{n,0})).
+\end{align*}
+
+By exact Taylor expansion of $\exp(x)=\exp(x_0)+\exp(x_0)(x-x_0)+\tfrac{1}{2}\exp(\xi(x,x_0))(x-x_0)^2$ for a $\xi(x,x_0)$ in between  $x$ and $x_0$, we have
+\[
+\exp(\tilde{f}_n)-\exp(f_{n,0})=\exp(f_{n,0})(\tilde{f}_n-f_{n,0})+\tfrac{1}{2}\exp(\xi(\tilde{f}_n,f_{n,0})) (\tilde{f}_n-f_{n,0})^2.\]
+We have 
+\begin{align} \label{eq:Taylor_exp_norm_const}
+C_n-C_{n,0} &= \int (\exp(\tilde{f}_n)-\exp(f_{n,0})) \mathrm{d}x \nonumber\\
+ &= \tfrac{1}{2}\int \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2 \mathrm{d}x+
+\int \exp(f_{n,0})(\tilde{f}_n-f_{n,0}) \mathrm{d}x.
+\end{align}
+Thus,
+\begin{align*}
+-C_{n,0}^{-2} \exp(f_{n,0})(C_n-C_{n,0}) 
+ &= -C_{n,0}^{-2}\exp(f_{n,0})\int \exp(f_{n,0})(\tilde{f}_n-f_{n,0})\mathrm{d}x\\
+ &\quad -C_{n,0}^{-2}\exp(f_{n,0}) \tfrac{1}{2} \int \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2 \mathrm{d}x.
+\end{align*}
+So
+\begin{align*}
+p_{\tilde{f}_n}-p_{f_{n,0}} 
+ &= -C_{n,0}^{-2}\exp(f_{n,0})\int \exp(f_{n,0})(\tilde{f}_n-f_{n,0})\mathrm{d}x\\
+ &\quad -C_{n,0}^{-2}\exp(f_{n,0}) \tfrac{1}{2} \int \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2 \mathrm{d}x\\
+ &\quad +(C_n-C_{n,0})^2/(C_nC_{n,0}^2)\exp(f_{n,0})
++C_{n,0}^{-1}\exp(f_{n,0})(\tilde{f}_n-f_{n,0})\\
+ &\quad +C_{n,0}^{-1}\tfrac{1}{2}\exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2\\
+ &\quad -(C_n-C_{n,0})/(C_nC_{n,0})(\exp(\tilde{f}_n)-\exp(f_{n,0}))\\
+ &\equiv \frac{\mathrm{d}}{\mathrm{d}f_{n,0}}p_{f_{n,0}}(\tilde{f}_n-f_{n,0})+R_{1n}(\tilde{f}_n,f_{n,0}),
+\end{align*}
+where
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}f_{n,0}}p_{f_{n,0}}(\tilde{f}_n-f_{n,0})
+ &= -C_{n,0}^{-2}\exp(f_{n,0})\int \exp(f_{n,0})(\tilde{f}_n-f_{n,0})\mathrm{d}x\\
+ &\quad +C_{n,0}^{-1}\exp(f_{n,0})(\tilde{f}_n-f_{n,0}).\\
+R_{1n}(\tilde{f}_n,f_{n,0})
+ &= -C_{n,0}^{-2}\exp(f_{n,0}) \tfrac{1}{2} \int \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2 \mathrm{d}x\\
+ &\quad +(C_n-C_{n,0})^2/(C_nC_{n,0}^2)\exp(f_{n,0})\\
+ &\quad +C_{n,0}^{-1}\tfrac{1}{2}\exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n-f_{n,0})^2\\
+ &\quad -(C_n-C_{n,0})/(C_nC_{n,0})(\exp(\tilde{f}_n)-\exp(f_{n,0})).
+\end{align*}
+This completes the proof of Lemma~\ref{app_d_lemma:R1n_phi_j}. 
+
+We apply Lemma~\ref{app_d_lemma:R1n_phi_j} to the term $R_{1n}(\bar\phi)$ and bound each term separately.
+\begin{align*}
+R_{1n}(\bar\phi)
+  &= - \int \bar\phi \Biggl\{
+        p_{f_n}-p_{f_{n,0}}
+        - \frac{\mathrm{d}}{\mathrm{d}f_{n,0}}p_{f_{n,0}}(f_n-f_{n,0})
+      \Biggr\} \mathrm{d}x \\[6pt]
+  &\equiv -\tfrac{1}{2} C_{n,0}^{-2} \int \bar\phi \exp(f_{n,0})\, \mathrm{d}x 
+            \int \exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)
+             (\tilde{f}_n-f_{n,0})^2\, \mathrm{d}x \\[6pt]
+  &\quad + \frac{(C_n-C_{n,0})^2}{C_n C_{n,0}^2}
+            \int \bar\phi \exp(f_{n,0})\, \mathrm{d}x \\[6pt]
+  &\quad + \tfrac{1}{2}C_{n,0}^{-1}\int \bar\phi 
+             \exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)(\tilde{f}_n-f_{n,0})^2\, \mathrm{d}x \\[6pt]
+  &\quad - \frac{C_n-C_{n,0}}{C_n C_{n,0}}
+            \int \bar\phi \bigl(\exp(\tilde{f}_n)-\exp(f_{n,0})\bigr)\, \mathrm{d}x .
+\end{align*}
+For the first term, we know that $\exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)$ is bounded above and below, so we can treat it as a constant, and then we have
+\begin{align*} 
+C_{n,0}^{-2}\int \bar\phi \exp(f_{n,0})\, \mathrm{d}x \int \exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)(\tilde{f}_n-f_{n,0})^2\, \mathrm{d}x &\lesssim 
+(P_{f_{n,0}}(\bar\phi) \,)(\Vert \tilde{f}_n - f_{n,0}\Vert_{\mu}^2)\\
+&= O(1) O_p(n^{-\frac{2k+2}{2k+3}}) = o_p(n^{-1/2)}
+\end{align*}
+
+We use the shorthand notation for $\Vert \cdot \Vert_{L^2(P_{f_{n,0}})}$ as $\Vert \cdot \Vert_{f_{n,0}}$. By Taylor expanding of $C(\tilde f_n)$ at $C_{n,0}$ as in Eq~\ref{eq:Taylor_exp_norm_const}, we have $C(\tilde f_n) - C_{n,0} = O_p(\Vert\tilde{f}_n-f_{n,0}\Vert_{\mu})$. Then 
+the second term can be bounded by $O(\Vert \phi\Vert_{f_{n,0}})$ times $\Vert \tilde{f}_n-f_{n,0}\Vert_{\mu}^2$.
+\begin{align*}
+\frac{(C_n-C_{n,0})^2}{C_n C_{n,0}^2}\int \bar\phi \exp(f_{n,0})\, \mathrm{d}x &= \frac{(C_n-C_{n,0})^2}{C_n C_{n,0}} \int \frac{\bar\phi \exp(f_{n,0})}{C_{n,0}} \mathrm{d}x \\
+& \lesssim (\Vert \tilde{f}_n - f_{n,0}\Vert_{\mu}^2)(\Vert \phi\Vert_{f_{n,0}} \,)\\
+&= O_p(n^{-\frac{2k+2}{2k+3}}) O(1) = o_p(n^{-1/2)}
+\end{align*}
+
+For the third term, again treating $\exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)$ as a constant, we need the Bounded Basis Assumption and Holder's inequality, and then we have,
+\begin{align*}
+\tfrac{1}{2}C_{n,0}^{-1}\int \bar\phi 
+             \exp\!\bigl(\xi(\tilde{f}_n,f_{n,0})\bigr)(\tilde{f}_n-f_{n,0})^2\, \mathrm{d}x
+&\lesssim \Vert \bar\phi \Vert_{\infty}\, \int (\tilde f_n - f_{n,0})^2 \mathrm{d}x\\
+&=  O(J_{n,0}^{1/2})\, \Vert \tilde f_n - f_{n,0} \Vert_{\mu}^{2} \\
+&= O_p(n^{1/4k+6}) O_p(n^{-\frac{2k+2}{2k+3}}) = o_p(n^{-1/2)},
+\end{align*}
+
+For the last term, we can similarly Taylor expand $\exp(\tilde{f}_n)$ on $\exp(f_{n,0})$, we have $\exp(\tilde{f}_n) - \exp(f_{n,0}) = \exp(\xi(\tilde{f}_n,f_{n,0}))(\tilde{f}_n - f_{n,0})$ for some $\xi$. Again using the Taylor Expansion of Eq~\ref{eq:Taylor_exp_norm_const}, and Cauchy-Schwartz inequality,
+\begin{align*}
+\frac{C_n-C_{n,0}}{C_n C_{n,0}}
+            \int \bar\phi \bigl(\exp(\tilde{f}_n)-\exp(f_{n,0})\bigr)\, \mathrm{d}x &\lesssim \Vert \tilde{f}_n - f_{n,0} \Vert_{\mu}\Vert \phi \Vert_{\mu} \Vert \tilde{f}_n - f_{n,0} \Vert_{\mu}\\
+            &= O_p(n^{-\frac{k+1}{2k+3}}) \, O(1) \,O_p(n^{-\frac{k+1}{2k+3}}) = o_p(n^{-1/2)}.
+\end{align*}
+
+Thus, combining all four terms, we showed $n^{1/2}R_{1n}(\bar\phi)$ is $o_P(1)$.
+
+\subsection*{The Term $(P_{\tilde f_n} - P_{f_n})(\bar\phi)$}
+Here, we argue why $n^{1/2}\bigl((P_{\tilde f_n} - P_{f_n})(\bar\phi)\bigr)$ is $o_P(1)$. This term denotes the projection error of the score function $S_{f_n}(\bar\phi)$ to the oracle score function $S_{f_{n,0}}(\bar\phi)$. And we bound it in a slighly different way.
+
+\begin{align*}
+(P_{\tilde f_n} - P_{f_n})(\bar\phi) &= J_{n,0}^{-\frac12}\sum_{j\in {\cal R}_{n,0}} (P_{\tilde f_n} - P_{f_n})(\phi_j^*) \phi_j^*(x)\\
+&= J_{n,0}^{-\frac12}\sum_{j\in {\cal R}_{n,0}} P_{f_{n,0}}(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}) \phi_j^* \phi_j^*(x)\\
+&=J_{n,0}^{-\frac12}\sum_{j\in {\cal R}_{n,0}} P_{f_{n,0}}(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}) \{\phi_j^* - P_{f_{n,0}}(\phi_j^*)\} \phi_j^*(x)\\
+&=J_{n,0}^{-\frac12}\sum_{j\in {\cal R}_{n,0}} \langle (p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}), (\phi_j^*) \rangle_{\beta_{n,0}} \phi_j^*(x)\\
+&= J_{n,0}^{-\frac12} \Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))(x)
+\end{align*}
+
+Notice that $p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}$ is a score in $L_0^2(P_{f_{n,0}})$, that is to say, the integration under measure $P_{f_{n,0}}$ is 0. And then use the inner product defined in Eq~\ref{eq:inner-product-score}, we can idenity the term as a projection of a score in $L_0^2(P_{f_{n,0}})$ to the space $D^{(k)}(\mathcal{R}_{n,0})$. 
+\begin{align*}
+   \Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))(x) &\leq \|\Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))\|_\infty \\
+   &\leq \|p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \|_\infty + \\
+   &\quad \|\Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0})) - (p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}) \|_\infty \\
+   &= O^+(1/J_{n,0}^{k+1}) + O^+(J_{n,0}^{-(k+1)}) \\
+   &= O^+(1/J_{n,0}^{k+1}).
+\end{align*}
+
+All the three densities $p_{\tilde f_n}$, $p_{f_n}$, and $p_{f_{n,0}}$ are bounded from above and below, thus $\|p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \|_\infty = O(\|\tilde f_n - f_{n,0}\|_{\infty}) = O^+(J_{n,0}^{-(k+1)})$, by the Uniform Approximation Assumption. Notice that $p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}$ has bounded sectional variation as well, and thus it is in $D^{(k)}_U([0,1])$. Thus, we can apply the Uniform Approximation Assumption again to get $\|\Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0})) - (p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}) \|_\infty = O^+(J_{n,0}^{-(k+1)})$. We can do this because $D^{(k)}(\mathcal{R}_{n,0})$ is a close linear subspace equipped with the $L^2(P_{f_{n,0}})$ norm, and thus the projection is unique. So the projection could be difined as the limiting result of a universal steepest descent algorithm, proving that projection has distance of the same order.
+
+Thus, $(P_{\tilde f_n} - P_{f_n})(\bar\phi) \asymp J_{n,0}^{(-1/2)} O^+(J_{n,0}^{-(k+1)}) = O_P^+(n^{-\frac{1}{2}}) = o_p(n^{-\frac{1}{2}}),$ with some undersmoothening.
+
+\subsection*{The Term $(P_n-P_0)\bigl\{S_{f_n}(\bar\phi)-S_{f_{n,0}}(\bar\phi)\bigr\}$}
+
+Here, we argue why $(P_n-P_0)\bigl\{S_{f_n}(\bar\phi)-S_{f_{n,0}}(\bar\phi)\bigr\}=0.$
+\[
+E_n(\bar{\phi}_{n,x})\equiv (P_n-P_0)(S_{f_n}(\bar{\phi}_{n,x})-S_{f_{n,0}}(\bar{\phi}_{n,x})).\]
+Again, based on our score expression, we have that $S_{f_n}(\phi)-S_{f_{n,0}}(\phi)=(P_{f_{n,0}}-P_{f_n})\phi$ is a constant due to cancellation of $\phi$. Therefore, the empirical process of a constant implies that $E_n(\bar{\phi}_{n,x})=0$.
+
+\end{proof}
+
+\subsection{Proof of Corollary~\ref{coro: Delta-method for Density Estimation}}
+\begin{proof}
+Let $g(f))(x)=\log p_f(x)$. Then, $g(f_0)(x)=\log p_0(x)=\log p_{f_0}(x)$. We wish to also analyze $g(f_n)(x)-g(f_0)(x)$ which implies the analysis for the density itself $p_{f_n}(x)-p_{f_0}(x)$ by a simple delta method argument. 
+We note that
+\begin{eqnarray*}
+g(f_n)(x)-g(f_0)(x)&=& (f_n(x)-f_0(x))-(\log C(f_n)-\log C(f_0)).
+\end{eqnarray*}
+We have a linear approximation for $f_n(x)-f_0(x)$ given in Theorem~\ref{thm:asymptotic-linearity-hal-mle} given by $J_{n,0}^{1/2}(P_n-P_0)S_{f_{n,0} }(\bar{\phi}_{n,x})$. We can Taylor expand
+\[
+\log C(f_n)-\log C(f_0) = \frac{1}{C(f_0)}(C(f_n)-C(f_0)) - \frac{1}{C(\xi)^2}(C(f_n) - C(f_0))^2,
+\]
+where $\xi$ is between $f_n$ and $f_0$. Knowing $C(\xi)$ to be bounded,
+\[
+(C(f_n) - C(f_0))^2 = (\int_0^1 \exp(f_n - f_0) dx)^2 = (\int_0^1 \exp(\xi_2)(f_n - f_0) dx)^2 = O_p(\Vert f_n - f_0 \Vert_{\mu}^2),
+\]
+by another Taylor expansion with $\xi_2$ and $\exp(\xi_2)$ to be bounded. Thus, we have the second order remainder to be negligible by $(n/J_{n,0})^{1/2}O_p(\Vert f_n - f_0 \Vert_{\mu}^2) = o_p(1)$.
+
+Then, notice that $C(f_0)$ is a pathwise differentiable function of $f_0$, choosing a path $f_{\epsilon}^h = f + \epsilon h$ where $\mathbb{E}_{P_{f_n}}[h] = 0$, 
+\begin{align*}
+    \left.\frac{\mathrm{d}}{\mathrm{d}\varepsilon} C(f_\varepsilon^h)\right|_{\varepsilon=0} &= \int_0^1 e^{f_0(x)} h(x) \, \mathrm{d}x \\
+    &= \int_0^1  C(f) \, h\, \mathrm{d}P_f =0
+\end{align*}
+This implies $D^*_f =0$ for $C(f)$, i.e., the normalizing constant only changes in second order as one changes $P_{f}$. It will not contribute to linearization and we can treat $g(f_n)(x)-g(f_0)(x)$ as $f_n(x)-f_0(x)$.
+
+Therefore, we can conclude that
+\[
+(n/J_{n,0})^{1/2}( g(f_n)(x)-g(f_0)(x))=(n/J_{n,0})^{1/2}(f_n(x)-f_0(x))+o_P(1).\]
+Therefore, $\log p_{f_n}(x)-\log p_{f_0}(x)$ behaves as $(f_n-f_0)(x)$, which proves that 
+\[
+(n/J_{n,0})^{1/2}(p_{f_n}-p_{f_0})(x)=p_0(x)(n/J_{n,0})^{1/2}(f_n-f_0)(x)+o_P(1).
+\]
+\end{proof}
