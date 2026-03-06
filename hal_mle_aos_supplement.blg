@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2025/Homebrew)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: hal_mle_aos_supplement.aux
+The style file: imsart-nameyear.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ref.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 14 entries,
+            5204 wiz_defined-function locations,
+            929 strings with 8106 characters,
+and the built_in function-call counts, 67675 in all, are:
+= -- 11333
+> -- 198
+< -- 23
++ -- 4444
+- -- 73
+* -- 3372
+:= -- 10769
+add.period$ -- 36
+call.type$ -- 14
+change.case$ -- 78
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 445
+empty$ -- 2808
+format.name$ -- 256
+if$ -- 16644
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 147
+num.names$ -- 65
+pop$ -- 320
+preamble$ -- 1
+purify$ -- 50
+quote$ -- 0
+skip$ -- 6719
+stack$ -- 0
+substring$ -- 8712
+swap$ -- 149
+text.length$ -- 126
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 356
+warning$ -- 0
+while$ -- 193
+width$ -- 0
+write$ -- 314

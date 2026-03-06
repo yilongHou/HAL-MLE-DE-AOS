@@ -1,0 +1,117 @@
+\documentclass[aos]{imsart}
+
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[authoryear]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{graphicx}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{grffile}
+\usepackage{wrapfig}
+
+\DeclareFontShape{T1}{ptm}{m}{scit}{<->ssub*ptm/m/sc}{}
+
+\startlocaldefs
+\numberwithin{equation}{section}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{problem}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\input{template/symbols}
+
+\newcommand{\vct}{\boldsymbol}
+\newcommand{\sR}{\mathfrak{R}}
+\endlocaldefs
+\makeatletter
+% Import selected main-paper labels used by supplementary references.
+\newlabel{HAl_MLE with Link Function}{{3.2}{7}{HAL-MLE with Link Function}{subsection.3.2}{}}
+\newlabel{Relationship with TV}{{2.2}{4}{Relationship with TV}{subsection.2.2}{}}
+\newlabel{coro: Delta-method for Density Estimation}{{4.7}{12}{Delta-method for Density Estimation}{theorem.4.7}{}}
+\newlabel{eq:inner-product-score}{{4.2}{9}{Pointwise Asymptotic Normality of the HAL-MLE}{equation.4.2}{}}
+\newlabel{sec:simulation}{{6}{17}{Simulation}{section.6}{}}
+\newlabel{subsec:rate-of-convergence-hal-mle-loss-based-dissimilarity}{{4.1}{8}{Rate of Convergence of HAL-MLE in Loss-based Dissimilarity}{subsection.4.1}{}}
+\newlabel{thm:Efficient Influence Curve Approximation}{{5.1}{15}{Efficient Influence Curve Approximation}{theorem.5.1}{}}
+\newlabel{thm:HAL_representation}{{2.3}{4}{Univariate Exact Representation}{theorem.2.3}{}}
+\newlabel{thm:asymptotic-linearity-hal-mle}{{4.4}{11}{Asymptotic Linearity of HAL-MLE}{theorem.4.4}{}}
+\newlabel{thm:density_HAL_asymptotic_normality}{{4.6}{11}{Pointwise Asymptotic Normality for HAL-MLE}{theorem.4.6}{}}
+\newlabel{thm:l2-convergence-hal-mle}{{4.3}{9}{$L^2$ convergence of HAL-MLE}{theorem.4.3}{}}
+\newlabel{thm:plugin_HAL_asymptotic_efficiency}{{5.2}{15}{Asymptotic Efficiency of Plug‐in HAL‐MLE}{theorem.5.2}{}}
+\newlabel{thm:single-step-hal-tmle}{{5.3}{16}{Asymptotic Efficiency of Single-step HAL‐TMLE}{theorem.5.3}{}}
+\newlabel{thm:uniform-density-hal}{{4.8}{12}{Uniform Convergence for HAL-MLE}{theorem.4.8}{}}
+\makeatother
+\begin{document}
+
+\begin{frontmatter}
+\title{Supplement to ``HAL-MLE Log-Splines Density Estimation (Part I: Univariate)''}
+\runtitle{Supplement to HAL-MLE Log-Splines Density Estimation}
+
+\begin{aug}
+\author[A]{\fnms{Yilong}~\snm{Hou}\ead[label=e1]{yilong\_hou@berkeley.edu}},
+\author[B]{\fnms{Zhengpu}~\snm{Zhao}\ead[label=e2]{zhengpu@berkeley.edu}},
+\author[A]{\fnms{Yi}~\snm{Li}\ead[label=e3]{yi\_li@berkeley.edu}}
+\and
+\author[A]{\fnms{Mark}~\snm{van der Laan}\ead[label=e4]{laan@berkeley.edu}}
+
+\address[A]{Division of Biostatistics, University of California, Berkeley, CA\printead[presep={,\ }]{e1,e3,e4}}
+\address[B]{Department of Statistics, University of California, Berkeley, CA\printead[presep={,\ }]{e2}}
+\end{aug}
+\end{frontmatter}
+
+\setcounter{section}{0}
+\renewcommand{\thesection}{S.\arabic{section}}
+\renewcommand{\thesubsection}{S.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{S.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\theequation}{S.\arabic{section}.\arabic{equation}}
+\renewcommand{\thetheorem}{S.\arabic{section}.\arabic{theorem}}
+\renewcommand{\thelemma}{S.\arabic{section}.\arabic{lemma}}
+\renewcommand{\thecorollary}{S.\arabic{section}.\arabic{corollary}}
+\renewcommand{\theproposition}{S.\arabic{section}.\arabic{proposition}}
+\renewcommand{\theclaim}{S.\arabic{section}.\arabic{claim}}
+\renewcommand{\theconjecture}{S.\arabic{section}.\arabic{conjecture}}
+\renewcommand{\thefact}{S.\arabic{section}.\arabic{fact}}
+\renewcommand{\thedefinition}{S.\arabic{section}.\arabic{definition}}
+\renewcommand{\theassumption}{S.\arabic{section}.\arabic{assumption}}
+\renewcommand{\theexample}{S.\arabic{section}.\arabic{example}}
+\renewcommand{\theobservation}{S.\arabic{section}.\arabic{observation}}
+\renewcommand{\theproblem}{S.\arabic{section}.\arabic{problem}}
+\renewcommand{\theremark}{S.\arabic{section}.\arabic{remark}}
+
+\input{appendix/app_a}
+\input{appendix/app_b}
+\input{appendix/app_c}
+\input{appendix/app_d_asy_norm}
+\input{appendix/app_e_uniform}
+\input{appendix/app_f_asy_eff}
+\input{appendix/app_g_dgp_setup}
+\input{appendix/app_h_TF_ADMM}
+\input{appendix/app_i_additional_simulation}
+\input{appendix/app_j_knot_selection}
+
+\bibliographystyle{imsart-nameyear}
+\bibliography{ref}
+
+\end{document}
