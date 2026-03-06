@@ -1,7 +1,7 @@
 PWD /Users/houyilong/GitHub/HAL-MLE-DE-AOS
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf
 INPUT /opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT hal_mle_aos.tex
+INPUT /Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex
 OUTPUT hal_mle_aos.log
 INPUT ./imsart.cls
 INPUT imsart.cls

@@ -1,13 +1,14 @@
 # Fdb version 4
-["bibtex hal_mle_aos"] 1772794863.45239 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772794873.00415 0
+["bibtex hal_mle_aos"] 1772796191.17776 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772796200.04915 0
   "./imsart-nameyear.bst" 1772518132.53073 39203 a106d018926600f6d654f6a3e616411e ""
   "./ref.bib" 1772518149.56104 11666 21bc78a1081cd841fd5d0efae9bc8e51 ""
-  "hal_mle_aos.aux" 1772794872.65914 50313 ba27744a71bef734ba35654638d6cc63 "pdflatex"
+  "hal_mle_aos.aux" 1772796199.82654 50386 9408f7dd97916e6ad575ce0a87e4692e "pdflatex"
   (generated)
   "hal_mle_aos.bbl"
   "hal_mle_aos.blg"
   (rewritten before read)
-["pdflatex"] 1772794863.54227 "hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772794873.00433 0
+["pdflatex"] 1772796191.2794 "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772796200.04931 0
+  "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" 1772793907.18331 7469 9404e9ceea0fabed427d7bd9c1fecbc4 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1741388039 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1741388039 5466553 2748998d7db8078826afa1f272036265 ""
@@ -183,12 +184,12 @@
   "appendix/app_e_uniform.tex" 1772518148.32529 3180 3e15c22a85440c29d42b65559368d90e ""
   "appendix/app_f_asy_eff.tex" 1772518148.32565 8611 adb76259e7b1db704663612575fcb19b ""
   "appendix/app_g_dgp_setup.tex" 1772788765.04387 5830 159ab1a299a819c8d5a1ccede10f4aa6 ""
-  "appendix/app_h_TF_ADMM.tex" 1772523127.47337 7601 5d56b75ab0f300fa95508127d89da13e ""
-  "appendix/app_i_additional_simulation.tex" 1772794852.18102 6495 280e0a181d222a47ea89dbc9ac043c68 ""
+  "appendix/app_h_TF_ADMM.tex" 1772796182.03851 8121 416d5a294ae12672899a18ff2db5d7fd ""
+  "appendix/app_i_additional_simulation.tex" 1772795647.78719 6797 d742c0f74f913c107a8862381a6fc666 ""
   "appendix/app_j_knot_selection.tex" 1772787351.69751 17042 db57678226a562d88d569eb79fc05598 ""
-  "hal_mle_aos.aux" 1772794872.65914 50313 ba27744a71bef734ba35654638d6cc63 "pdflatex"
-  "hal_mle_aos.bbl" 1772794863.5362 17398 0b93fecfdeef5c0ab7beebd7ac2f4613 "bibtex hal_mle_aos"
-  "hal_mle_aos.out" 1772794872.6614 21272 75325e6adf7685ee9297121f944f05c4 "pdflatex"
+  "hal_mle_aos.aux" 1772796199.82654 50386 9408f7dd97916e6ad575ce0a87e4692e "pdflatex"
+  "hal_mle_aos.bbl" 1772796191.27422 17208 3fb5f0049204031b61dc9df7cd6a0f9f "bibtex hal_mle_aos"
+  "hal_mle_aos.out" 1772796199.82884 21342 370a4f0dfaa7f71ea28f11b21fe6b1d8 "pdflatex"
   "hal_mle_aos.tex" 1772793907.18331 7469 9404e9ceea0fabed427d7bd9c1fecbc4 ""
   "imsart-aos.cnf" 0 -1 0 ""
   "imsart-vtex.cnf" 0 -1 0 ""

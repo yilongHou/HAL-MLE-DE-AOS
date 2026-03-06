@@ -9,14 +9,15 @@
     \item EIC\textendash based variance estimation for statistical estimands (Section~\ref{app_i_subsec:eic-based-variance-estimation}): per\textendash DGP CI width and coverage figures.
 \end{itemize}
 
-\subsection{Asymptotic normality and variance estimation}\label{app_i_subsec:asymptotic_normality_and_var_est}
-\begin{figure}[p]
+\subsection{Pointwise Asymptotic normality and variance estimation}\label{app_i_subsec:asymptotic_normality_and_var_est}
+This subsection provides full pointwise asymptotic normality and variance estimation panels for all six DGPs.
+\begin{figure}[H]
     \centering
     \includegraphics[angle=90, height=0.90\textheight]{resources/density_asymptotic_normality_and_var_est/Figure_Coverage_Combined.png}
     \caption{95\% coverage probabilities across DGPs and sample sizes (rotated for full\textendash page display).}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[angle=90, height=0.90\textheight]{resources/density_asymptotic_normality_and_var_est/Figure_CI_Widths_Combined.png}
     \caption{95\% confidence\textendash interval widths across DGPs and sample sizes (rotated for full\textendash page display).}
@@ -24,6 +25,7 @@
 \clearpage
 
 \subsection{Asymptotic efficiency}\label{app_i_subsec:asymptotic_efficiency}
+This subsection provides full asymptotic-efficiency comparison panels for all six DGPs.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_comparison.png}
@@ -62,13 +64,13 @@
 
 \clearpage
 \subsection{EIC\textendash based variance estimation for statistical estimands}\label{app_i_subsec:eic-based-variance-estimation}
+This subsection reports detailed EIC-based coverage tables and CI-width/coverage plots for all six DGPs.
 
 \input{resources/target_estimand_variance/coverage_targeting_mean.tex}
 \input{resources/target_estimand_variance/coverage_targeting_second_moment.tex}
 \input{resources/target_estimand_variance/coverage_targeting_survival_0_5.tex}
 \input{resources/target_estimand_variance/coverage_targeting_median.tex}
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png}
