@@ -73,12 +73,11 @@ A theoretical concern in iterative TMLE is the preservation of the function clas
 The HAL-MLE $f_n$ belongs to a function space whose induced distribution $P_{f_n}^0$ lies in a 
 Donsker class with covering number equivalent to that of $D^{(k)}([0,1])$. When applying a finite number of targeting steps, this property is preserved. However, performing infinitely many TMLE iterations may drive the estimator outside of this Donsker class.
 
-According to \citet{van2017generally}, a single targeting step already suffices, because the initial HAL-MLE $f_n$ converges to $f_0$ at a rate faster than $n^{-1/4}$ and we also satisfy the positivity condition, the single-step update $f_n^1$ obtained by fluctuating along the least favorable submodel satisfie 
-\[
+According to \citet{van2017generally}, a single targeting step already suffices, because the initial HAL-MLE $f_n$ converges to $f_0$ at a rate faster than $n^{-1/4}$ and we also satisfy the positivity condition, the single-step update $f_n^1$ obtained by fluctuating along the least favorable submodel satisfies
+$
 P_n D^*_{f_n^1} = o_p(n^{-1/2}).
-\]
-Consequently, $f_n^1$ also attains the same asymptotic efficiency, while preserving the convergence rate and sectional variation norm of the initial HAL-MLE. One could also construct a universal least favorable path as in \citet{van2016one} and Chapter 5 in \citet{van2018targeted}, which guarantees that the single step TMLE update already solves $P_n D^*_{f_n^1}=0$. We formally state the theorem as follows.
-%Yilong, need citation to van der Laan, Gruber and TL book chapter
+$
+Consequently, $f_n^1$ also attains the same asymptotic efficiency, while preserving the convergence rate and sectional variation norm of the initial HAL-MLE. We formally state the theorem as follows.
 
 \begin{theorem} [Asymptotic Efficiency of Single-step HAL‐TMLE] \label{thm:single-step-hal-tmle}
 Suppose we impose a single targeting step to $f_n$ and yield $f_n^1$. And suppose that the second and third assumptions hold for $f_n^1$, that is,
@@ -90,7 +89,7 @@ Suppose we impose a single targeting step to $f_n$ and yield $f_n^1$. And suppos
 Then $P_n D^*_{f_n^1} = o_p(n^{-1/2})$, and thus the single-step HAL-TMLE is asymptotically efficient.
 \end{theorem}
 
-The following are some examples of statistical estimands for which we can compute this TMLE:
+Here are some examples for which we can compute this TMLE:
 
 \begin{example}[Survival function and CDF]
 For the marginal survival function $\Psi^F(f)=\int_{x_0}^1 p_f(y)dy$ at $x_0$, we have \(D^*_f(x) = I(x > x_0) - \mathbb{E}_{P_{f}}\bigl[I(x > x_0)\bigr].\) We can thus select $h = I(x > x_0)$. Note that, technically, we need $\mathbb{E}_{P_{f_n}}[h] = 0$, but the constant will cancel out by the normalizing constant. Similarly, for CDF $F_f$ at $x_0$ we can select $h=I(x\leq x_0)$.
@@ -98,14 +97,14 @@ For the marginal survival function $\Psi^F(f)=\int_{x_0}^1 p_f(y)dy$ at $x_0$, w
 
 \begin{example}[Median]
 For the median $\Psi^F(f)=F_f^{-1}(0.5)$ we have 
-\(D^*_f(x) = \frac{\frac12 - I(x < F_f^{-1}(0.5))}{f(F_f^{-1}(0.5)) },\) and thus $h = I(X< F_f^{-1}(0.5))$. We need to estimate the median based on the initial estimation and then do the targeting. Notice that this formula of the median is trivially generalized to any percentile. Since the density estimation changes from $f_n$ to $f_n^k$ after the $k$ steps targeting, we can iteratively update the median. In Theorem~\ref{thm:single-step-hal-tmle}, we show that a single step targeting already guarantees $P_n D^*_{f_n^1} = o_p(n^{-1/2})$, and thus the asymptotic efficiency holds.
+\(D^*_f(x) = \frac{\frac12 - I(x < F_f^{-1}(0.5))}{f(F_f^{-1}(0.5)) },\) and thus $h = I(X< F_f^{-1}(0.5))$. We need to estimate the median based on the initial and then do the targeting. Note that the targeting of median is trivially generalized to any percentile. Since the density estimation changes from $f_n$ to $f_n^k$ after the $k$ steps targeting, we can iteratively do the targeting of the median. However, in Theorem~\ref{thm:single-step-hal-tmle}, we show that a single step targeting already guarantees $P_n D^*_{f_n^1} = o_p(n^{-1/2})$, and thus the asymptotic efficiency holds.
 \end{example}
 
 \begin{example}[$k$-th order moments]
 For the $k$-th order moment $\Psi^F(f)=\int x^k p_f(x)\mathrm{d}x$ we have
-\(D^*_f(x) = x^k - \Psi^F(f),\) and thus $h = x^k$. Notice that this is just the parametric basis. This implies a motivation for not penalizing the parametric part in the $m$-th order HAL, like LAS and the classic TF, in the sense that the resulting HAL fit would be targeting all its k-th order moments, $k=1,\ldots,m$.\\
+\(D^*_f(x) = x^k - \Psi^F(f),\) and thus $h = x^k$. Note that this is just the parametric basis. This implies a motivation for not penalizing the parametric part, like LAS and the classic TF, in the sense that the resulting HAL fit would be targeting all its moments.
 \end{example}
-Notice that the LLFPs for survival probability and moments are actually their universal least favorable paths (ULFP), and the single-step HAL-TMLE in this case is equivalent to one-step HAL-TMLE in \citet{van2017generally}, and thus we have $P_n D^*_{f_n^1} = 0$ exactly. Also, by \citet{van2017generally}, $f_n^1$ and $f_n$ preserve the same convergence rate to $f_0$. Thus, we can extend the arguments of the assumptions of the plug-in HAL-MLE to the single-step HAL-TMLE directly. 
+Note that the LLFPs for survival probability and moments are actually their universal least favorable paths (ULFP), and their corresponding single-step HAL-TMLE is the one-step HAL-TMLE in \citet{van2017generally, van2016one, van2018targeted}, and thus we have $P_n D^*_{f_n^1} = 0$ exactly. Also, by \citet{van2017generally}, $f_n^1$ and $f_n$ preserve the same convergence rate to $f_0$. Thus, we can extend the arguments of the assumptions of the plug-in HAL-MLE to the single-step HAL-TMLE. 
 
 \subsection{Theoretical Property and Variance Estimation}
 \label{subsec: EIC-based-variance-estimation}

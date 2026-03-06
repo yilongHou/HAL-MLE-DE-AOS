@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex hal_mle_aos"] 1772796191.17776 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772796200.04915 0
+["bibtex hal_mle_aos"] 1772800480.47332 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772800515.37839 0
   "./imsart-nameyear.bst" 1772518132.53073 39203 a106d018926600f6d654f6a3e616411e ""
   "./ref.bib" 1772518149.56104 11666 21bc78a1081cd841fd5d0efae9bc8e51 ""
-  "hal_mle_aos.aux" 1772796199.82654 50386 9408f7dd97916e6ad575ce0a87e4692e "pdflatex"
+  "hal_mle_aos.aux" 1772800515.17648 50362 b455cdac2f31103b4f6a17ae15dda256 "pdflatex"
   (generated)
   "hal_mle_aos.bbl"
   "hal_mle_aos.blg"
   (rewritten before read)
-["pdflatex"] 1772796191.2794 "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772796200.04931 0
-  "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" 1772793907.18331 7469 9404e9ceea0fabed427d7bd9c1fecbc4 ""
+["pdflatex"] 1772800506.72734 "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772800515.37855 0
+  "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" 1772799293.37582 7207 25916f980797adeb99a3bad4a4e2a316 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1741388039 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1741388039 5466553 2748998d7db8078826afa1f272036265 ""
@@ -187,10 +187,10 @@
   "appendix/app_h_TF_ADMM.tex" 1772796182.03851 8121 416d5a294ae12672899a18ff2db5d7fd ""
   "appendix/app_i_additional_simulation.tex" 1772795647.78719 6797 d742c0f74f913c107a8862381a6fc666 ""
   "appendix/app_j_knot_selection.tex" 1772787351.69751 17042 db57678226a562d88d569eb79fc05598 ""
-  "hal_mle_aos.aux" 1772796199.82654 50386 9408f7dd97916e6ad575ce0a87e4692e "pdflatex"
-  "hal_mle_aos.bbl" 1772796191.27422 17208 3fb5f0049204031b61dc9df7cd6a0f9f "bibtex hal_mle_aos"
-  "hal_mle_aos.out" 1772796199.82884 21342 370a4f0dfaa7f71ea28f11b21fe6b1d8 "pdflatex"
-  "hal_mle_aos.tex" 1772793907.18331 7469 9404e9ceea0fabed427d7bd9c1fecbc4 ""
+  "hal_mle_aos.aux" 1772800515.17648 50362 b455cdac2f31103b4f6a17ae15dda256 "pdflatex"
+  "hal_mle_aos.bbl" 1772800480.53115 17208 3fb5f0049204031b61dc9df7cd6a0f9f "bibtex hal_mle_aos"
+  "hal_mle_aos.out" 1772800515.17939 21342 370a4f0dfaa7f71ea28f11b21fe6b1d8 "pdflatex"
+  "hal_mle_aos.tex" 1772799293.37582 7207 25916f980797adeb99a3bad4a4e2a316 ""
   "imsart-aos.cnf" 0 -1 0 ""
   "imsart-vtex.cnf" 0 -1 0 ""
   "imsart.cls" 1772518132.5255 4981 3a3dfc4d7ac7074d7703c84e76b63153 ""
@@ -199,8 +199,8 @@
   "main/00_intro.tex" 1772787378.036 5879 af3d387c983e615feb393a41ddb62e53 ""
   "main/01_HAL.tex" 1772780307.69726 11424 103fa2ce22af35f00a0eb2f876a2900f ""
   "main/02_HAL_MLE.tex" 1772790853.00752 41249 cf015371c9af0e33e2cef4c3ef26dc41 ""
-  "main/03_HAL_TMLE.tex" 1772789899.00622 11893 8edd9e297fb9be6d4da8a914bfef33d0 ""
-  "main/05_simulation.tex" 1772794560.65825 12379 d7fac0e6c5c30d84c762200ceedca17f ""
+  "main/03_HAL_TMLE.tex" 1772800506.56681 11541 bb3a97275b30dc541bd5ac23965ed8dd ""
+  "main/05_simulation.tex" 1772799375.43042 12379 d7fac0e6c5c30d84c762200ceedca17f ""
   "main/06_case_study.tex" 1772791351.66009 4195 131fc354720b6a2546327a4a7bde7aff ""
   "resources/case_study/bootstrap_vs_delta_method_variance_estimation.png" 1772518140.44374 302621 b21342bad0b35c3dc3289a4fcb77f1d0 ""
   "resources/case_study/hal_mle_vs_hal_tmle_for_mean.png" 1772518140.44414 198243 c0056f23153ef143c0e840fdfaf8e321 ""
