@@ -27,6 +27,10 @@
 \usepackage{grffile}
 \usepackage{wrapfig}
 
+% Times (ptm) does not provide a native small-caps italic shape in T1.
+% Define a fallback to small caps to avoid repeated font-shape warnings.
+\DeclareFontShape{T1}{ptm}{m}{scit}{<->ssub*ptm/m/sc}{}
+
 \startlocaldefs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Theorem environments
@@ -123,7 +127,6 @@ We establish three new theoretical results: (i) the univariate HAL-MLE is asympt
 \input{main/01_HAL}
 \input{main/02_HAL_MLE}
 \input{main/03_HAL_TMLE}
-\input{main/04_optimization_dis}
 \input{main/05_simulation}
 \input{main/06_case_study}
 
@@ -132,14 +135,14 @@ We establish three new theoretical results: (i) the univariate HAL-MLE is asympt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Discussion} \label{sec:discussion}
-We constructed a nonparametric density estimation technique based on HAL-MLE. We proved and verified the pointwise asymptotic normality and the uniform convergence for the univariate case when \(k\ge1\); we also give a practical delta-method confidence interval for the density and show that plug-in HAL-MLE and HAL-TMLE are asymptotically efficient for pathwise differentiable statistical estimands. We proposed an EIC-based variance estimation accordingly. Specialized proximal-Newton/L-BFGS/AdaGrad solvers scale and select knots effectively. We compared the performance of  different univariate density estimators, including KDE, TF(PP), log-spline, and HAL-MLE, over the same benchmark. We used a galaxy-velocity case study to visualize the convergence, confidence intervals, and targetings. The limitation of this paper is that we only focused on the univariate case to compare and connect the classical density estimation methods in such setting. In the future, we can consider the generalization of the assumptions and extend the results to the multivariate case. We can also consider the adaptation to different data structures, such as censored/coarsened data.
+The limitation of this paper is that we only focused on the univariate case in order to compare and connect the classical density estimation methods in such setting. In the future, we can consider the generalization of the assumptions and extend the results to the multivariate case and other basis systems. We can also consider the adaptation to different data structures, such as censored/coarsened data.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Acknowledgments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{acks}[Acknowledgments]
-We would like to first thank Professor Ryan Tibshirani for his valuable comments and suggestions on the implementation of TF and TFPP. We had multiple discussions with him on the theoretical and practical aspects of the falling factorial basis and truncated power basis. We also learned a lot about convex optimization and the specialized ADMM algorithm for TF from him. We thank Zhexiao Lin for the detailed feedback and editing. We also acknowledge the anonymous reviewers for their helpful comments and suggestions.
+We would like to first thank Professor Ryan Tibshirani for his valuable comments and suggestions on the implementation of TF. We had multiple discussions with him on the theoretical and practical aspects of the falling factorial basis and truncated power basis. We also learned a lot about convex optimization and the specialized ADMM algorithm for TF from him. We thank Zhexiao Lin for the detailed feedback and editing. We also acknowledge the anonymous reviewers for their helpful comments and suggestions.
 \end{acks}
 
 %\begin{funding}
@@ -160,7 +163,7 @@ We would like to first thank Professor Ryan Tibshirani for his valuable comments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 \begin{appendix}
 
 \input{appendix/app_a}

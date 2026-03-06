@@ -1,18 +1,15 @@
 \section{Case Study}\label{sec:case-study}
 
-This section presents a real data analysis using the classic Galaxies recession–velocity measurements. We follow the same dataset choice as \citet{bak2021penalized} and organize the discussion in three parts: (i) data description and preprocessing, (ii) density fitting and variance estimation for the density itself, and (iii) inference for several statistical estimands via plug–in HAL–MLE and HAL–TMLE.
-
+This section presents a real data analysis using the classic Galaxies recession–velocity measurements. We follow the same dataset choice as \citet{bak2021penalized}.
 \subsection{Data and preprocessing}
 We analyze the \emph{Galaxies} data (R package \texttt{MASS}; \citealp{venables2002modern}), consisting of velocities for $n=82$ galaxies in the Corona Borealis region measured from six conic sections of space \citep[][Table~1]{postman1986probes}. If galaxies are clustered, the velocity density is expected to exhibit three to seven modes that correspond to superclusters \citep{roeder1990density}. 
-
 For the preprocessing, we apply a monotone affine rescaling of the observed velocities to $[0,1]$. Throughout the figures, the horizontal axis represents the velocity as a proportion of the speed of light $c$: $x\in[0,1]$ corresponds to $v/c$. 
-
 \subsection{Density fit and variance estimation}
-We fit the HAL–MLE density on the rescaled axis. The resulting fit captures all prominent modes and the troughs between them, reflecting the heterogeneous galaxy population. We estimate the standard errors for the density via a delta–method as in Section~\ref{density_sd_section} and construct the confidence intervals. We benchmark these standard errors against a nonparametric bootstrap. This is a visualization of how bootstrap results differ from the delta-method results on the same small dataset. However, the bootstrap is much more computationally expensive, and thus we do not recommend it for practical use at this point. The shape of the density is similar to \citet{bak2021penalized} even though the data is rescaled.
+We fit the HAL–MLE density on the rescaled axis. The resulting fit captures all prominent modes and the troughs between them, reflecting the heterogeneous galaxy population. We estimate the standard errors for the density via the delta–method in Section~\ref{density_sd_section}. We benchmark the delta-method results against a nonparametric bootstrap. However, the bootstrap is much more computationally expensive, and thus we do not recommend it for practical use at this point. The shape of the density is similar to \citet{bak2021penalized} even though the data is rescaled.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{resources/case_study/bootstrap_vs_delta_method_variance_estimation.png}
+    \includegraphics[width=0.9\textwidth]{resources/case_study/bootstrap_vs_delta_method_variance_estimation.png}
     \caption{Galaxy velocities: histogram of the data with 50 bins, HAL–MLE density, and variance estimation for the density via the delta method (blue band) compared with a nonparametric bootstrap (red band).}
     \label{fig:galaxy-density-variance}
 \end{figure}

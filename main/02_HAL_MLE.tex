@@ -53,7 +53,11 @@ As the setup in the introduction, let the $X\sim P_0$ be defined on $[0,1]$. We 
 \beta_n(M) = \arg \min_{\beta: \Vert \beta\Vert_1 < M} \sum_{i=1}^{n} L(f_{n, \beta})(X_i) = \arg \max_{\beta:  \Vert \beta\Vert_1 \leq M} \sum_{i=1}^{n} \sum_{j=1}^{n+k+1} \beta_j \phi_j(x_i) - n\log C(\beta),
 \] where \( x_{1:n} \sim  P_0,  i.i.d.\), $L = -\log p_f$ is the loss function, and the $C(\beta) = \int_0^1 \exp(f_{\beta}(x)) \mathrm{d}x$ is the normalizing constant. 
 
-\subsubsection{Comparison with NPMLE}
+\begin{remark}
+This convex optimization problem can be solved by generic optimization solvers like \texttt{CVXPY}. However, the major drawback is that the knot points selection is not as effective as the sample size increases. We propose a list of standard algorithms, including fast iterative shrinkage-thresholding algorithm (FISTA), projected gradient descent, and proximal Newton method and quasi-Newton method (L-BFGS), etc. Generally speaking, comparing to the \texttt{CVXPY} solvers, the optimization algorithms we proposed succeed in selecting knot points and converging to the global optimum. This aligns with the HAL-MLE theory of the size of the post-selection working model, as in Appendix~\ref{appB: $L^2$ Convergence Analysis} and Appendix~\ref{appendix_E: Uniform Convergence Rate}, that we only need $O^+(n^{\frac{1}{2k+3}})$ knots to achieve the desired performance. We provide more details in Appendix~\ref{app:knot-selection}.
+\end{remark}
+
+\subsubsection{Comparison with NPMLE} \label{subsec:comparison-with-npmle}
 Our set ${\cal R}^k(n)$ of $k$-th order spline basis functions is determined by data and its linear span is flexible enough to provide a strong approximation of any function in our class $D^{(k)}_U([0,1])$. Moreover, for large enough $U$, the latter class will contain the true $f_0$ identifying the true density $p_{f_0}$ of $X$. 
 Therefore, the HAL-MLE over the linear combination of basis in ${\cal R}_n$ with some $L_1$ norm upper bound, denoted as $D^{(k)}_U({\cal R}_n)$ approximates an MLE over the full class $D^{(k)}_U([0,1])$ containing the true $f_0$. Consequently we can view the HAL-MLE as  a Nonparametric Maximum Likelihood Estimation (NPMLE) method for estimating the true density of the data. An important distinction between HAL‑MLE and the traditional NPMLE methods, like the empirical distribution and Kaplan–Meier (KM) estimator \citep{kaplan1958nonparametric}, lies in the functional constraint HAL imposes. HAL‑MLE produces density estimates confined to the space $D^{(k)}_U([0,1])$. In contrast, traditional NPMLE imposes no smoothness or variation‑norm constraints on the densities. As a consequence, the NPMLE is attained at the (non-density) empirical discrete distribution that puts mass $1/n$ on each observation $x_i$. This is not even a real density, even when there are reasons to believe that the underlying true density is continuous. Similarly, the NPMLE of the failure time distribution for right-censored data under the assumption of independent censoring  is attained at a discrete failure time distribution, while the HAL-MLE analogue would result in a valid density estimator of the true failure time density.  
 NPMLE can still provide efficient plug-in estimators of smooth functionals of the density, such as a survivor function. The HAL-MLE, possibly extended with the HAL-TMLE, also yield efficient plug-in estimators of such smooth features, while it still also estimates the density well.
@@ -263,7 +267,6 @@ However, we construct the proof of the following corollary by recognizing that i
     (n/J_{n,0})^{1/2}(p_{f_n}-p_{f_0})(x)=p_0(x)(n/J_{n,0})^{1/2}(f_n-f_0)(x)+o_P(1).
     \]
 \end{corollary}
-
 This extends the pointwise asymptotic normality and the uniform convergence from $f_n$ to $p_{f_n}$. 
 
 \subsection{Uniform Convergence for HAL-MLE} \label{subsct: uniform convergence for HAL-MLE}

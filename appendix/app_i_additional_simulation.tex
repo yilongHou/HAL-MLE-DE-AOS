@@ -5,7 +5,7 @@
 \paragraph{Contents of this appendix}
 \begin{itemize}
     \item Asymptotic normality and variance estimation (Section~\ref{app_i_subsec:asymptotic_normality_and_var_est}): combined full\textendash page coverage and CI\textendash width panels across DGPs and sample sizes.
-    \item Asymptotic efficiency (Section~\ref{app_i_subsec:asymptotic_efficiency}): efficiency comparisons for TN, GS3, GA3, GS5, Step, and Sine.
+    \item Asymptotic efficiency (Section~\ref{app_i_subsec:asymptotic_efficiency}): efficiency comparisons for TN, GS3, GA3, GS5, Step, and Sine. 
     \item EIC\textendash based variance estimation for statistical estimands (Section~\ref{app_i_subsec:eic-based-variance-estimation}): per\textendash DGP CI width and coverage figures.
 \end{itemize}
 
@@ -60,8 +60,15 @@
     \caption{Asymptotic\textendash efficiency comparison for Sine.}
 \end{figure}
 
+\clearpage
 \subsection{EIC\textendash based variance estimation for statistical estimands}\label{app_i_subsec:eic-based-variance-estimation}
 
+\input{resources/target_estimand_variance/coverage_targeting_mean.tex}
+\input{resources/target_estimand_variance/coverage_targeting_second_moment.tex}
+\input{resources/target_estimand_variance/coverage_targeting_survival_0_5.tex}
+\input{resources/target_estimand_variance/coverage_targeting_median.tex}
+
+\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png}

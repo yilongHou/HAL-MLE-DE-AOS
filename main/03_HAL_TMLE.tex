@@ -105,8 +105,6 @@ For the median $\Psi^F(f)=F_f^{-1}(0.5)$ we have
 For the $k$-th order moment $\Psi^F(f)=\int x^k p_f(x)\mathrm{d}x$ we have
 \(D^*_f(x) = x^k - \Psi^F(f),\) and thus $h = x^k$. Notice that this is just the parametric basis. This implies a motivation for not penalizing the parametric part in the $m$-th order HAL, like LAS and the classic TF, in the sense that the resulting HAL fit would be targeting all its k-th order moments, $k=1,\ldots,m$.\\
 \end{example}
-
-%\Mark{Yilong: I wonder if we should target the specific linear combination of scores that corresponds with the efficient influence curve of $\beta^{\top}(P)\phi(x_0)$ in the HAL-working model $D^{(k)}({\cal R}_n)$. Then we don't have to do relax HAL but we still solve the desired score equation we need for our proof. We should mention this for sure since it makes clear we can even arran e this condition, and again, we can stop when we have succeeded. We then only need the approximation co dition, I think.}
 Notice that the LLFPs for survival probability and moments are actually their universal least favorable paths (ULFP), and the single-step HAL-TMLE in this case is equivalent to one-step HAL-TMLE in \citet{van2017generally}, and thus we have $P_n D^*_{f_n^1} = 0$ exactly. Also, by \citet{van2017generally}, $f_n^1$ and $f_n$ preserve the same convergence rate to $f_0$. Thus, we can extend the arguments of the assumptions of the plug-in HAL-MLE to the single-step HAL-TMLE directly. 
 
 \subsection{Theoretical Property and Variance Estimation}
