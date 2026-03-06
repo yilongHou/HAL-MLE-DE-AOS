@@ -49,7 +49,7 @@ We regress the median error on the sample size on a log-log scale and report the
 
 This Table~\ref{tab:uniform_convergence_scaling} verifies that the adaptive HAL-MLE that selects the smoothness $k$ with cross-validation is converging at an adaptive rate. And the adaptive rates we are seeing align with the  smoothness of the DGPs. The Step Function might be too easy and does not have a huge space for improvement.
 
-\subsubsection{Asymptotic normality: pointwise SE, CI width, and coverage.} \label{subsec:simulation_asymptotic_normality}
+\subsubsection{Pointwise Asymptotic Normality: pointwise SE, CI width, and coverage} \label{subsec:simulation_asymptotic_normality}
 We assess the pointwise asymptotic normality of the HAL-MLE density mentioned in Theorem~\ref{thm:density_HAL_asymptotic_normality} and evaluate the performance of density variance estimation via the delta-method in Eq.~\ref{eq:delta-method-variance-estimator}. We assess the density variance estimation performance by introducing the oracle CI, which is the HAL-MLE point estimate \(\pm 1.96\) times the empirical standard deviation of the fitted densities across 1000 samples. Then, we evaluate the variance estimator by computing the coverage of the CI constructed by the z-statistic of the HAL-MLE point estimate. 
 
 For each DGP and sample size \(n\), we evaluate on the 201 grid points between the first and last observation and summarize (i) interval widths and (ii) coverage of the truth \(p_0(x)\). Coverage is computed pointwise as the fraction of replicates whose 95\% CI contains the truth at each grid point. The coverage of the Delta-method variance estimator is the mean coverage over the 201 grid points. The full results, including the CI widths and the coverage of each grid point, are included in Appendix~\ref{app_i_subsec:asymptotic_normality_and_var_est}.
@@ -66,7 +66,7 @@ For each DGP and sample size \(n\), we evaluate on the 201 grid points between t
 
 We can see that the oracle CI coverage is always around 95\%, which means the density estimation is pointwise asymptotically normal. For most of the DGPs, the Delta-method variance estimator is also very close to the oracle CI coverage. A limitation of the Delta-method is that it does not work as well on the extrapolated region, where we have no data. For example, in the GS5 DGP, the distribution is very concentrated and the data points are centered around [0.2,0.8]. And the Delta-method variance estimator is not working as well when testing the coverage on the margins, even though the density estimation is still asymptotically normal.
 
-\subsubsection{Asymptotic efficiency of plug-in HAL-MLE and HAL-TMLE.} \label{subsec:simulation_asymptotic_efficiency_of_plug_in_hal_mle_and_hal_tmle}
+\subsubsection{Asymptotic efficiency of plug-in HAL-MLE and HAL-TMLE} \label{subsec:simulation_asymptotic_efficiency_of_plug_in_hal_mle_and_hal_tmle}
 We here evaluate the asymptotic efficiency of the plug-in HAL-MLE and HAL-TMLE by comparing their performance in estimating some statistical estimands such as the mean, median, survival at 0.5, and second moment, against the existing asymptotically efficient estimators.
 
 Trivially, the asymptotically efficient estimator of the population mean is the sample mean. And the asymptotically efficient estimator of the population median is the sample median. The asymptotically efficient estimator of population survival probability at 0.5 is the empirical survival proportion at 0.5. The asymptotically efficient estimator of the population second moment is the sample second moment.
@@ -82,7 +82,7 @@ Across DGPs and sample sizes, we compare the bias, variance, MSE, and the ratio 
 
 They are comparable and thus verify the asymptotic efficiency of the plug-in HAL-MLE and HAL-TMLE. We can see that sometimes the plug-in HAL-MLE has super-efficiency over the asymptotically efficient estimator when the sample size is small. But after targeting, the EIC equation is solved, and the HAL-TMLE performance is the same as the asymptotically efficient estimator uptill some numerical errors. In the univariate case, we cannot expect the performance of Plug-in HAL-MLE and HAL-TMLE to be significantly better than their corresponding asymptotic efficient estimators, but one major advantage is that we can provide nonparametric inference using the EIC-based confidence interval.
 
-\subsection{EIC\textendash based variance estimation for statistical estimands.} \label{subsec:simulation_eic-based-variance-estimation}
+\subsection{EIC\textendash based variance estimation for statistical estimands} \label{subsec:simulation_eic-based-variance-estimation}
 We evaluate the EIC-based variance estimation introduced in Section~\ref{subsec: EIC-based-variance-estimation} for the statistical estimands by computing the plug-in standard errors via the efficient influence curve and comparing the coverage of the oracle. We report the coverage of the 95\% confidence interval for four estimands—mean, second moment, survival at 0.5, and median—across six DGPs and eight sample sizes in Tables~\ref{tab:coverage_targeting_mean}, \ref{tab:coverage_targeting_second_moment}, \ref{tab:coverage_targeting_survival_0_5}, and \ref{tab:coverage_targeting_median}. Each table shows, for every DGP and sample size, the pair (EIC-based coverage, oracle coverage). EIC-based coverage uses plug-in standard errors derived from the efficient influence curve, while oracle coverage uses the empirical standard deviation of estimates across Monte Carlo simulations.
 
 
@@ -98,7 +98,7 @@ We can see that the EIC-based variance estimator and the oracle coverage are all
 \subsection{Comparison with Existing Methods} \label{subsec:comparative_benchmarks}
 We compare the HAL-MLE with the existing methods, including the TF, TFPP, logspline, and KDE methods. TF(PP) are carried out here with \texttt{CVXPY} as well for the sake of fairness. However, we also implemented an ADMM solver following \citet{ramdas2016fast} for TF on the same uniform grid, with similar performance to the \texttt{CVXPY} implementation; see Appendix~\ref{app:tf_admm}. We evaluate the performance of the existing methods at $n=800$ over a common grid of 19 points on $[0.05,0.95]$; and report the bias, variance, and MSE in Figure~\ref{fig:methods-bias-n800}, Figure~\ref{fig:methods-variance-n800}, and Figure~\ref{fig:methods-mse-n800}. 
 
-\subsubsection{Hyperparameter selection.}
+\subsubsection{Hyperparameter selection}
 The hyperparameter selection for the TF(PP), logspline, and KDE methods are as follows: (i) The TF and TFPP methods have a $\lambda$ in $[10^{-3},10^{6}]$ for the $\ell_1$ penalty and $k$ for the $k$th order finite differences ($k\in\{0,1,2\}$). (ii) The logspline method is a spline basis for the log-density with default hyperparameter choices in the R package \texttt{logspline}. (iii) The KDE method is a kernel smoother with jointly tuned kernel (Gaussian, Epanechnikov, tophat) and bandwidth $h$ in $[10^{-3},10^{6}]$.
 
 \begin{figure}[H]

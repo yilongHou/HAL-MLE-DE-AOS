@@ -9,13 +9,13 @@ We denote by $n$ the number of samples, $G$ the number of midpoint intervals use
 \subsection{Per-iteration FLOP derivations}
 We summarize implementation\,-\,aware FLOP counts for each algorithm; see the project note \path{experiments/compare_knot_selection/algorithm_flop_per_iter.md} in the experiment git repo for additional commentary and logging details.
 
-\paragraph{FISTA.} A forward pass on data and midpoints and a backward pass via autograd each cost $\Theta\big((n+G)K\big)$, with an additional $\Theta(GK)$ for the exact normalization update. Dominant term: $\Theta\big((n+G)K\big)$.
+\paragraph{FISTA} A forward pass on data and midpoints and a backward pass via autograd each cost $\Theta\big((n+G)K\big)$, with an additional $\Theta(GK)$ for the exact normalization update. Dominant term: $\Theta\big((n+G)K\big)$.
 
-\paragraph{Proximal AdaGrad.} Computing the gradient uses $\Theta\big(nK + GK\big)$; forming the diagonal Hessian via variance on midpoints contributes another $\Theta(GK)$ (tighter bound) to $\Theta(3GK)$ (conservative). Including the normalization step yields a dominant $\Theta\big((n+G)K\big)$.
+\paragraph{Proximal AdaGrad} Computing the gradient uses $\Theta\big(nK + GK\big)$; forming the diagonal Hessian via variance on midpoints contributes another $\Theta(GK)$ (tighter bound) to $\Theta(3GK)$ (conservative). Including the normalization step yields a dominant $\Theta\big((n+G)K\big)$.
 
-\paragraph{Proximal Newton (full).} Each iteration forms the gradient in $\Theta\big((n+G)K\big)$, the Hessian as a weighted covariance on midpoints in $\Theta\big(GK^2\big)$, solves the proximal subproblem via coordinate descent in $\Theta\big(sK^2\big)$, and performs $L_k$ objective evaluations contributing $\Theta\big(L_k (n+G)K\big)$; normalization adds $\Theta(GK)$. Dominant term: $\Theta\big(GK^2 + sK^2\big) + \Theta\big((1+L_k)(n+G)K\big)$.
+\paragraph{Proximal Newton (full)} Each iteration forms the gradient in $\Theta\big((n+G)K\big)$, the Hessian as a weighted covariance on midpoints in $\Theta\big(GK^2\big)$, solves the proximal subproblem via coordinate descent in $\Theta\big(sK^2\big)$, and performs $L_k$ objective evaluations contributing $\Theta\big(L_k (n+G)K\big)$; normalization adds $\Theta(GK)$. Dominant term: $\Theta\big(GK^2 + sK^2\big) + \Theta\big((1+L_k)(n+G)K\big)$.
 
-\paragraph{Proximal Newton L\,-\,BFGS.} Replacing the full Hessian with an L\,-\,BFGS update avoids the $GK^2$ term; per iteration is dominated by the gradient and line search plus normalization: $\Theta\big((1+L_k)(n+G)K\big)$.
+\paragraph{Proximal Newton L\,-\,BFGS} Replacing the full Hessian with an L\,-\,BFGS update avoids the $GK^2$ term; per iteration is dominated by the gradient and line search plus normalization: $\Theta\big((1+L_k)(n+G)K\big)$.
 
 \subsection{From iterations to cumulative FLOPs}
 Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration $t$ are $C(t) = \sum_{k=1}^t F(k)$. Our visualization utilities infer $L_k$ from logged step sizes $\alpha_k$ (with backtracking factor $\beta=0.5$) and use consistent baselines at iteration/FLOP zero. See the note for practical defaults and alignment details.

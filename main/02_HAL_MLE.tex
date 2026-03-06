@@ -1,7 +1,7 @@
 \section{HAL Density Estimation} \label{HAL Density Estimation}
 With the HAL assumptions and the same link function in \citet{kooperberg1992logspline}, we here form the density estimation technique, HAL-MLE. The intuition of this choice of link function is to assume that the log-likelihood of the density follows a càdlàg structure with bounded sectional variation, making it well-suited for modeling via HAL. This link function is also referred to as the histo-spline method \citep{leonard1978density, silverman1982estimation}. Specifically, when using zero-order HAL basis functions, the function \( f \) can be expressed as a histogram. One major benefit of this link function is that the resulting density belongs to the exponential family, ensuring the convexity of the MLE optimization with $L_1$ norm regularization.
 
-\subsection{HAL Construction.} \label{Estimation Construction}
+\subsection{HAL Construction} \label{Estimation Construction}
 Proposition \ref{thm:HAL_representation} shows that we can represent any function $f \in D^{(k)}_U([0,1])$ by an infinite linear combination of the $k$-th order splines (bases). We then could construct our estimation with a finite-dimensional working model by approximating the integral with a sum. This explains the bias of HAL model by not including all the bases. We initialize the pre-selection working model by partitioning the integral into $n$ parts with knot points $x_1, \cdots, x_n$. Let $f_0\in D^{(k)}_U([0,1])$ be the truth, and $f_n$ be the estimation based on the $n$-knot points. Note that the dimension of the working model here refers to the parameters needed for modeling rather than the structure of observations.
 
 \[
