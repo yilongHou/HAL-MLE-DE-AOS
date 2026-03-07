@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex hal_mle_aos"] 1772801347.00178 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772801842.85286 0
+["bibtex hal_mle_aos"] 1772849159.90572 "hal_mle_aos.aux" "hal_mle_aos.bbl" "hal_mle_aos" 1772852003.92536 0
   "./imsart-nameyear.bst" 1772518132.53073 39203 a106d018926600f6d654f6a3e616411e ""
-  "./ref.bib" 1772801313.85494 11929 15d1d4df74dc331133b2cd081e6b4523 ""
-  "hal_mle_aos.aux" 1772801842.68449 25997 ededeaf8dfb878f9e26f842989b0f5f3 "pdflatex"
+  "./ref.bib" 1772801969.51373 11929 15d1d4df74dc331133b2cd081e6b4523 ""
+  "hal_mle_aos.aux" 1772852003.76593 26053 eebd6fe991ad2a4e3e92407fbafcf7e6 "pdflatex"
   (generated)
   "hal_mle_aos.bbl"
   "hal_mle_aos.blg"
   (rewritten before read)
-["pdflatex"] 1772801839.68058 "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772801842.85299 0
-  "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" 1772801113.16144 6948 8df7ad356e087242e178e40ea0754c52 ""
+["pdflatex"] 1772852000.75871 "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" "hal_mle_aos.pdf" "hal_mle_aos" 1772852003.9255 0
+  "/Users/houyilong/GitHub/HAL-MLE-DE-AOS/hal_mle_aos.tex" 1772801969.48137 6948 8df7ad356e087242e178e40ea0754c52 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1741388039 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1741388039 5466553 2748998d7db8078826afa1f272036265 ""
@@ -158,20 +158,20 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1741388039 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346140 981dae4097bc43850a521b8b1e36e95f ""
-  "hal_mle_aos.aux" 1772801842.68449 25997 ededeaf8dfb878f9e26f842989b0f5f3 "pdflatex"
-  "hal_mle_aos.bbl" 1772801347.05764 15710 a2bd1f241dfc897cc67220607ca6233b "bibtex hal_mle_aos"
-  "hal_mle_aos.out" 1772801842.68579 8137 9adaf7f2a7893f0e30350bc52a0bfceb "pdflatex"
-  "hal_mle_aos.tex" 1772801113.16144 6948 8df7ad356e087242e178e40ea0754c52 ""
+  "hal_mle_aos.aux" 1772852003.76593 26053 eebd6fe991ad2a4e3e92407fbafcf7e6 "pdflatex"
+  "hal_mle_aos.bbl" 1772849159.96698 15536 7bde60fffce64179f48111191cbe6f17 "bibtex hal_mle_aos"
+  "hal_mle_aos.out" 1772852003.76717 8137 9adaf7f2a7893f0e30350bc52a0bfceb "pdflatex"
+  "hal_mle_aos.tex" 1772801969.48137 6948 8df7ad356e087242e178e40ea0754c52 ""
   "imsart-aos.cnf" 0 -1 0 ""
   "imsart-vtex.cnf" 0 -1 0 ""
   "imsart.cls" 1772518132.5255 4981 3a3dfc4d7ac7074d7703c84e76b63153 ""
   "imsart.cnf" 0 -1 0 ""
   "imsart.sty" 1772518132.52772 167336 45e5f8230afbf9beec44b10501ad2ff5 ""
-  "main/00_intro.tex" 1772801335.6219 5914 5a723e3bad1d56e3f7fca36cfa5f25ad ""
+  "main/00_intro.tex" 1772852000.46563 6239 ca673e98ec8363137778c5dbaeb97abb ""
   "main/01_HAL.tex" 1772780307.69726 11424 103fa2ce22af35f00a0eb2f876a2900f ""
-  "main/02_HAL_MLE.tex" 1772801839.57199 41320 37af444b056278975a70d273f7f06a21 ""
-  "main/03_HAL_TMLE.tex" 1772801139.54551 11624 4518bbf0bc76ea24e74616346c156821 ""
-  "main/05_simulation.tex" 1772801160.69846 12543 c82a8daf17e7a1a2f86c9d47b22b2c63 ""
+  "main/02_HAL_MLE.tex" 1772801969.51257 41320 37af444b056278975a70d273f7f06a21 ""
+  "main/03_HAL_TMLE.tex" 1772801969.51281 11624 4518bbf0bc76ea24e74616346c156821 ""
+  "main/05_simulation.tex" 1772801969.51315 12543 c82a8daf17e7a1a2f86c9d47b22b2c63 ""
   "main/06_case_study.tex" 1772791351.66009 4195 131fc354720b6a2546327a4a7bde7aff ""
   "resources/case_study/bootstrap_vs_delta_method_variance_estimation.png" 1772518140.44374 302621 b21342bad0b35c3dc3289a4fcb77f1d0 ""
   "resources/case_study/hal_mle_vs_hal_tmle_for_mean.png" 1772518140.44414 198243 c0056f23153ef143c0e840fdfaf8e321 ""
