@@ -27,7 +27,7 @@ The development of the large-scale methods seems to be unnecessary in the univar
 \subsection{Exploration of Optimization Algorithms} \label{subsct: exploration_of_optimization_algorithms}
 We study the performance of the optimization algorithms in some fixed settings where \texttt{CVXPY} solvers have trouble selecting knot points. We here demonstrate the performance of the optimization algorithms on the Truncated Normal Data Generating Process (DGP), and the visualizations are shown in Figure~\ref{fig:opt-algorithms-tn}. We use the final result of \texttt{CVXPY} solutions as the baseline, and we evaluate the performance of the optimization algorithms by comparing the knot selection and loss convergence per iteration and per FLOP. The FLOPs are estimated by the computational complexity of the algorithms, which is shown in Table~\ref{tab:complexity-summary}. Additional results for all six DGPs and the reasoning of the computational complexity based on our implementation is provided in Appendix~\ref{app:knot-selection}.
 
-\begin{table}[H]
+\begin{table}[tbp]
    \centering
    \begin{tabular}{ll}
    \toprule
@@ -44,7 +44,7 @@ We study the performance of the optimization algorithms in some fixed settings w
    \end{table}
 
 
-\begin{figure}[H]
+\begin{figure}[tbp]
 \centering
 \includegraphics[width=.36\textwidth]{resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_per_iter.png}
 \includegraphics[width=.36\textwidth]{resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_per_flop.png}\\

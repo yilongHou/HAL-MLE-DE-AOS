@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  6 MAR 2026 04:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  7 MAR 2026 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,32 +498,33 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ment.sty
 \CommentStream=\write3
  Excluding comment 'comment')
-(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/float/float
-.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count310
-\float@exts=\toks35
-\float@box=\box58
-\@float@everytoks=\toks36
-\@floatcapt=\box59
-)
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/multirow/mu
 ltirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip65
-\multirow@cntb=\count311
+\multirow@cntb=\count310
 \multirow@dima=\skip66
 \bigstrutjot=\dimen177
 )
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/threepartta
 ble/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box60
+\@tempboxb=\box58
 )
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/algorithms/
 algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
+
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/float/float
+.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count311
+\float@exts=\toks35
+\float@box=\box59
+\@float@everytoks=\toks36
+\@floatcapt=\box60
+)
 \@float@every@algorithm=\toks37
 \c@algorithm=\count312
 )
@@ -575,25 +576,25 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./hal_mle_aos_supplement.aux)
 \openout1 = `hal_mle_aos_supplement.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-Package hyperref Info: Link coloring ON on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+Package hyperref Info: Link coloring ON on input line 48.
 
 (./hal_mle_aos_supplement.out) (./hal_mle_aos_supplement.out)
 \@outlinefile=\write4
@@ -626,20 +627,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 66.
-Package microtype Info: Applying patch `item' on input line 66.
-Package microtype Info: Applying patch `toc' on input line 66.
-Package microtype Info: Applying patch `eqnum' on input line 66.
-Package microtype Info: Applying patch `footnote' on input line 66.
-Package microtype Info: Applying patch `verbatim' on input line 66.
-LaTeX Info: Redefining \microtypesetup on input line 66.
+LaTeX Info: Redefining \microtypecontext on input line 48.
+Package microtype Info: Applying patch `item' on input line 48.
+Package microtype Info: Applying patch `toc' on input line 48.
+Package microtype Info: Applying patch `eqnum' on input line 48.
+Package microtype Info: Applying patch `footnote' on input line 48.
+Package microtype Info: Applying patch `verbatim' on input line 48.
+LaTeX Info: Redefining \microtypesetup on input line 48.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 66.
+LaTeX Info: Redefining \showhyphens on input line 48.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -648,7 +649,7 @@ Package microtype Info: No adjustment of character kerning.
 t-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 69.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 51.
 
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/microtype/m
 t-cmr.cfg
@@ -657,17 +658,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 69.
+(Font)              size <5> substituted on input line 51.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 69.
+(Font)              size <5> substituted on input line 51.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 69.
+(Font)              size <5> substituted on input line 51.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/um
@@ -678,7 +679,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 t-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/um
@@ -690,7 +691,7 @@ t-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/ptm/m/scit' in size <8> not available
-(Font)              Font shape `T1/ptm/m/sc' tried instead on input line 79.
+(Font)              Font shape `T1/ptm/m/sc' tried instead on input line 61.
  (./appendix/app_a.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
@@ -903,7 +904,7 @@ Package hyperref Warning: Difference (3) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 6.
 
 <resources/density_asymptotic_normality_and_var_est/Figure_Coverage_Combined.pn
-g, id=575, 1047.915pt x 712.3413pt>
+g, id=531, 1047.915pt x 712.3413pt>
 File: resources/density_asymptotic_normality_and_var_est/Figure_Coverage_Combin
 ed.png Graphic file (type png)
 <use resources/density_asymptotic_normality_and_var_est/Figure_Coverage_Combine
@@ -911,13 +912,8 @@ d.png>
 Package pdftex.def Info: resources/density_asymptotic_normality_and_var_est/Fig
 ure_Coverage_Combined.png  used on input line 16.
 (pdftex.def)             Requested size: 1047.91243pt x 712.33955pt.
-
-
-[23]
-
-[24]
 <resources/density_asymptotic_normality_and_var_est/Figure_CI_Widths_Combined.p
-ng, id=588, 1047.915pt x 712.3413pt>
+ng, id=533, 1047.915pt x 712.3413pt>
 File: resources/density_asymptotic_normality_and_var_est/Figure_CI_Widths_Combi
 ned.png Graphic file (type png)
 <use resources/density_asymptotic_normality_and_var_est/Figure_CI_Widths_Combin
@@ -927,7 +923,9 @@ ure_CI_Widths_Combined.png  used on input line 22.
 (pdftex.def)             Requested size: 1047.91243pt x 712.33955pt.
 
 
-[25
+[23]
+
+[24
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -936,7 +934,7 @@ l.25 \clearpage
                 <./resources/density_asymptotic_normality_and_var_est/Figure_Co
 verage_Combined.png>]
 
-[26
+[25
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -945,7 +943,7 @@ l.25 \clearpage
                 <./resources/density_asymptotic_normality_and_var_est/Figure_CI
 _Widths_Combined.png>]
 <resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_comparison.
-png, id=602, 715.2321pt x 443.0151pt>
+png, id=553, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_compar
 ison.png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_compari
@@ -954,7 +952,7 @@ Package pdftex.def Info: resources/density_asymptotic_efficiency/TruncatedNorma
 l/efficiency_comparison.png  used on input line 31.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
 <resources/density_asymptotic_efficiency/TruncatedGMMSymmetricThree/efficiency_
-comparison.png, id=603, 715.2321pt x 443.0151pt>
+comparison.png, id=554, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/TruncatedGMMSymmetricThree/effici
 ency_comparison.png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/TruncatedGMMSymmetricThree/efficie
@@ -963,7 +961,7 @@ Package pdftex.def Info: resources/density_asymptotic_efficiency/TruncatedGMMSy
 mmetricThree/efficiency_comparison.png  used on input line 37.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
 <resources/density_asymptotic_efficiency/TruncatedGMMAsymmetricThree/efficiency
-_comparison.png, id=604, 715.2321pt x 443.0151pt>
+_comparison.png, id=555, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/TruncatedGMMAsymmetricThree/effic
 iency_comparison.png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/TruncatedGMMAsymmetricThree/effici
@@ -971,27 +969,8 @@ ency_comparison.png>
 Package pdftex.def Info: resources/density_asymptotic_efficiency/TruncatedGMMAs
 ymmetricThree/efficiency_comparison.png  used on input line 43.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
-
-
-[27
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.46 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.46 
-      <./resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_com
-parison.png> <./resources/density_asymptotic_efficiency/TruncatedGMMSymmetricTh
-ree/efficiency_comparison.png>]
 <resources/density_asymptotic_efficiency/TruncatedGMMFiveSpikes/efficiency_comp
-arison.png, id=613, 715.2321pt x 443.0151pt>
+arison.png, id=556, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/TruncatedGMMFiveSpikes/efficiency
 _comparison.png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/TruncatedGMMFiveSpikes/efficiency_
@@ -1000,7 +979,7 @@ Package pdftex.def Info: resources/density_asymptotic_efficiency/TruncatedGMMFi
 veSpikes/efficiency_comparison.png  used on input line 49.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
 <resources/density_asymptotic_efficiency/StepFunction/efficiency_comparison.png
-, id=614, 715.2321pt x 443.0151pt>
+, id=557, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/StepFunction/efficiency_compariso
 n.png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/StepFunction/efficiency_comparison
@@ -1008,25 +987,8 @@ n.png Graphic file (type png)
 Package pdftex.def Info: resources/density_asymptotic_efficiency/StepFunction/e
 fficiency_comparison.png  used on input line 55.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
-
-
-[28
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.58 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.58 
-      <./resources/density_asymptotic_efficiency/TruncatedGMMAsymmetricThree/ef
-ficiency_comparison.png> <./resources/density_asymptotic_efficiency/TruncatedGM
-MFiveSpikes/efficiency_comparison.png>]
 <resources/density_asymptotic_efficiency/Sinusoidal/efficiency_comparison.png, 
-id=623, 715.2321pt x 443.0151pt>
+id=558, 715.2321pt x 443.0151pt>
 File: resources/density_asymptotic_efficiency/Sinusoidal/efficiency_comparison.
 png Graphic file (type png)
 <use resources/density_asymptotic_efficiency/Sinusoidal/efficiency_comparison.p
@@ -1036,7 +998,41 @@ iciency_comparison.png  used on input line 61.
 (pdftex.def)             Requested size: 365.39752pt x 226.32678pt.
 
 
-[29
+[26
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.65 \clearpage
+               
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.65 \clearpage
+               
+
+ <./resources/density_asymptotic_efficiency/TruncatedNormal/efficiency_comparis
+on.png> <./resources/density_asymptotic_efficiency/TruncatedGMMSymmetricThree/e
+fficiency_comparison.png>]
+
+[27
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.65 \clearpage
+               
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.65 \clearpage
+                <./resources/density_asymptotic_efficiency/TruncatedGMMAsymmetr
+icThree/efficiency_comparison.png> <./resources/density_asymptotic_efficiency/T
+runcatedGMMFiveSpikes/efficiency_comparison.png>]
+
+[28
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1055,7 +1051,7 @@ iency_comparison.png>]
 (./resources/target_estimand_variance/coverage_targeting_second_moment.tex)
 (./resources/target_estimand_variance/coverage_targeting_survival_0_5.tex)
 (./resources/target_estimand_variance/coverage_targeting_median.tex)
-<resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png, id=632
+<resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png, id=583
 , 425.9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png Gr
 aphic file (type png)
@@ -1063,36 +1059,7 @@ aphic file (type png)
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Tru
 ncatedNormal.png  used on input line 76.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[30
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.79 
-     ]
-<resources/target_estimand_variance/Figure_Coverage_TruncatedNormal.png, id=641
+<resources/target_estimand_variance/Figure_Coverage_TruncatedNormal.png, id=584
 , 426.1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_TruncatedNormal.png Gr
 aphic file (type png)
@@ -1101,7 +1068,7 @@ Package pdftex.def Info: resources/target_estimand_variance/Figure_Coverage_Tru
 ncatedNormal.png  used on input line 82.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
 <resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMSymmetricThree.
-png, id=642, 425.9112pt x 304.2567pt>
+png, id=585, 425.9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMSymmetricT
 hree.png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMSymmetricTh
@@ -1109,24 +1076,8 @@ ree.png>
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Tru
 ncatedGMMSymmetricThree.png  used on input line 88.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[31
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.91 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.91 
-      <./resources/target_estimand_variance/Figure_CI_Width_TruncatedNormal.png
-> <./resources/target_estimand_variance/Figure_Coverage_TruncatedNormal.png>]
 <resources/target_estimand_variance/Figure_Coverage_TruncatedGMMSymmetricThree.
-png, id=652, 426.1521pt x 304.2567pt>
+png, id=586, 426.1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_TruncatedGMMSymmetricT
 hree.png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_Coverage_TruncatedGMMSymmetricTh
@@ -1135,7 +1086,7 @@ Package pdftex.def Info: resources/target_estimand_variance/Figure_Coverage_Tru
 ncatedGMMSymmetricThree.png  used on input line 94.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
 <resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMAsymmetricThree
-.png, id=653, 425.9112pt x 304.2567pt>
+.png, id=587, 425.9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMAsymmetric
 Three.png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMAsymmetricT
@@ -1143,25 +1094,8 @@ hree.png>
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Tru
 ncatedGMMAsymmetricThree.png  used on input line 100.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[32
-pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.103 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.103 
-       <./resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMSymmet
-ricThree.png> <./resources/target_estimand_variance/Figure_Coverage_TruncatedGM
-MSymmetricThree.png>]
 <resources/target_estimand_variance/Figure_Coverage_TruncatedGMMAsymmetricThree
-.png, id=662, 426.1521pt x 304.2567pt>
+.png, id=588, 426.1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_TruncatedGMMAsymmetric
 Three.png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_Coverage_TruncatedGMMAsymmetricT
@@ -1170,7 +1104,7 @@ Package pdftex.def Info: resources/target_estimand_variance/Figure_Coverage_Tru
 ncatedGMMAsymmetricThree.png  used on input line 106.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
 <resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMFiveSpikes.png,
- id=663, 425.9112pt x 304.2567pt>
+ id=589, 425.9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMFiveSpikes
 .png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMFiveSpikes.
@@ -1178,25 +1112,8 @@ png>
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Tru
 ncatedGMMFiveSpikes.png  used on input line 112.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[33
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.115 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.115 
-       <./resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMAsymme
-tricThree.png> <./resources/target_estimand_variance/Figure_Coverage_TruncatedG
-MMAsymmetricThree.png>]
 <resources/target_estimand_variance/Figure_Coverage_TruncatedGMMFiveSpikes.png,
- id=672, 426.1521pt x 304.2567pt>
+ id=590, 426.1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_TruncatedGMMFiveSpikes
 .png Graphic file (type png)
 <use resources/target_estimand_variance/Figure_Coverage_TruncatedGMMFiveSpikes.
@@ -1204,7 +1121,7 @@ png>
 Package pdftex.def Info: resources/target_estimand_variance/Figure_Coverage_Tru
 ncatedGMMFiveSpikes.png  used on input line 118.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
-<resources/target_estimand_variance/Figure_CI_Width_StepFunction.png, id=673, 4
+<resources/target_estimand_variance/Figure_CI_Width_StepFunction.png, id=591, 4
 25.9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_StepFunction.png Graph
 ic file (type png)
@@ -1212,24 +1129,7 @@ ic file (type png)
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Ste
 pFunction.png  used on input line 124.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[34
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.127 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.127 
-       <./resources/target_estimand_variance/Figure_CI_Width_TruncatedGMMFiveSp
-ikes.png> <./resources/target_estimand_variance/Figure_Coverage_TruncatedGMMFiv
-eSpikes.png>]
-<resources/target_estimand_variance/Figure_Coverage_StepFunction.png, id=682, 4
+<resources/target_estimand_variance/Figure_Coverage_StepFunction.png, id=592, 4
 26.1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_StepFunction.png Graph
 ic file (type png)
@@ -1237,7 +1137,7 @@ ic file (type png)
 Package pdftex.def Info: resources/target_estimand_variance/Figure_Coverage_Ste
 pFunction.png  used on input line 130.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
-<resources/target_estimand_variance/Figure_CI_Width_Sinusoidal.png, id=683, 425
+<resources/target_estimand_variance/Figure_CI_Width_Sinusoidal.png, id=593, 425
 .9112pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_CI_Width_Sinusoidal.png Graphic
  file (type png)
@@ -1245,23 +1145,7 @@ File: resources/target_estimand_variance/Figure_CI_Width_Sinusoidal.png Graphic
 Package pdftex.def Info: resources/target_estimand_variance/Figure_CI_Width_Sin
 usoidal.png  used on input line 136.
 (pdftex.def)             Requested size: 304.5pt x 217.52332pt.
-
-
-[35
-pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.139 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.139 
-       <./resources/target_estimand_variance/Figure_CI_Width_StepFunction.png> 
-<./resources/target_estimand_variance/Figure_Coverage_StepFunction.png>]
-<resources/target_estimand_variance/Figure_Coverage_Sinusoidal.png, id=692, 426
+<resources/target_estimand_variance/Figure_Coverage_Sinusoidal.png, id=594, 426
 .1521pt x 304.2567pt>
 File: resources/target_estimand_variance/Figure_Coverage_Sinusoidal.png Graphic
  file (type png)
@@ -1271,7 +1155,115 @@ usoidal.png  used on input line 142.
 (pdftex.def)             Requested size: 304.5pt x 217.4119pt.
 
 
-[36
+[29
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+
+]
+
+[30
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                 <./resources/target_estimand_variance/Figure_CI_Width_Truncate
+dNormal.png> <./resources/target_estimand_variance/Figure_Coverage_TruncatedNor
+mal.png>]
+
+[31
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                 <./resources/target_estimand_variance/Figure_CI_Width_Truncate
+dGMMSymmetricThree.png> <./resources/target_estimand_variance/Figure_Coverage_T
+runcatedGMMSymmetricThree.png>]
+
+[32
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                 <./resources/target_estimand_variance/Figure_CI_Width_Truncate
+dGMMAsymmetricThree.png> <./resources/target_estimand_variance/Figure_Coverage_
+TruncatedGMMAsymmetricThree.png>]
+
+[33
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                 <./resources/target_estimand_variance/Figure_CI_Width_Truncate
+dGMMFiveSpikes.png> <./resources/target_estimand_variance/Figure_Coverage_Trunc
+atedGMMFiveSpikes.png>]
+
+[34
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 \clearpage
+                 <./resources/target_estimand_variance/Figure_CI_Width_StepFunc
+tion.png> <./resources/target_estimand_variance/Figure_Coverage_StepFunction.pn
+g>]
+
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1287,11 +1279,11 @@ l.146 \clearpage
 al.png> <./resources/target_estimand_variance/Figure_Coverage_Sinusoidal.png>])
 (./appendix/app_j_knot_selection.tex
 
-[37
+[36
 
 ]
 <resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_per_it
-er.png, id=715, 252.945pt x 180.675pt>
+er.png, id=665, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_p
 er_iter.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_pe
@@ -1300,7 +1292,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedNo
 rmal_order_2_loss_per_iter.png  used on input line 54.
 (pdftex.def)             Requested size: 146.16025pt x 104.40285pt.
 <resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_per_fl
-op.png, id=716, 252.945pt x 180.675pt>
+op.png, id=666, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_p
 er_flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_pe
@@ -1309,7 +1301,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedNo
 rmal_order_2_loss_per_flop.png  used on input line 55.
 (pdftex.def)             Requested size: 146.16025pt x 104.40285pt.
 <resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_select
-ion.png, id=717, 252.945pt x 180.675pt>
+ion.png, id=667, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_s
 election.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_se
@@ -1318,7 +1310,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedNo
 rmal_order_2_knot_selection.png  used on input line 56.
 (pdftex.def)             Requested size: 146.16025pt x 104.40285pt.
 <resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_knot_select
-ion_flops.png, id=718, 252.945pt x 180.675pt>
+ion_flops.png, id=668, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_knot_s
 election_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_knot_se
@@ -1327,7 +1319,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedNo
 rmal_order_2_knot_selection_flops.png  used on input line 57.
 (pdftex.def)             Requested size: 146.16025pt x 104.40285pt.
 <resources/optimization_algorithms/per_iter/legend_knot_selection_algorithms.pn
-g, id=719, 467.346pt x 28.6671pt>
+g, id=669, 467.346pt x 28.6671pt>
 File: resources/optimization_algorithms/per_iter/legend_knot_selection_algorith
 ms.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/legend_knot_selection_algorithm
@@ -1337,26 +1329,14 @@ _selection_algorithms.png  used on input line 59.
 (pdftex.def)             Requested size: 292.3205pt x 17.93086pt.
 
 
-[38
+[37
 pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.63 
-     ]
-
-[39
-pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.75 
-      <./resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_los
-s_per_iter.png> <./resources/optimization_algorithms/per_flop/TruncatedNormal_o
-rder_2_loss_per_flop.png> <./resources/optimization_algorithms/per_iter/Truncat
-edNormal_order_2_knot_selection.png> <./resources/optimization_algorithms/per_f
-lop/TruncatedNormal_order_2_knot_selection_flops.png> <./resources/optimization
-_algorithms/per_iter/legend_knot_selection_algorithms.png>]
+l.70 I
+      t is well known that locally supported B-splines can be more computati...
+]
 Underfull \hbox (badness 1348) in paragraph at lines 77--78
 \T1/ptm/m/n/11 (+20) counts for each al-go-rithm; see the project note $\T1/pcr
 /m/n/11 experiments / compare _ knot _
@@ -1366,6 +1346,20 @@ Underfull \hbox (badness 1348) in paragraph at lines 77--78
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 79.
 
+
+
+[38
+pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.84 
+      <./resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_los
+s_per_iter.png> <./resources/optimization_algorithms/per_flop/TruncatedNormal_o
+rder_2_loss_per_flop.png> <./resources/optimization_algorithms/per_iter/Truncat
+edNormal_order_2_knot_selection.png> <./resources/optimization_algorithms/per_f
+lop/TruncatedNormal_order_2_knot_selection_flops.png> <./resources/optimization
+_algorithms/per_iter/legend_knot_selection_algorithms.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 85.
@@ -1392,7 +1386,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedNo
 rmal_order_2_loss_per_iter.png  used on input line 92.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_order_1_
-loss_per_iter.png, id=737, 252.945pt x 180.675pt>
+loss_per_iter.png, id=688, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_ord
 er_1_loss_per_iter.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_orde
@@ -1401,7 +1395,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MSymmetricThree_order_1_loss_per_iter.png  used on input line 94.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_order_2
-_loss_per_iter.png, id=738, 252.945pt x 180.675pt>
+_loss_per_iter.png, id=689, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_or
 der_2_loss_per_iter.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_ord
@@ -1410,7 +1404,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MAsymmetricThree_order_2_loss_per_iter.png  used on input line 96.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_loss
-_per_iter.png, id=739, 252.945pt x 180.675pt>
+_per_iter.png, id=690, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1
 _loss_per_iter.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_
@@ -1419,7 +1413,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MFiveSpikes_order_1_loss_per_iter.png  used on input line 98.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/StepFunction_order_0_loss_per_iter.
-png, id=740, 252.945pt x 180.675pt>
+png, id=691, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/StepFunction_order_0_loss_per_
 iter.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/StepFunction_order_0_loss_per_i
@@ -1428,7 +1422,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/StepFunctio
 n_order_0_loss_per_iter.png  used on input line 100.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/Sinusoidal_order_1_loss_per_iter.pn
-g, id=741, 252.945pt x 180.675pt>
+g, id=692, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/Sinusoidal_order_1_loss_per_it
 er.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/Sinusoidal_order_1_loss_per_ite
@@ -1436,9 +1430,6 @@ r.png>
 Package pdftex.def Info: resources/optimization_algorithms/per_iter/Sinusoidal_
 order_1_loss_per_iter.png  used on input line 102.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
-
-
-[40]
 File: resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_p
 er_flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_pe
@@ -1447,7 +1438,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedNo
 rmal_order_2_loss_per_flop.png  used on input line 110.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_order_1_
-loss_per_flop.png, id=747, 252.945pt x 180.675pt>
+loss_per_flop.png, id=693, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_ord
 er_1_loss_per_flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_orde
@@ -1456,7 +1447,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MSymmetricThree_order_1_loss_per_flop.png  used on input line 112.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_order_2
-_loss_per_flop.png, id=748, 252.945pt x 180.675pt>
+_loss_per_flop.png, id=694, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_or
 der_2_loss_per_flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_ord
@@ -1465,7 +1456,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MAsymmetricThree_order_2_loss_per_flop.png  used on input line 114.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_loss
-_per_flop.png, id=749, 252.945pt x 180.675pt>
+_per_flop.png, id=695, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1
 _loss_per_flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_
@@ -1474,7 +1465,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MFiveSpikes_order_1_loss_per_flop.png  used on input line 116.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/StepFunction_order_0_loss_per_flop.
-png, id=750, 252.945pt x 180.675pt>
+png, id=696, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/StepFunction_order_0_loss_per_
 flop.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/StepFunction_order_0_loss_per_f
@@ -1483,7 +1474,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/StepFunctio
 n_order_0_loss_per_flop.png  used on input line 118.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/Sinusoidal_order_1_loss_per_flop.pn
-g, id=751, 252.945pt x 180.675pt>
+g, id=697, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/Sinusoidal_order_1_loss_per_fl
 op.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/Sinusoidal_order_1_loss_per_flo
@@ -1491,20 +1482,6 @@ p.png>
 Package pdftex.def Info: resources/optimization_algorithms/per_flop/Sinusoidal_
 order_1_loss_per_flop.png  used on input line 120.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
-
-
-[41
-pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.125 
-       <./resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree
-_order_1_loss_per_iter.png> <./resources/optimization_algorithms/per_iter/Trunc
-atedGMMAsymmetricThree_order_2_loss_per_iter.png> <./resources/optimization_alg
-orithms/per_iter/TruncatedGMMFiveSpikes_order_1_loss_per_iter.png> <./resources
-/optimization_algorithms/per_iter/StepFunction_order_0_loss_per_iter.png> <./re
-sources/optimization_algorithms/per_iter/Sinusoidal_order_1_loss_per_iter.png>]
 File: resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_s
 election.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_se
@@ -1513,7 +1490,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedNo
 rmal_order_2_knot_selection.png  used on input line 128.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_order_1_
-knot_selection.png, id=762, 252.945pt x 180.675pt>
+knot_selection.png, id=698, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_ord
 er_1_knot_selection.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree_orde
@@ -1522,7 +1499,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MSymmetricThree_order_1_knot_selection.png  used on input line 130.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_order_2
-_knot_selection.png, id=763, 252.945pt x 180.675pt>
+_knot_selection.png, id=699, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_or
 der_2_knot_selection.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMAsymmetricThree_ord
@@ -1531,7 +1508,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MAsymmetricThree_order_2_knot_selection.png  used on input line 132.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_knot
-_selection.png, id=764, 252.945pt x 180.675pt>
+_selection.png, id=700, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1
 _knot_selection.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_
@@ -1540,7 +1517,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/TruncatedGM
 MFiveSpikes_order_1_knot_selection.png  used on input line 134.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/StepFunction_order_0_knot_selection
-.png, id=765, 252.945pt x 180.675pt>
+.png, id=701, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/StepFunction_order_0_knot_sele
 ction.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/StepFunction_order_0_knot_selec
@@ -1549,7 +1526,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_iter/StepFunctio
 n_order_0_knot_selection.png  used on input line 136.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_iter/Sinusoidal_order_1_knot_selection.p
-ng, id=766, 252.945pt x 180.675pt>
+ng, id=702, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_iter/Sinusoidal_order_1_knot_select
 ion.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/Sinusoidal_order_1_knot_selecti
@@ -1557,20 +1534,6 @@ on.png>
 Package pdftex.def Info: resources/optimization_algorithms/per_iter/Sinusoidal_
 order_1_knot_selection.png  used on input line 138.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
-
-
-[42
-pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.141 
-       <./resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree
-_order_1_loss_per_flop.png> <./resources/optimization_algorithms/per_flop/Trunc
-atedGMMAsymmetricThree_order_2_loss_per_flop.png> <./resources/optimization_alg
-orithms/per_flop/TruncatedGMMFiveSpikes_order_1_loss_per_flop.png> <./resources
-/optimization_algorithms/per_flop/StepFunction_order_0_loss_per_flop.png> <./re
-sources/optimization_algorithms/per_flop/Sinusoidal_order_1_loss_per_flop.png>]
 File: resources/optimization_algorithms/per_iter/legend_knot_selection_algorith
 ms.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/legend_knot_selection_algorithm
@@ -1586,7 +1549,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedNo
 rmal_order_2_knot_selection_flops.png  used on input line 151.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_order_1_
-knot_selection_flops.png, id=777, 252.945pt x 180.675pt>
+knot_selection_flops.png, id=703, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_ord
 er_1_knot_selection_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMSymmetricThree_orde
@@ -1595,7 +1558,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MSymmetricThree_order_1_knot_selection_flops.png  used on input line 153.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_order_2
-_knot_selection_flops.png, id=778, 252.945pt x 180.675pt>
+_knot_selection_flops.png, id=704, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_or
 der_2_knot_selection_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_ord
@@ -1604,7 +1567,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MAsymmetricThree_order_2_knot_selection_flops.png  used on input line 155.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_knot
-_selection_flops.png, id=779, 252.945pt x 180.675pt>
+_selection_flops.png, id=705, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1
 _knot_selection_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_
@@ -1613,7 +1576,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/TruncatedGM
 MFiveSpikes_order_1_knot_selection_flops.png  used on input line 157.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/StepFunction_order_0_knot_selection
-_flops.png, id=780, 252.945pt x 180.675pt>
+_flops.png, id=706, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/StepFunction_order_0_knot_sele
 ction_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/StepFunction_order_0_knot_selec
@@ -1622,7 +1585,7 @@ Package pdftex.def Info: resources/optimization_algorithms/per_flop/StepFunctio
 n_order_0_knot_selection_flops.png  used on input line 159.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
 <resources/optimization_algorithms/per_flop/Sinusoidal_order_1_knot_selection_f
-lops.png, id=781, 252.945pt x 180.675pt>
+lops.png, id=707, 252.945pt x 180.675pt>
 File: resources/optimization_algorithms/per_flop/Sinusoidal_order_1_knot_select
 ion_flops.png Graphic file (type png)
 <use resources/optimization_algorithms/per_flop/Sinusoidal_order_1_knot_selecti
@@ -1630,21 +1593,6 @@ on_flops.png>
 Package pdftex.def Info: resources/optimization_algorithms/per_flop/Sinusoidal_
 order_1_knot_selection_flops.png  used on input line 161.
 (pdftex.def)             Requested size: 198.94223pt x 142.1031pt.
-
-
-[43
-pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.163 
-       <./resources/optimization_algorithms/per_iter/TruncatedGMMSymmetricThree
-_order_1_knot_selection.png> <./resources/optimization_algorithms/per_iter/Trun
-catedGMMAsymmetricThree_order_2_knot_selection.png> <./resources/optimization_a
-lgorithms/per_iter/TruncatedGMMFiveSpikes_order_1_knot_selection.png> <./resour
-ces/optimization_algorithms/per_iter/StepFunction_order_0_knot_selection.png> <
-./resources/optimization_algorithms/per_iter/Sinusoidal_order_1_knot_selection.
-png>]
 File: resources/optimization_algorithms/per_iter/legend_knot_selection_algorith
 ms.png Graphic file (type png)
 <use resources/optimization_algorithms/per_iter/legend_knot_selection_algorithm
@@ -1652,115 +1600,116 @@ s.png>
 Package pdftex.def Info: resources/optimization_algorithms/per_iter/legend_knot
 _selection_algorithms.png  used on input line 166.
 (pdftex.def)             Requested size: 365.39752pt x 22.41315pt.
-) (./hal_mle_aos_supplement.bbl
+) (./hal_mle_aos_supplement.bbl)
 
-[44
+[39]
+
+[40
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 \end{document}
+                    <./resources/optimization_algorithms/per_iter/TruncatedGMMS
+ymmetricThree_order_1_loss_per_iter.png> <./resources/optimization_algorithms/p
+er_iter/TruncatedGMMAsymmetricThree_order_2_loss_per_iter.png> <./resources/opt
+imization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_loss_per_iter.png>
+ <./resources/optimization_algorithms/per_iter/StepFunction_order_0_loss_per_it
+er.png> <./resources/optimization_algorithms/per_iter/Sinusoidal_order_1_loss_p
+er_iter.png>]
+
+[41
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 \end{document}
+                    <./resources/optimization_algorithms/per_flop/TruncatedGMMS
+ymmetricThree_order_1_loss_per_flop.png> <./resources/optimization_algorithms/p
+er_flop/TruncatedGMMAsymmetricThree_order_2_loss_per_flop.png> <./resources/opt
+imization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_loss_per_flop.png>
+ <./resources/optimization_algorithms/per_flop/StepFunction_order_0_loss_per_fl
+op.png> <./resources/optimization_algorithms/per_flop/Sinusoidal_order_1_loss_p
+er_flop.png>]
+
+[42
+pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 \end{document}
+                    <./resources/optimization_algorithms/per_iter/TruncatedGMMS
+ymmetricThree_order_1_knot_selection.png> <./resources/optimization_algorithms/
+per_iter/TruncatedGMMAsymmetricThree_order_2_knot_selection.png> <./resources/o
+ptimization_algorithms/per_iter/TruncatedGMMFiveSpikes_order_1_knot_selection.p
+ng> <./resources/optimization_algorithms/per_iter/StepFunction_order_0_knot_sel
+ection.png> <./resources/optimization_algorithms/per_iter/Sinusoidal_order_1_kn
+ot_selection.png>]
+
+[43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.60   Tibshirani}{2019}]{sadhanala2019additive}
-                                                 <./resources/optimization_algo
-rithms/per_flop/TruncatedGMMSymmetricThree_order_1_knot_selection_flops.png> <.
-/resources/optimization_algorithms/per_flop/TruncatedGMMAsymmetricThree_order_2
-_knot_selection_flops.png> <./resources/optimization_algorithms/per_flop/Trunca
-tedGMMFiveSpikes_order_1_knot_selection_flops.png> <./resources/optimization_al
-gorithms/per_flop/StepFunction_order_0_knot_selection_flops.png> <./resources/o
-ptimization_algorithms/per_flop/Sinusoidal_order_1_knot_selection_flops.png>])
-
-[45] (./hal_mle_aos_supplement.aux)
+l.99 \end{document}
+                    <./resources/optimization_algorithms/per_flop/TruncatedGMMS
+ymmetricThree_order_1_knot_selection_flops.png> <./resources/optimization_algor
+ithms/per_flop/TruncatedGMMAsymmetricThree_order_2_knot_selection_flops.png> <.
+/resources/optimization_algorithms/per_flop/TruncatedGMMFiveSpikes_order_1_knot
+_selection_flops.png> <./resources/optimization_algorithms/per_flop/StepFunctio
+n_order_0_knot_selection_flops.png> <./resources/optimization_algorithms/per_fl
+op/Sinusoidal_order_1_knot_selection_flops.png>] (./hal_mle_aos_supplement.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.25pt have occurred.
 
 Package rerunfilecheck Info: File `hal_mle_aos_supplement.out' has not changed.
 
-(rerunfilecheck)             Checksum: A2A96E4994701F56D8200E0613F20CFA;13436.
+(rerunfilecheck)             Checksum: 3FBD5DF6BC8DE649B837F0C1F4DCD87C;14048.
  ) 
 Here is how much of TeX's memory you used:
- 16455 strings out of 473190
- 283861 string characters out of 5704335
- 692275 words of memory out of 5000000
- 38794 multiletter control sequences out of 15000+600000
- 651354 words of font info for 383 fonts, out of 8000000 for 9000
+ 16421 strings out of 473190
+ 283212 string characters out of 5704335
+ 697833 words of memory out of 5000000
+ 38778 multiletter control sequences out of 15000+600000
+ 651097 words of font info for 379 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,15n,79p,1053b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{theorem.5.3} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.5.2} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.5.1} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.4.8} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.4.7} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.4.4} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.4.3} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.4.6} has been referenced but does not exist
-, replaced by a fixed one
-
-</opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20250308
-_1/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></opt/homebre
-w/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/2
-0250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></opt/homeb
+</opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/202503
+08_1/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></opt/homeb
 rew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmib10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive
-/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/home
-brew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr9.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive
-/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></o
-pt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm7.pfb></opt/homebrew/Cellar/texlive/2
-0250308_1/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/homebrew/Ce
-llar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt
-/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on hal_mle_aos_supplement.pdf (45 pages, 6486084 bytes).
+mmi10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive
+/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></opt/hom
+ebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmib10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texli
+ve/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/ho
+mebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texli
+ve/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
+/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></opt/homebrew/Cellar/texlive
+/20250308_1/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></opt/homebrew/
+Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></o
+pt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/ut
+mr8a.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/
+urw/times/utmri8a.pfb>
+Output written on hal_mle_aos_supplement.pdf (43 pages, 6483914 bytes).
 PDF statistics:
- 944 PDF objects out of 1000 (max. 8388607)
- 737 compressed objects within 8 object streams
- 209 named destinations out of 1000 (max. 500000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 197 named destinations out of 1000 (max. 500000)
  76018 words of extra memory for PDF output out of 89155 (max. 10000000)
 

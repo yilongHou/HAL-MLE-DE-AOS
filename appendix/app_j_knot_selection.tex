@@ -23,7 +23,7 @@ We refer to the matrix of initiated basis evaluated at the data points as the ba
 
 \paragraph{Large-scale Adjustment} The proximal Newton's method fails for large-scale problems due to memory issues. When the sample size n is too large, such as 10,000 or 100,000, the initialized Hessian will be $O(n^2)$ and too large to be memorized. For this problem, we propose the Quasi-Newton method (L-BFGS) and coordinate descent. An easy implementation is just memorizing the most recent pair of differences in parameters and their corresponding gradient. Thus, the approximation of the Hessian is a scaled identity matrix, and we update the scale at each iteration. The memory reduces from $O(n^2)$ to $O(n)$. Pragmatically, we find out that including the coordinate descent is more robust for large-scale problems.
 
-Another algorithm we propose is a variant of AdaGrad using the inner product defined in Equation~\ref{eq:inner-product-score}. We just compute the diagonal entries of the Hessian for each iteration. Thus, the cost per iteration becomes very cheap, and the memory is just $O(n)$ and totally affordable. 
+Another algorithm we propose is a variant of AdaGrad using the inner product defined in Eq. (4.2) of the main paper. We just compute the diagonal entries of the Hessian for each iteration. Thus, the cost per iteration becomes very cheap, and the memory is just $O(n)$ and totally affordable. 
 
 \begin{remark}
 The development of the large-scale methods seems to be unnecessary in the univariate case, because, in HAL theory like Appendix~\ref{appB: $L^2$ Convergence Analysis} and Appendix~\ref{appendix_E: Uniform Convergence Rate}, we only need about $O^+(n^{\frac{1}{2k+3}})$ knots, and we could choose them based on the percentile of the original sample while remaining the performance. However, in the multivariate case, we need such algorithms because (1) the definition of multivariate percentile could be meaningless and (2) even a small sample size could initialize a large number of parameters $n(2^d - 1)$ for $ d$-dimensional data.
@@ -32,7 +32,7 @@ The development of the large-scale methods seems to be unnecessary in the univar
 \subsubsection{Exploration of Optimization Algorithms} \label{subsct: exploration_of_optimization_algorithms}
 We study the performance of the optimization algorithms in some fixed settings where \texttt{CVXPY} solvers have trouble selecting knot points. We here demonstrate the performance of the optimization algorithms on the Truncated Normal Data Generating Process (DGP), and the visualizations are shown in Figure~\ref{fig:opt-algorithms-tn}. We use the final result of \texttt{CVXPY} solutions as the baseline, and we evaluate the performance of the optimization algorithms by comparing the knot selection and loss convergence per iteration and per FLOP. The FLOPs are estimated by the computational complexity of the algorithms, which is shown in Table~\ref{tab:complexity-summary}. Comprehensive results for all six DGPs and the computational-complexity details based on our implementation are provided in this appendix.
 
-\begin{table}[H]
+\begin{table}[tbp]
    \centering
    \begin{tabular}{ll}
    \toprule
@@ -49,7 +49,7 @@ We study the performance of the optimization algorithms in some fixed settings w
    \end{table}
 
 
-\begin{figure}[H]
+\begin{figure}[tbp]
 \centering
 \includegraphics[width=.36\textwidth]{resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_per_iter.png}
 \includegraphics[width=.36\textwidth]{resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_per_flop.png}\\
@@ -87,7 +87,7 @@ We summarize implementation\,-\,aware FLOP counts for each algorithm; see the pr
 \subsection{From iterations to cumulative FLOPs}
 Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration $t$ are $C(t) = \sum_{k=1}^t F(k)$. Our visualization utilities infer $L_k$ from logged step sizes $\alpha_k$ (with backtracking factor $\beta=0.5$) and use consistent baselines at iteration/FLOP zero. See the note for practical defaults and alignment details.
 
-\begin{figure}[H]
+\begin{figure}[tbp]
     \centering
     \includegraphics[width=.49\textwidth]{resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_loss_per_iter.png}
     \hfill
@@ -105,7 +105,7 @@ Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration 
     \label{fig:opt-per-iter-loss}
     \end{figure}
     
-    \begin{figure}[H]
+    \begin{figure}[tbp]
     \centering
     \includegraphics[width=.49\textwidth]{resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_loss_per_flop.png}
     \hfill
@@ -123,7 +123,7 @@ Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration 
     \label{fig:opt-per-flop-loss}
  \end{figure}
  
- \begin{figure}[H]
+ \begin{figure}[tbp]
  \centering
  \includegraphics[width=.49\textwidth]{resources/optimization_algorithms/per_iter/TruncatedNormal_order_2_knot_selection.png}
  \hfill
@@ -139,14 +139,14 @@ Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration 
  
  \end{figure}
  
- \begin{figure}[H]
+ \begin{figure}[tbp]
     \centering
     \includegraphics[width=.9\textwidth]{resources/optimization_algorithms/per_iter/legend_knot_selection_algorithms.png}
     \caption{Per-iteration knot selection for optimization algorithms across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}
  \label{fig:opt-per-iter-knot}
  \end{figure}
  
- \begin{figure}[H]
+ \begin{figure}[tbp]
  \centering
  \includegraphics[width=.49\textwidth]{resources/optimization_algorithms/per_flop/TruncatedNormal_order_2_knot_selection_flops.png}
  \hfill
@@ -161,7 +161,7 @@ Given per\,-\,iteration FLOP estimates $F(k)$, cumulative FLOPs up to iteration 
  \includegraphics[width=.49\textwidth]{resources/optimization_algorithms/per_flop/Sinusoidal_order_1_knot_selection_flops.png}
  \end{figure}
  
- \begin{figure}[H]
+ \begin{figure}[tbp]
     \centering
     \includegraphics[width=.9\textwidth]{resources/optimization_algorithms/per_iter/legend_knot_selection_algorithms.png}
     \caption{Per-FLOP-normalized knot selection across six DGPs. Panels (row-wise, left to right): (a) TN, (b) GS3, (c) GA3, (d) GS5, (e) Step, (f) Sine.}

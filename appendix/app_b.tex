@@ -2,11 +2,11 @@
 We start with the $L^2$ convergence proof, which is a standard proof based on the convergence of loss-based dissimilarity. Let \(\mathcal F := D^{(k)}_U([0,1])\), and define \(f_{0} \;=\; \arg\min_{f\in\mathcal F} P_{0}L(f)\). Let $M$ be the user-supplied $L_1$ norm constraint and $\mathcal{R}_n$ be the index set of the finite-dimensional working model, and define 
 \(f_{n} \;=\; \arg\min_{f\in D^{(k)}_M(\mathcal{R}_n)} P_{n}L(f).\)
 Define the loss-based dissimilarity to be
-\(d_{0}(f_{n},f_{0}) \;=\; P_{0}L(f_{n}) - P_{0}L(f_{0}).\) Notice that $d_{0}(f_{n},f_{0})$ is just the KL divergence of the true density $p_{f_{0}}$ and the estimated density $p_{f_{n}}$ when $L$ is $-\log p_f$. Knowing the fact that KL divergence is equivalent to the squared $L^2$-norm when the positivity assumption in Theorem~\ref{thm:density_HAL_asymptotic_normality} holds true, we can show the $L^2$ convergence of HAL-MLE by showing the convergence of $d_{0}(f_{n},f_{0})$. Again, the positivity assumption is guaranteed by the link function.
+\(d_{0}(f_{n},f_{0}) \;=\; P_{0}L(f_{n}) - P_{0}L(f_{0}).\) Notice that $d_{0}(f_{n},f_{0})$ is just the KL divergence of the true density $p_{f_{0}}$ and the estimated density $p_{f_{n}}$ when $L$ is $-\log p_f$. Knowing the fact that KL divergence is equivalent to the squared $L^2$-norm when the positivity assumption in Theorem 4.6 of the main paper holds true, we can show the $L^2$ convergence of HAL-MLE by showing the convergence of $d_{0}(f_{n},f_{0})$. Again, the positivity assumption is guaranteed by the link function.
 
-\subsection{Proof of Theorem~\ref{thm:l2-convergence-hal-mle}}
+\subsection{Proof of Theorem 4.3 in the main paper}
 We show the convergence by discussing the covering number of $D^{(k)}_U([0,1]^d)$ and its relationship to the covering number of $\mathcal{F}_L := \{L(f) - L(f_0): f \in \mathcal F\}$.
-The sup–norm covering number of $D^k_M[0,1]^d$ is covered in Lemma 29 of \citep{vanderlaan2023higherordersplinehighly}, and this implies the $L^2$ covering number of $D^k_M[0,1]^d$. However, for the univariate case, it is sufficient—and conventional—to rely directly on existing \(L^{2}\) results for functions whose \(k^{\text{th}}\) derivative has bounded total variation. The equivalency is already stated in Section~\ref{Relationship with TV}. The earliest source we have been able to locate is \citep{birman1967piecewise}, which establishes the sharp bound
+The sup–norm covering number of $D^k_M[0,1]^d$ is covered in Lemma 29 of \citep{vanderlaan2023higherordersplinehighly}, and this implies the $L^2$ covering number of $D^k_M[0,1]^d$. However, for the univariate case, it is sufficient—and conventional—to rely directly on existing \(L^{2}\) results for functions whose \(k^{\text{th}}\) derivative has bounded total variation. The equivalency is already stated in Section 2.2 of the main paper. The earliest source we have been able to locate is \citep{birman1967piecewise}, which establishes the sharp bound
 \(
 \log N\!\Bigl(\varepsilon,\; D^{(k)}_U([0,1]),\; L^2(\mu)\Bigr)
 \;\lesssim\;
@@ -58,7 +58,7 @@ Let $\{f_j^\varepsilon: j = 1, \cdots, N(\varepsilon)\}$ be an $\varepsilon$-cov
 And this implies that any element in $\mathcal{F}_L$ can be expressed as $L(f) - L(f_0)$. Constructing a net $\{L(f_j^\varepsilon) - L(f_0): j = 1, \cdots, N(\varepsilon)\}$ on $\mathcal{F}_L$ based on that covering number, then $\lVert((L(f_j^\varepsilon) - L(f_0)) - (L(f) - L(f_0))\lVert_{L^2(P_0)}^2 = \lVert L(f_j^\varepsilon) - L(f)\lVert_{L^2(P_0)}^2 = P_0\{L(f_j^\varepsilon) - L(f) \}^2 =O(\lVert f_j^\varepsilon - f\rVert^{2}) = O(\varepsilon^2)$. The second last step is implied by Assumption~\ref{as2}. So this net is a covering number on $\mathcal{F}_L$ which indicates the equivalence of the covering number of both classes.
 \end{proof}
 
-Now we have developed all the tools needed for proving Theorem~\ref{thm:l2-convergence-hal-mle}. 
+Now we have developed all the tools needed for proving Theorem 4.3 in the main paper. 
 
 \begin{proof}
 Let \( J(\delta, \mathcal{F}_L, L^2(P_0)) \) be the entropy integral of $\mathcal{F}_L$; for brevity we write \(J_2(\delta)\). Based on Theorem~\ref{Covering number equivalency}, $\mathcal{F}_L$ and $\mathcal{F}$ shares the same entropy integral \(J_2(\delta) = \delta^\frac{2k+1}{2k+2}\).

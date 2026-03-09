@@ -6,7 +6,7 @@ Note that this equals
 \[
 S_{\beta}(\phi_j)=\phi_j(X)-P_{\beta}\phi_j, \]
 where $P_{\beta}\phi_j\equiv \int \phi_j(x)p_{\beta}(x) \mathrm{d}x$.
-We note $\phi\rightarrow S_{\beta}(\phi)$ is linear. HAL-MLE has one $L_1$ norm constraint and solves $J_n - 1$ scores. We name the linear span of these $J_n - 1$ scores as the $L_1$ constrained score space, and notice that this space is a closed linear subspace of $D^k(\mathcal{R}_n)$. In the latter proof in Appendix~\ref{appendix_D: proof of asymptotic normality} and Appendix~\ref{appendix_E: Uniform Convergence Rate}, we will construct $\bar{\phi}_{n,x}$ as defined before Theorem~\ref{thm:asymptotic-linearity-hal-mle} and we want to elaborate on the rate of $P_n S_{f_n}(\bar{\phi}_{n,x})$.
+We note $\phi\rightarrow S_{\beta}(\phi)$ is linear. HAL-MLE has one $L_1$ norm constraint and solves $J_n - 1$ scores. We name the linear span of these $J_n - 1$ scores as the $L_1$ constrained score space, and notice that this space is a closed linear subspace of $D^k(\mathcal{R}_n)$. In the latter proof in Appendix~\ref{appendix_D: proof of asymptotic normality} and Appendix~\ref{appendix_E: Uniform Convergence Rate}, we will construct $\bar{\phi}_{n,x}$ as defined before Theorem 4.4 of the main paper and we want to elaborate on the rate of $P_n S_{f_n}(\bar{\phi}_{n,x})$.
 
 Let $\tilde{\phi}_{n,x}$ be the projection of $\bar{\phi}_{n,x}$ onto the $L_1$ constrained score space, that is, the linear span of scores $S_{f_n}(\tilde{\phi}_j)$, $j\in {\cal R}_n$ that HAL solves exactly so that $P_n S_{f_n}(\tilde{\phi}_j)=0$ for $j\in {\cal R}_n$. Then, $P_n S_{f_n}(\tilde{\phi}_{n,x})=0$, and thus we have
 \[
@@ -22,7 +22,7 @@ We have $p_{f_{n,0}}>\delta>0$ on $[0,1]$, so that we also have
 \Vert \bar{\phi}_{n,x} \Vert_{\mu}=O(1).
 \end{align}
 
-Recall the $L^2$ Approximation Error Assumption between $D^k(\mathcal{R}_n)$ and $D^k_U([0,1])$ in Theorem~\ref{thm:asymptotic-linearity-hal-mle} 
+Recall the $L^2$ Approximation Error Assumption between $D^k(\mathcal{R}_n)$ and $D^k_U([0,1])$ in Theorem 4.4 of the main paper 
 \[
 \sup_{f\in D^{(k)}_U([0,1])}\inf_{g\in D^{(k)}(\mathcal R_{n})}\|f-g\|_{\mu}
 =O^+\bigl(J_{n}^{-(k+1)}\bigr).

@@ -200,11 +200,25 @@ We now analyze the HAL-MLE w.r.t.  the independent oracle MLE $f_{{\cal R}_{n,0}
 
 Although \(f_n\) is not a full MLE over \(D^{(k)}(\mathcal R_{n,0})\), it can be shown to act as an approximate MLE solving its score equations at close enough approximation so that $f_n$ not only acts as an MLE over the data dependent working model $D^{(k)}({\cal R}_n)$ but also as an MLE over the independent working model $D^{(k)}({\cal R}_{n,0})$. The approximation error in solving these score equations is a term in our analysis that is formally addressed in Section S.3 of the Supplementary Material \citep{hou2026supplement} by introducing the $L_1$ constrained score space. The HAL-MLE, $f_n$, has one $L_1$ norm constraint on the coefficients, and thus solves $J_n - 1$ score equations. We name the linear span of these $J_n - 1$ scores as the $L_1$ constrained score space, and this space is a closed linear subspace of $D^k(\mathcal{R}_n)$. 
 
-Let \(\{\phi_j^*: j\in\mathcal R_{n,0}\}\) be an orthonormal basis of \(\operatorname{span}\{\phi_j: j\in\mathcal R_{n,0}\}\) under the inner product
-\(\langle f,g\rangle_{\beta_{n,0}}\). We define a normalized score vector at \(x\) by
-\(
-\bar{\phi}_{n,x}(X)\equiv J_{n,0}^{-1/2}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X)\).
-Notice that  for each value $x\in [0,1]$, $\bar{\phi}_{n,x}$ is a function on $[0,1]$. Notice that $J_{n,0}^{-1/2} \bar{\phi}_{n,x}(X) = J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X)$, which is a linear combination of the orthonormal basis functions $\phi_j^*$, and we believe it to be uniformly bounded. Additionally, we use notation $O^+(r(n))$ if the term is $O(r(n)(\log n)^p)$ for some finite $p$, and similarly we define $O_p^+(r(n))$. Note that $p$ can be negative, and usually we can determine this $p$ based on undersmoothening, and it does not influence the main rate $r(n)$.
+Let \(\{\phi_j^*: j\in\mathcal R_{n,0}\}\) be an orthonormal basis of
+\(\operatorname{span}\{\phi_j: j\in\mathcal R_{n,0}\}\) under the inner product
+\(\langle f,g\rangle_{\beta_{n,0}}\). We define a normalized score vector at
+\(x\) by
+\[
+\bar{\phi}_{n,x}(X)\equiv J_{n,0}^{-1/2}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X).
+\]
+For each value $x\in [0,1]$, $\bar{\phi}_{n,x}$ is a function on $[0,1]$.
+Also,
+\[
+J_{n,0}^{-1/2}\bar{\phi}_{n,x}(X)
+= J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(X),
+\]
+which is a linear combination of the orthonormal basis functions $\phi_j^*$,
+and we believe it to be uniformly bounded. Additionally, we use notation
+$O^+(r(n))$ if the term is $O(r(n)(\log n)^p)$ for some finite $p$, and
+similarly we define $O_p^+(r(n))$. Note that $p$ can be negative, and usually
+we can determine this $p$ based on undersmoothening, and it does not influence
+the main rate $r(n)$.
 \begin{theorem}[Asymptotic Linearity of HAL-MLE]
 \label{thm:asymptotic-linearity-hal-mle}
 Let $J_{n,0}$ satisfy $J_{n,0}^{-(k+1)}=o((J_{n,0}/n)^{1/2})$.

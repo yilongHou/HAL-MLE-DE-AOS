@@ -1,6 +1,6 @@
 \section{Proof of Pointwise Asymptotic Normality} \label{appendix_D: proof of asymptotic normality}
 
-This appendix includes the proof of Theorem~\ref{thm:asymptotic-linearity-hal-mle}, Theorem~\ref{thm:density_HAL_asymptotic_normality}, and Corollary~\ref{coro: Delta-method for Density Estimation}.
+This appendix includes the proof of Theorem 4.4, Theorem 4.6, and Corollary 4.7 in the main paper.
 
 \begin{proof}
 Again, recall that the HAL‐MLE over $D^{(k)}_M(\mathcal R_n)$ by
@@ -14,7 +14,7 @@ Suppose \(D^{(k)}_M(R_{n,0})\) has effective dimension \(J_{n,0}\) with orthonor
 \(\phi^* \equiv \{\phi_j^{\ast}\}_{j=1}^{J_{n,0}}\), and we can project $f_n =  \Pi(f_n\mid D^{(k)}_M({\cal R}_{n,0}))$ from \(D^{(k)}_M(R_{n,0})\) to \(D^{(k)}_M(R_{n})\), denoted by $\tilde f_n$. Since $\tilde f_n$ is an element on $D^{(k)}_M(\mathcal R_{n,0})$, we can also represent $\tilde f_n $ in terms of \(\{\phi_j^{\ast}\}_{j=1}^{J_{n,0}}\), and we have $\tilde f_n = \sum_{j=1}^{J_{n,0}}\tilde \beta_{n}(j)\,\phi_j^{\ast}$. 
 
 \subsection{Outline}
-We here give an outline of the proof first and then argue the rates of each terms along the process. Denote the score equation at $f_n$ as $r_n(\cdot) \;=\; P_n S_{f_n}(\cdot)$, and denote the score equation at $\tilde f_n$ as $\tilde r_n(\cdot) \;=\; P_n S_{\tilde f_n}(\cdot)$. Define a linear operator T of an vector with $J$ elements such that \(T(b)(\cdot)=\sqrt{\frac{n}{J}}\sum_{j=1}^{J} b_j\,\phi_j^{\ast}(\cdot)\). Previously in Section~\ref{HAl_MLE with Link Function},  we define the normalized score vector at \(x\) by
+We here give an outline of the proof first and then argue the rates of each terms along the process. Denote the score equation at $f_n$ as $r_n(\cdot) \;=\; P_n S_{f_n}(\cdot)$, and denote the score equation at $\tilde f_n$ as $\tilde r_n(\cdot) \;=\; P_n S_{\tilde f_n}(\cdot)$. Define a linear operator T of an vector with $J$ elements such that \(T(b)(\cdot)=\sqrt{\frac{n}{J}}\sum_{j=1}^{J} b_j\,\phi_j^{\ast}(\cdot)\). Previously in Section 3.2 of the main paper, we define the normalized score vector at \(x\) by
 \(
 \bar{\phi}_{n,x}(\cdot)\equiv J_{n,0}^{-1/2}\sum_{j\in {\cal R}_{n,0}}\phi_j^*(x)\phi_j^*(\cdot)\).
 Notice that $T(\phi^*(x))(\cdot) = \bar\phi_{n,x}$, and we shorthand it to be $\bar\phi$ in the following outline.
@@ -57,7 +57,7 @@ Notice that $T(\phi^*(x))(\cdot) = \bar\phi_{n,x}$, and we shorthand it to be $\
 \end{align*}
 
 $\sqrt{J_{n,0}}S_{f_{n,0}}(\bar\phi)$ serves as the influence curve of HAL-MLE, and it is a function of $x$ since $\bar\phi$ is a function of $x$. For an application of the CLT we need that the variance under $P_0$ of $S_{\beta_{n,0}}(\bar{\phi})$ is $O(1)$. We have \[S_{\beta_{n,0}}(\bar{\phi})=\bar{\phi}(X)-P_{\beta_{n,0}}\bar{\phi}.\] Therefore this variance can be bounded by $\| \bar{\phi}\|_{P_0}^2$. 
-Recall the Positivity Condition for Theorem~\ref{thm:l2-convergence-hal-mle}, the density $p_f$ is bounded away from zero uniformly for all $f \in \mathcal F$. And the BSVN condition implies that the density $p_f$ is uniformly bounded from above by some constant as well, and then this should generally be true for the oracle MLE. Then, it follows that 
+Recall the Positivity Condition for Theorem 4.3 of the main paper: the density $p_f$ is bounded away from zero uniformly for all $f \in \mathcal F$. And the BSVN condition implies that the density $p_f$ is uniformly bounded from above by some constant as well, and then this should generally be true for the oracle MLE. Then, it follows that 
 \[
 \| \bar{\phi}\|_{P_0}=O(\| \bar{\phi}\|_{P_{\beta_{n,0}} } )=O( J_{n,0}^{-1}\sum_{j\in {\cal R}_{n,0}}\{\phi_j^*(x)\}^2)=O(1).
 \]
@@ -65,7 +65,7 @@ Let $\sigma^2_{n,0}\equiv P_0 \{S_{\beta_{n,0}}(\bar{\phi})\}^2$. We can then ap
 
 Then the rest of the proof of the pointwise asymptotic normality from the projection $\tilde f_n$ to the oracle $f_{n,0}$ depends on the rates of the terms $n^{1/2}\bigl(P_{\tilde f_n} - P_{f_n})(\bar\phi)\bigr)$, $n^{1/2}r_n(\bar\phi)$, and $n^{1/2}R_{1n}(\bar\phi)$. By Appendix~\ref{App C: Score Analysis}, we have that $n^{1/2} r_n(\bar \phi)$ is $o_P(1)$. For the rest of the terms, we will discuss them in the following subsections.
 
-We want the property from HAL-MLE $f_n$ to the truth $f_0$, thus we need to deal with the projection error from $f_n$ to $\tilde{f}_n$ and the oracle approximation error from $f_{n,0}$ to $f_0$. And both of the errors could be bounded by the Uniform Approximation Assumption in Theorem~\ref{thm:asymptotic-linearity-hal-mle} of this working model w.r.t. $D^{(k)}_U([0,1])$. Since $f_n\in D^{(k)}_U([0,1])$, we certainly have that $\| f_n-\tilde{f}_n\|_{\infty} = O^+(1/J_{n,0}^{k+1})$. And $\|f_{n,0} - f_0\|_{\infty} = O^+(J_{n,0}^{-(k+1)})$. They become negligible when choosing $(n/J_{n,0})^{1/2}\asymp^+ J_{n,0}^{(k+1)}$. By adding these two terms, we achieve the pointwise asymptotic normality of HAL-MLE $f_n$ to the truth $f_0$, as follows:
+We want the property from HAL-MLE $f_n$ to the truth $f_0$, thus we need to deal with the projection error from $f_n$ to $\tilde{f}_n$ and the oracle approximation error from $f_{n,0}$ to $f_0$. And both of the errors could be bounded by the Uniform Approximation Assumption in Theorem 4.4 of the main paper for this working model with respect to $D^{(k)}_U([0,1])$. Since $f_n\in D^{(k)}_U([0,1])$, we certainly have that $\| f_n-\tilde{f}_n\|_{\infty} = O^+(1/J_{n,0}^{k+1})$. And $\|f_{n,0} - f_0\|_{\infty} = O^+(J_{n,0}^{-(k+1)})$. They become negligible when choosing $(n/J_{n,0})^{1/2}\asymp^+ J_{n,0}^{(k+1)}$. By adding these two terms, we achieve the pointwise asymptotic normality of HAL-MLE $f_n$ to the truth $f_0$, as follows:
 \begin{align*}
     \sqrt{\frac{n}{J_{n,0}}}\bigl(f_n - f_{n,0}\bigr)(x) = -\,n^{1/2}(P_n-P_0)S_{f_{n,0}}(\bar\phi)
      + o_P(1) + \sqrt{\frac{n}{J_{n,0}}}O^{+}\!\bigl(J_{n,0}^{-(k+1)}\bigr),
@@ -211,7 +211,7 @@ Here, we argue why $n^{1/2}\bigl((P_{\tilde f_n} - P_{f_n})(\bar\phi)\bigr)$ is 
 &= J_{n,0}^{-\frac12} \Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))(x)
 \end{align*}
 
-Notice that $p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}$ is a score in $L_0^2(P_{f_{n,0}})$, that is to say, the integration under measure $P_{f_{n,0}}$ is 0. And then use the inner product defined in Eq~\ref{eq:inner-product-score}, we can idenity the term as a projection of a score in $L_0^2(P_{f_{n,0}})$ to the space $D^{(k)}(\mathcal{R}_{n,0})$. 
+Notice that $p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}}$ is a score in $L_0^2(P_{f_{n,0}})$, that is to say, the integration under measure $P_{f_{n,0}}$ is 0. And then use the inner product defined in Eq. (4.2) of the main paper, we can identify the term as a projection of a score in $L_0^2(P_{f_{n,0}})$ to the space $D^{(k)}(\mathcal{R}_{n,0})$. 
 \begin{align*}
    \Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))(x) &\leq \|\Pi(p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \mid D^{(k)}(\mathcal{R}_{n,0}))\|_\infty \\
    &\leq \|p_{\tilde f_n} - p_{f_n}/p_{f_{n,0}} \|_\infty + \\
@@ -233,14 +233,14 @@ Again, based on our score expression, we have that $S_{f_n}(\phi)-S_{f_{n,0}}(\p
 
 \end{proof}
 
-\subsection{Proof of Corollary~\ref{coro: Delta-method for Density Estimation}}
+\subsection{Proof of Corollary 4.7 in the main paper}
 \begin{proof}
 Let $g(f))(x)=\log p_f(x)$. Then, $g(f_0)(x)=\log p_0(x)=\log p_{f_0}(x)$. We wish to also analyze $g(f_n)(x)-g(f_0)(x)$ which implies the analysis for the density itself $p_{f_n}(x)-p_{f_0}(x)$ by a simple delta method argument. 
 We note that
 \begin{eqnarray*}
 g(f_n)(x)-g(f_0)(x)&=& (f_n(x)-f_0(x))-(\log C(f_n)-\log C(f_0)).
 \end{eqnarray*}
-We have a linear approximation for $f_n(x)-f_0(x)$ given in Theorem~\ref{thm:asymptotic-linearity-hal-mle} given by $J_{n,0}^{1/2}(P_n-P_0)S_{f_{n,0} }(\bar{\phi}_{n,x})$. We can Taylor expand
+We have a linear approximation for $f_n(x)-f_0(x)$ given in Theorem 4.4 of the main paper, namely $J_{n,0}^{1/2}(P_n-P_0)S_{f_{n,0} }(\bar{\phi}_{n,x})$. We can Taylor expand
 \[
 \log C(f_n)-\log C(f_0) = \frac{1}{C(f_0)}(C(f_n)-C(f_0)) - \frac{1}{C(\xi)^2}(C(f_n) - C(f_0))^2,
 \]
